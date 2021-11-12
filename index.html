@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/css/master.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+    integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+    crossorigin="anonymous"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap" rel="stylesheet">
+    <title>Gifos</title>
+</head>
+<body>
+    <!--Navbar-->
+    <header id="top">
+        <div class="top-line"></div>
+        <nav class="navBar">
+           <a href="#top"><img class="logo" src="assets/logo-mobile.svg" alt="Gifos logo"></a>
+           <ul class="navBar-menu">
+                <li class="navBar-menu_item">
+                    <a href="/dark_mode.html">Modo nocturno</a>
+                </li>
+                <div class="navBar-menu_line"></div>
+                <li class="navBar-menu_item">
+                    <a href="/favorites.html">Favoritos</a>
+                </li>
+                <div class="navBar-menu_line"></div>
+                <li class="navBar-menu_item">
+                    <a href="/my_gifos.html">Mis GIFOS</a>
+                </li>
+                <div class="navBar-menu_line"></div>
+           </ul>
+           <a class="hamburger hidden"><img id="burger" src="assets/burger.svg" alt="Menu"></a>
+        </nav>
+    </header>
+    <!--Search and Trending-->
+    <main id="mainContent">
+                                     <!--SECTION 1-->
+        <!--Search Gifos-->
+        <section1 id="search">
+            <!--Title1-->
+            <div class="mainContent-title1">
+                <h1>Inspírate, busca, guarda, y crea los mejores <span class="title1-gifos">GIFOS</span></h1>
+            </div>
+            <!--Image and search input-->
+            <div class="mainContent-search">
+                <img class="mainContent-image" src="assets/ilustra_header.svg">
+                <form>
+                    <input id="search-box" type="text" placeholder="Busca GIFOS y más" name="search">
+                    <button id="searchBtn" type="submit"><img class="searchBtn-icon" src="assets/icon-search.svg" alt="Search icon"></button>
+                </form>
+                <div id="match-list">
+
+                </div>
+            </div>
+            <!--Trending-->
+            <div class="mainContent-trending">
+                <p>Trending</p>
+                <div id="result">
+
+                </div>
+            </div>
+            <div id="gifss" class="mainContent-gifs">
+
+            </div>
+        </section1>
+                                    <!--SECTION 2-->
+        <!--Trending Gifos-->
+        <section2 id="trending">
+            <div class="trending-text">
+                <h2>Trending GIFOS</h2>
+                <p>Mira los últimos GIFOS de nuestra comunidad.</p>
+            </div>
+            <div id="trending-gifos"></div>
+        </section2>
+    </main>
+    <!--Last part-->
+    <footer id="bottom">
+        <p>Compartir en:</p>
+        <a><i class="fab fa-facebook"></i></a>
+        <a><i class="fab fa-twitter"></i></a>
+        <a><i class="fab fa-instagram"></i></a>
+        <p>© GIFOS 2020 All Rights Reserved.</p>
+    </footer>
+    <!--Scripts-->
+    <script src="JS/menu.js"></script>
+    <script src="JS/trending.js"></script>
+    <script src="JS/search.js"></script>
+    <script src="JS/autocomplete.js"></script>
+    <script src="JS/terms.js"></script>
+    <script src="JS/responsive.js"></script>
+</body>
+</html>

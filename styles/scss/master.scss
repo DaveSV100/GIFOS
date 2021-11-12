@@ -1,0 +1,24 @@
+@import 'header.scss', 'main.scss', 'footer.scss', 'responsive.scss';
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+body {
+    display: grid;
+    grid-template-columns: 100vw;
+    grid-template-rows: 10vh 100vh 10vh;
+    grid-template-areas: "header"
+                         "main"
+                         "footer";
+}
+
+header {
+    grid-area: header;
+}
+main {
+    grid-area: main;
+}
+footer {
+    grid-area: footer;
+}
