@@ -124,7 +124,7 @@
 #mainContent #search .mainContent-terms {
   grid-area: mainContent-terms;
 }
-#mainContent #search .mainContent-terms p {
+#mainContent #search .mainContent-terms .mainContent-terms_title {
   font-family: "Montserrat-bold", sans-serif;
   color: #572EE5;
   text-align: center;
