@@ -63,8 +63,8 @@
 #mainContent #search {
   display: grid;
   grid-template-columns: 100vw;
-  grid-template-rows: 20vh 20vh 20vh;
-  grid-template-areas: "mainContent-title1" "mainContent-search" "mainContent-trending";
+  grid-template-rows: 20vh 20vh 30vh 40vh;
+  grid-template-areas: "mainContent-title1" "mainContent-search" "mainContent-terms" "mainContent-gifs";
   text-align: center;
 }
 #mainContent #search .mainContent-title1 {
@@ -94,7 +94,7 @@
 #mainContent #search .mainContent-search img {
   width: 70vw;
 }
-#mainContent #search .mainContent-search #search-box {
+#mainContent #search .mainContent-search .search-container #search-box {
   margin-top: -10px;
   height: 50px;
   width: 290px;
@@ -102,10 +102,10 @@
   border-radius: 27px;
   padding-left: 20px;
 }
-#mainContent #search .mainContent-search #search-box::placeholder {
+#mainContent #search .mainContent-search .search-container #search-box::placeholder {
   background: none;
 }
-#mainContent #search .mainContent-search #searchBtn {
+#mainContent #search .mainContent-search .search-container #searchBtn {
   height: 40px;
   width: 40px;
   background: none;
@@ -113,18 +113,18 @@
   margin-left: -50px;
   transform: translateY(10px);
 }
-#mainContent #search .mainContent-search .searchBtn-icon {
+#mainContent #search .mainContent-search .search-container .searchBtn-icon {
   height: 30px;
   width: 20px;
   cursor: pointer;
 }
-#mainContent #search .mainContent-search .searchBtn-icon:hover {
+#mainContent #search .mainContent-search .search-container .searchBtn-icon:hover {
   opacity: 0.7;
 }
-#mainContent #search .mainContent-trending {
-  grid-area: mainContent-trending;
+#mainContent #search .mainContent-terms {
+  grid-area: mainContent-terms;
 }
-#mainContent #search .mainContent-trending p {
+#mainContent #search .mainContent-terms p {
   font-family: "Montserrat-bold", sans-serif;
   color: #572EE5;
   text-align: center;
@@ -133,12 +133,12 @@
   line-height: 25px;
   padding: 10px;
 }
-#mainContent #search .mainContent-trending #result {
+#mainContent #search .mainContent-terms #mainContent-terms_result {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-#mainContent #search .mainContent-trending #result a {
+#mainContent #search .mainContent-terms #mainContent-terms_result a {
   font-family: "Montserrat-bold", sans-serif;
   color: #572EE5;
   text-align: center;
@@ -147,6 +147,9 @@
   line-height: 25px;
   padding: 10px;
   cursor: pointer;
+}
+#mainContent #search .mainContent-gifs {
+  grid-area: mainContent-gifs;
 }
 #mainContent #trending .trending-text h2 {
   color: #572EE5;

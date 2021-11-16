@@ -1,4 +1,4 @@
-const apiKey = "efARnSmXUsXz3XqFvbyykWkVyNi3IIuQ";
+// const apiKey = "efARnSmXUsXz3XqFvbyykWkVyNi3IIuQ";
 //                     //TRENDING
 // let trending = document.getElementById('trending-gifos');
 // const trendingUrl = "https://api.giphy.com/v1/gifs/trending?";
@@ -19,9 +19,3 @@ const apiKey = "efARnSmXUsXz3XqFvbyykWkVyNi3IIuQ";
 // }).catch(err => {
 //     console.error('something went wrong :/', err);
 // })
-
-
-
-
-
-    

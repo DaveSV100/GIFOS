@@ -1,12 +1,13 @@
                     //SEARCH
+const apiKey = "efARnSmXUsXz3XqFvbyykWkVyNi3IIuQ";
 const searchUrl = "https://api.giphy.com/v1/gifs/search?";
-let gifs = document.getElementById('result');
+let gifs = document.getElementById('result-gifs');
 let searchButton = document.getElementById('searchBtn');
 let word = document.getElementById('search-box');
 searchButton.addEventListener("click", s);
 function s() {
     async function searchGif() {
-        let search = (word).value;
+        let search = word.value;
         console.log(search); 
         //request parameters: api_key and q (string)
         let search_fetch = `${searchUrl}&api_key=${apiKey}&q=${search}&limit=20&offset=0`;
@@ -28,3 +29,4 @@ function s() {
         console.error('something went wrong :/', err);
     })
 }
+s();

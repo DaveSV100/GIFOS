@@ -1,6 +1,6 @@
-                    //TRENDING SEARCH TERMS
+//                     //TRENDING SEARCH TERMS
 const searches_url = "https://api.giphy.com/v1/trending/searches?";
-let searches = document.getElementById('result');
+let searches = document.getElementById("mainContent-terms_result");
 function show_terms() {
     async function display() {
         let terms = `${searches_url}&api_key=${apiKey}&limit=5`

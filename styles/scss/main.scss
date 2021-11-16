@@ -4,11 +4,12 @@
     #search {
         display: grid;
         grid-template-columns: 100vw;
-        grid-template-rows: 20vh 20vh 20vh;
+        grid-template-rows: 20vh 20vh 30vh 40vh;
         grid-template-areas: 
                              "mainContent-title1"
                              "mainContent-search"
-                             "mainContent-trending";
+                             "mainContent-terms"
+                             "mainContent-gifs";
         text-align: center;
         .mainContent-title1 {
             grid-area: mainContent-title1;
@@ -36,36 +37,38 @@
             img {
                 width: 70vw;
             }
-            #search-box {
-                margin-top: -10px;
-                height: 50px;
-                width: 290px;
-                border: 1px solid #572EE5;
-                border-radius: 27px;
-                padding-left: 20px;
-            }
-            #search-box::placeholder {
-               background: none;
-            }
-            #searchBtn {
-                height: 40px;
-                width: 40px;
-                background: none;
-                border: none;
-                margin-left: -50px;
-                transform: translateY(10px)
-            }
-            .searchBtn-icon {
-                height: 30px;
-                width: 20px;
-                cursor: pointer;
-            }
-            .searchBtn-icon:hover {
-                opacity: .7;
+            .search-container {
+                #search-box {
+                    margin-top: -10px;
+                    height: 50px;
+                    width: 290px;
+                    border: 1px solid #572EE5;
+                    border-radius: 27px;
+                    padding-left: 20px;
+                }
+                #search-box::placeholder {
+                   background: none;
+                }
+                #searchBtn {
+                    height: 40px;
+                    width: 40px;
+                    background: none;
+                    border: none;
+                    margin-left: -50px;
+                    transform: translateY(10px)
+                }
+                .searchBtn-icon {
+                    height: 30px;
+                    width: 20px;
+                    cursor: pointer;
+                }
+                .searchBtn-icon:hover {
+                    opacity: .7;
+                }
             }
         }
-        .mainContent-trending {
-            grid-area: mainContent-trending;
+        .mainContent-terms {
+            grid-area: mainContent-terms;
             p {
                 font-family: 'Montserrat-bold', sans-serif;
                 color: #572EE5;
@@ -75,12 +78,12 @@
                 line-height: 25px;
                 padding: 10px;
             }
-            #result {
+            #mainContent-terms_result {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: center;
                 a {
-                    font-family: 'Montserrat-bold', sans-serif;
+                font-family: 'Montserrat-bold', sans-serif;
                 color: #572EE5;
                 text-align: center;
                 font-weight: 400;
@@ -90,6 +93,9 @@
                 cursor: pointer;
                 }
             }
+        }
+        .mainContent-gifs {
+            grid-area: mainContent-gifs
         }
     }
     /*Section2*/
