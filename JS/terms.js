@@ -37,6 +37,11 @@ function show_terms() {
                         gifs.appendChild(foundGif);
                         foundGif.style.width = '300px';
                     }
+                    let gifTitle = document.createElement('p');
+                    let titleName = a.text;
+                    gifTitle.textContent = titleName;
+                    console.log(search);
+                    title.appendChild(gifTitle);
                 }).catch(err => {
                     console.error('something went wrong :/', err);
                 })

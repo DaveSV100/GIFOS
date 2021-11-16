@@ -4,11 +4,12 @@
     #search {
         display: grid;
         grid-template-columns: 100vw;
-        grid-template-rows: 20vh 20vh 30vh 40vh;
+        grid-template-rows: 20vh 20vh 20vh 10vh 40vh;
         grid-template-areas: 
                              "mainContent-title1"
                              "mainContent-search"
                              "mainContent-terms"
+                             "mainContent-result"
                              "mainContent-gifs";
         text-align: center;
         .mainContent-title1 {
@@ -94,6 +95,23 @@
                 }
             }
         }
+        .mainContent-result {
+            grid-area: mainContent-result;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            p {
+                font-family: 'Montserrat-bold', sans-serif;
+                color: #572EE5;
+                text-align: center;
+                font-weight: 600;
+                font-size: 1.5rem;
+                line-height: 25px;
+            }
+            p:first-letter {
+                text-transform: uppercase;
+            }
+        }
         .mainContent-gifs {
             grid-area: mainContent-gifs
         }
@@ -103,10 +121,10 @@
         .trending-text {
             h2 {
                 color: #572EE5;
-                font-family: 'Montserrat', sans-serif;
+                font-family: 'Montserrat-bold', sans-serif;
                 text-align: center;
                 font-weight: 400;
-                font-size: 1.5rem;
+                font-size: 1rem;
                 line-height: 30px;
             }
             p {

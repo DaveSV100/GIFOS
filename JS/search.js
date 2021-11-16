@@ -1,6 +1,7 @@
                     //SEARCH
 const apiKey = "efARnSmXUsXz3XqFvbyykWkVyNi3IIuQ";
 const searchUrl = "https://api.giphy.com/v1/gifs/search?";
+let title = document.getElementById("result-title")
 let gifs = document.getElementById('result-gifs');
 let searchButton = document.getElementById('searchBtn');
 let word = document.getElementById('search-box');
@@ -25,6 +26,11 @@ function s() {
             gifs.appendChild(foundGif);
             foundGif.style.width = '300px';
         }
+        let gifTitle = document.createElement('p');
+            let titleName = word.value;
+            gifTitle.textContent = titleName;
+            console.log(search);
+            title.appendChild(gifTitle);
     }).catch(err => {
         console.error('something went wrong :/', err);
     })
