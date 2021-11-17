@@ -1,21 +1,36 @@
 // const apiKey = "efARnSmXUsXz3XqFvbyykWkVyNi3IIuQ";
 //                     //TRENDING
-// let trending = document.getElementById('trending-gifos');
-// const trendingUrl = "https://api.giphy.com/v1/gifs/trending?";
+let trending = document.getElementById('trending-gifos');
+const trendingUrl = "https://api.giphy.com/v1/gifs/trending?";
 
-// async function getGif() {
-//     let fetch_url = `${trendingUrl}&api_key=${apiKey}&limit=15&offset=0`;
-//     const response = await fetch(fetch_url);
-//     const data = await response.json();
-//     return data;
-// }
-// getGif().then(response => {
-//     for (var i = 0; i < response.data.length; i++) {
-//         let gif = document.createElement('img');
-//         gif.setAttribute('src', response.data[i].images.original.url);
-//         trending.appendChild(gif);
-//         gif.style.width = '300px';
-//     }
-// }).catch(err => {
-//     console.error('something went wrong :/', err);
-// })
+async function getGif() {
+    let fetch_url = `${trendingUrl}&api_key=${apiKey}&limit=10&offset=0`;
+    const response = await fetch(fetch_url);
+    const data = await response.json();
+    return data;
+}
+getGif().then(response => {
+
+    let pic2 = document.createElement('img');
+    pic2.setAttribute('src', response.data[9].images.original.url);
+    pic2.setAttribute('id', 'secondClone');
+    trending.appendChild(pic2);
+    pic2.style.width = '300px';
+    
+    for (var i = 0; i < response.data.length; i++) {
+        let gif = document.createElement('img');
+        gif.setAttribute('src', response.data[i].images.original.url);
+        console.log(response.data[0].images.original.url);
+        trending.appendChild(gif);
+        gif.style.width = '300px';
+    }
+
+    let pic1 = document.createElement('img');
+    pic1.setAttribute('src', response.data[0].images.original.url);
+    pic1.setAttribute('id', 'firstClone');
+    trending.appendChild(pic1);
+    pic1.style.width = '300px';
+
+}).catch(err => {
+    console.error('something went wrong :/', err);
+})

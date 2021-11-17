@@ -26,11 +26,14 @@ function s() {
             gifs.appendChild(foundGif);
             foundGif.style.width = '300px';
         }
+        //Gif result title
         let gifTitle = document.createElement('p');
-            let titleName = word.value;
-            gifTitle.textContent = titleName;
-            console.log(search);
-            title.appendChild(gifTitle);
+        let titleName = word.value;
+        gifTitle.textContent = titleName;
+        console.log(search);
+        title.appendChild(gifTitle);
+        //Div height
+        // gifs.style.height = '500vh';
     }).catch(err => {
         console.error('something went wrong :/', err);
     })

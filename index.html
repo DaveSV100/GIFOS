@@ -39,7 +39,7 @@
     <main id="mainContent">
                                      <!--SECTION 1-->
         <!--Search Gifos-->
-        <section1 id="search">
+        <section id="search">
             <!--Title1-->
             <div class="mainContent-title1">
                 <h1>Inspírate, busca, guarda, y crea los mejores <span class="title1-gifos">GIFOS</span></h1>
@@ -65,29 +65,35 @@
             <div id="result-gifs" class="mainContent-gifs">
                 
             </div>
-        </section1>
+        </section>
                                     <!--SECTION 2-->
         <!--Trending Gifos-->
-        <section2 id="trending">
+        <section id="trending" class="trending-container">
             <div class="trending-text">
                 <h2>Trending GIFOS</h2>
                 <p>Mira los últimos GIFOS de nuestra comunidad.</p>
             </div>
-            <div id="trending-gifos"></div>
-        </section2>
+            <div id="trending-gifos">
+
+            </div>
+            <button id="prevBtn">Prev</button>
+            <button id="nextBtn">Next</button>
+        </section>
     </main>
     <!--Last part-->
     <footer id="bottom">
         <p>Compartir en:</p>
-        <a><i class="fab fa-facebook"></i></a>
-        <a><i class="fab fa-twitter"></i></a>
-        <a><i class="fab fa-instagram"></i></a>
+        <div class="socialMedia">
+            <a><i class="fab fa-facebook"></i></a>
+            <a><i class="fab fa-twitter"></i></a>
+            <a><i class="fab fa-instagram"></i></a>
+        </div>
         <p>© GIFOS 2020 All Rights Reserved.</p>
     </footer>
     <!--Scripts-->
+    <script src="JS/search.js"></script>
     <script src="JS/menu.js"></script>
     <script src="JS/trending.js"></script>
-    <script src="JS/search.js"></script>
     <script src="JS/autocomplete.js"></script>
     <script src="JS/terms.js"></script>
     <script src="JS/responsive.js"></script>

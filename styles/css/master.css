@@ -63,7 +63,7 @@
 #mainContent #search {
   display: grid;
   grid-template-columns: 100vw;
-  grid-template-rows: 20vh 20vh 20vh 10vh 40vh;
+  grid-template-rows: 20vh 20vh 25vh 0vh 0vh;
   grid-template-areas: "mainContent-title1" "mainContent-search" "mainContent-terms" "mainContent-result" "mainContent-gifs";
   text-align: center;
 }
@@ -148,6 +148,9 @@
   padding: 10px;
   cursor: pointer;
 }
+#mainContent #search .mainContent-terms #mainContent-terms_result a:first-letter {
+  text-transform: uppercase;
+}
 #mainContent #search .mainContent-result {
   grid-area: mainContent-result;
   display: flex;
@@ -168,20 +171,46 @@
 #mainContent #search .mainContent-gifs {
   grid-area: mainContent-gifs;
 }
+#mainContent #trending {
+  height: 50vh;
+  width: 100vw;
+  background: #F3F5F8;
+  margin: auto;
+}
+#mainContent #trending .trending-text {
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 #mainContent #trending .trending-text h2 {
+  height: 5vh;
   color: #572EE5;
   font-family: "Montserrat-bold", sans-serif;
   text-align: center;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 1.5rem;
   line-height: 30px;
 }
 #mainContent #trending .trending-text p {
+  height: 5vh;
   font-family: "Roboto-Regular", sans-serif;
   font-size: 1rem;
   color: #000000;
   text-align: center;
   line-height: 23px;
+}
+#mainContent #trending #trending-gifos {
+  height: 30vh;
+  width: 100vw;
+  display: flex;
+}
+#bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 @media (min-width: 769px) {
@@ -234,7 +263,7 @@
 body {
   display: grid;
   grid-template-columns: 100vw;
-  grid-template-rows: 10vh 100vh 10vh;
+  grid-template-rows: 10vh 115vh 20vh;
   grid-template-areas: "header" "main" "footer";
 }
 
