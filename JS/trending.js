@@ -37,7 +37,8 @@ getGif().then(response => {
     // pic1.style.width = '300px';
 
     let counter = 1;
-    const size = trending[0];
+    const size = trending.firstElementChild.clientWidth;
+    trending.style.transform = 'translateX(' + (-size * counter) + 'px)';
     console.log(size);
 
 }).catch(err => {
