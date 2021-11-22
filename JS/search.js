@@ -30,7 +30,6 @@ function s() {
         let gifTitle = document.createElement('p');
         let titleName = word.value;
         gifTitle.textContent = titleName;
-        console.log(search);
         title.appendChild(gifTitle);
         //Div height
         // gifs.style.height = '500vh';

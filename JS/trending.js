@@ -1,7 +1,7 @@
 // const apiKey = "efARnSmXUsXz3XqFvbyykWkVyNi3IIuQ";
 //                     //TRENDING
 const trending = document.getElementById('trending-gifos');
-const carouselImages = document.querySelectorAll('trending-gifos img');
+// const carouselImages = document.querySelectorAll('#trending-gifos img');
 const prevBtn = document.querySelector('#prevBtn');
 const nextBtn = document.querySelector('#nextBtn');
 
@@ -36,11 +36,24 @@ getGif().then(response => {
     trending.appendChild(pic1);
     // pic1.style.width = '300px';
 
+    //Counter
     let counter = 1;
     const size = trending.firstElementChild.clientWidth;
-    trending.style.transform = 'translateX(' + (-size * counter) + 'px)';
+    // const size = carouselImages[0].getBoundingClientRect().width;
     console.log(size);
+    trending.style.transform = 'translateX(' + (-size * counter) + 'px)';
+
+
 
 }).catch(err => {
     console.error('something went wrong :/', err);
 })
+
+
+    //Button Listeners
+    nextBtn.addEventListener('click', () => {
+        alert("hey you");
+        // trending.style.transition = "transform 0.4s ease-in-out";
+        // counter++;
+        // trending.style.transform = 'translateX(' + (-size * counter) + 'px)';
+    });
