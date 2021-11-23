@@ -4,7 +4,7 @@
     #search {
         display: grid;
         grid-template-columns: 100vw;
-        grid-template-rows: 20vh 20vh 25vh 0vh 0vh;
+        grid-template-rows: 20vh 25vh 25vh 0vh 0vh;
         grid-template-areas: 
                              "mainContent-title1"
                              "mainContent-search"
@@ -116,7 +116,8 @@
             }
         }
         .mainContent-gifs {
-            grid-area: mainContent-gifs
+            grid-area: mainContent-gifs;
+            min-height: 0vh;
         }
     }
     /*Section2*/
@@ -148,22 +149,18 @@
                 line-height: 23px;
             }
         }
-        .trending-carousel {
+        #trending-gifos {
+            height: 30vh;
             width: 100vw;
-            margin: auto;
-            border: 5px solid #000000;
-            #trending-gifos {
-                height: 30vh;
+            display: flex;
+            overflow: scroll;
+            img {
+                // display: block;
+                // max-width: 100%;
+                // max-height: 100%;
+                // width: auto;
+                // height: auto;
                 width: 100vw;
-                display: flex;
-                img {
-                    // display: block;
-                    // max-width: 100%;
-                    // max-height: 100%;
-                    // width: auto;
-                    // height: auto;
-                    width: 100vw;
-                }
             }
         }
     }

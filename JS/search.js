@@ -1,13 +1,18 @@
                     //SEARCH
 const apiKey = "efARnSmXUsXz3XqFvbyykWkVyNi3IIuQ";
 const searchUrl = "https://api.giphy.com/v1/gifs/search?";
-let title = document.getElementById("result-title")
+let searchContainer = document.getElementById('search');
+let title = document.getElementById('result-title')
+let searchedTitle = document.getElementsByClassName('mainContent-result');
 let gifs = document.getElementById('result-gifs');
+let searchedGifs = document.getElementsByClassName('mainContent-gifs');
 let searchButton = document.getElementById('searchBtn');
 let word = document.getElementById('search-box');
 searchButton.addEventListener("click", s);
 function s() {
+    
     async function searchGif() {
+        
         let search = word.value;
         console.log(search); 
         //request parameters: api_key and q (string)
@@ -19,13 +24,17 @@ function s() {
         return data;
     }
     searchGif().then(response => {
+        
         for (var i = 0; i < response.data.length; i++) {
+            searchContainer.style.gridTemplateRows = '20vh 25vh 25vh 25vh 600vh';
             //Gifs container
             let foundGif = document.createElement('img');
             foundGif.setAttribute('src', response.data[i].images.original.url);
             gifs.appendChild(foundGif);
             foundGif.style.width = '300px';
         }
+        // searchedTitle.style.height = '40vh';
+        // searchedGifs.style.height = '50vh';
         //Gif result title
         let gifTitle = document.createElement('p');
         let titleName = word.value;
