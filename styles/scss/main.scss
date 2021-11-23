@@ -117,7 +117,15 @@
         }
         .mainContent-gifs {
             grid-area: mainContent-gifs;
-            min-height: 0vh;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-content: flex-start;
+            img {
+                width: 150px;
+                height: 150px;
+                object-fit: cover;
+            }
         }
     }
     /*Section2*/

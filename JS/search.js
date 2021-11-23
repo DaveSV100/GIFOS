@@ -16,7 +16,7 @@ function s() {
         let search = word.value;
         console.log(search); 
         //request parameters: api_key and q (string)
-        let search_fetch = `${searchUrl}&api_key=${apiKey}&q=${search}&limit=20&offset=0`;
+        let search_fetch = `${searchUrl}&api_key=${apiKey}&q=${search}&limit=24&offset=0`;
         console.log(search_fetch);
         const response = await fetch(search_fetch);
         const data = await response.json();
@@ -32,7 +32,7 @@ function s() {
             let foundGif = document.createElement('img');
             foundGif.setAttribute('src', response.data[i].images.original.url);
             gifs.appendChild(foundGif);
-            foundGif.style.width = '300px';
+            // foundGif.style.width = '300px';
         }
         // searchedTitle.style.height = '40vh';
         // searchedGifs.style.height = '50vh';
