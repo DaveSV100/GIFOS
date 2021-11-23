@@ -63,7 +63,7 @@
 #mainContent #search {
   display: grid;
   grid-template-columns: 100vw;
-  grid-template-rows: 20vh 25vh 25vh 0vh 0vh;
+  grid-template-rows: 20vh 25vh 20vh 0vh 0vh;
   grid-template-areas: "mainContent-title1" "mainContent-search" "mainContent-terms" "mainContent-result" "mainContent-gifs";
   text-align: center;
 }

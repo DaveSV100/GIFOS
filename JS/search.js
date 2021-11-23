@@ -26,7 +26,8 @@ function s() {
     searchGif().then(response => {
         
         for (var i = 0; i < response.data.length; i++) {
-            searchContainer.style.gridTemplateRows = '20vh 25vh 25vh 25vh 600vh';
+            document.body.style.gridTemplateRows = '10vh 815vh 20vh';
+            searchContainer.style.gridTemplateRows = '20vh 25vh 20vh 20vh 600vh';
             //Gifs container
             let foundGif = document.createElement('img');
             foundGif.setAttribute('src', response.data[i].images.original.url);
