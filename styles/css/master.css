@@ -63,8 +63,8 @@
 #mainContent #search {
   display: grid;
   grid-template-columns: 100vw;
-  grid-template-rows: 20vh 25vh 20vh 0vh 0vh;
-  grid-template-areas: "mainContent-title1" "mainContent-search" "mainContent-terms" "mainContent-result" "mainContent-gifs";
+  grid-template-rows: 20vh 20vh 20vh 0vh 0vh 0vh;
+  grid-template-areas: "mainContent-title1" "mainContent-search" "mainContent-terms" "mainContent-result" "mainContent-gifs" "mainContent-button";
   text-align: center;
 }
 #mainContent #search .mainContent-title1 {
@@ -180,6 +180,24 @@
   height: 150px;
   object-fit: cover;
 }
+#mainContent #search .mainContent-button {
+  grid-area: mainContent-button;
+  height: 0vh;
+}
+#mainContent #search .mainContent-button button {
+  height: 40px;
+  width: 100px;
+  background: none;
+  border: 1px solid #572EE5;
+  border-radius: 25px;
+  font-family: "Montserrat-bold", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #572EE5;
+  letter-spacing: 0;
+  text-align: center;
+  text-transform: uppercase;
+}
 #mainContent #trending {
   height: 50vh;
   width: 100vw;
@@ -216,7 +234,9 @@
   overflow: scroll;
 }
 #mainContent #trending #trending-gifos img {
-  width: 100vw;
+  height: 187px;
+  width: 243px;
+  object-fit: cover;
 }
 
 #bottom {
