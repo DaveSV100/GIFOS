@@ -69,7 +69,7 @@ searchButton.addEventListener('click', () => {
                     let search = word.value;
                     console.log(search); 
                     //request parameters: api_key and q (string)
-                    let search_fetch = `${searchUrl}&api_key=${apiKey}&q=${search}&limit=24&offset=12`;
+                    let search_fetch = `${searchUrl}&api_key=${apiKey}&q=${search}&limit=12&offset=12`;
                     console.log(search_fetch);
                     const response = await fetch(search_fetch);
                     const data = await response.json();
@@ -78,18 +78,13 @@ searchButton.addEventListener('click', () => {
                 }
                 searchGif().then(response => {
                     for (var i = 0; i < response.data.length; i++) {
-                        document.body.style.gridTemplateRows = '10vh 440vh 20vh';
-                        searchContainer.style.gridTemplateRows = '20vh 20vh 20vh 10vh 310vh 0vh';
+                        document.body.style.gridTemplateRows = '10vh 340vh 20vh';
+                        searchContainer.style.gridTemplateRows = '20vh 20vh 20vh 10vh 210vh 0vh';
                         //Gifs container
                         let foundGif = document.createElement('img');
                         foundGif.setAttribute('src', response.data[i].images.original.url);
                         gifs.appendChild(foundGif);
                     }
-                    //Gif result title
-                    let gifTitle = document.createElement('p');
-                    let titleName = word.value;
-                    gifTitle.textContent = titleName;
-                    title.appendChild(gifTitle);
                     //Remove button
                     gifsBtn.remove();
                 }).catch(err => {
