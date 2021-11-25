@@ -21,3 +21,46 @@ main {
 footer {
     grid-area: footer;
 }
+
+//GIF CARD
+//It'll be displayed on top when the user click a gif
+.gifCard {
+    height: 200vh;
+    width: 100vw;
+    z-index: 2;
+    position: absolute;
+    background: rgba(255, 255, 255, .9);
+    //Gif container
+    .gifCard-container {
+        transform: translateY(10vh);
+        height: 100vh;
+        width: 100vw;
+        background: rgb(255, 255, 255);
+        position: relative;
+        //Close icon
+        .card-image {
+            height: 20vh;
+            width: 80vw;
+            object-fit: cover;
+            margin: 10vh 10vw 0;
+        }
+        .x-icon {
+            background: none;
+            border: none;
+            transform: translateX(80vw);
+             // transform: translateY(-60vh);
+        }
+        //Favorite icon
+        .favorite-icon {
+        }
+        //Donwload icon
+        .donwload-icon {
+        }
+        //Title
+        .gif-title {
+            font-family: 'Montserrat-bold', sans-serif;
+            font-size: 1rem;
+            color: #000000;
+        }
+    }
+}

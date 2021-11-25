@@ -312,4 +312,35 @@ footer {
   grid-area: footer;
 }
 
+.gifCard {
+  height: 200vh;
+  width: 100vw;
+  z-index: 2;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.9);
+}
+.gifCard .gifCard-container {
+  transform: translateY(10vh);
+  height: 100vh;
+  width: 100vw;
+  background: white;
+  position: relative;
+}
+.gifCard .gifCard-container .card-image {
+  height: 20vh;
+  width: 80vw;
+  object-fit: cover;
+  margin: 10vh 10vw 0;
+}
+.gifCard .gifCard-container .x-icon {
+  background: none;
+  border: none;
+  transform: translateX(80vw);
+}
+.gifCard .gifCard-container .gif-title {
+  font-family: "Montserrat-bold", sans-serif;
+  font-size: 1rem;
+  color: #000000;
+}
+
 /*# sourceMappingURL=master.css.map */

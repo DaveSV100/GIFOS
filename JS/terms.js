@@ -21,8 +21,8 @@ function show_terms() {
             let clicked = false;
             a.addEventListener('click', () => {
                 //Disable a event listener 
-                if (!clicked) {
-                    clicked = true;
+                // if (!clicked) {
+                    // clicked = true;
                     async function searchGif() {
                         let search = a.text;
                         console.log(search); 
@@ -108,8 +108,7 @@ function show_terms() {
                     }).catch(err => {
                         console.error('something went wrong :/', err);
                     })
-                }
-                
+                // } 
             });
         });
 
