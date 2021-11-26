@@ -15,11 +15,6 @@ getGif().then(response => {
         gif.setAttribute('alt', response.data[i].title);
         trending.appendChild(gif);
         gif.addEventListener('click', () => {
-            // window.onclick = e => {
-            //     console.log(e.target);  // to get the element
-            //     console.log(e.target.tagName);  // to get the element tag name alone
-            // } 
-
                                                //GIF CARD
             //The styles for the Gif Card are set on the master.scss file.
             //To go to the top and stop scroll
@@ -33,9 +28,6 @@ getGif().then(response => {
             let gifContainer = document.createElement('div');
             gifContainer.setAttribute('class', 'gifCard-container');
             background.appendChild(gifContainer);
-            //Gif image
-            gif.setAttribute('class', 'card-image');
-            gifContainer.appendChild(gif);
             //Close icon
             let x = document.createElement('button');
             x.setAttribute('class', 'x-icon');
@@ -48,16 +40,9 @@ getGif().then(response => {
             x.addEventListener('click', () => {
                 location.reload();
             })
-            
-            //Gif
-            // gif.style.display = 'block';
-            // gif.style.position = 'absolute';
-            // gif.style.height = '70vw';
-            // gif.style.width = '80vw';
-            // gif.style.objectFit = 'cover';
-            // gif.style.transform = 'translateY(-70vh)';
-            // gif.style.zIndex = '4';
-
+            //Gif image
+            gif.setAttribute('class', 'card-image');
+            gifContainer.appendChild(gif);
             //Favorite icon
             let favIcon = document.createElement('a');
             favIcon.setAttribute('class', 'favorite-icon');
@@ -78,7 +63,7 @@ getGif().then(response => {
             let titleContent = gif.alt;
             title.textContent = titleContent;
             gifContainer.appendChild(title);
-        })   
+        });   
     }
 }).catch(err => {
     console.error('something went wrong :/', err);

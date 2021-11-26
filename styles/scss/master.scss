@@ -38,29 +38,40 @@ footer {
         background: rgb(255, 255, 255);
         position: relative;
         //Close icon
+        .x-icon {
+            position: absolute;
+            background: none;
+            border: none;
+            margin: 5vh 0 0 83vw;
+        }
+        //Gif image 
         .card-image {
             height: 20vh;
             width: 80vw;
             object-fit: cover;
             margin: 10vh 10vw 0;
         }
-        .x-icon {
-            background: none;
-            border: none;
-            transform: translateX(80vw);
-             // transform: translateY(-60vh);
-        }
         //Favorite icon
         .favorite-icon {
+            position: absolute;
+            transform: translateX(-30vw);
+            margin-top: 32vh;
         }
         //Donwload icon
         .donwload-icon {
+            position: absolute;
+            transform: translateX(-20vw);
+            margin-top: 31vh;
         }
         //Title
         .gif-title {
+            width: 50vw;
             font-family: 'Montserrat-bold', sans-serif;
             font-size: 1rem;
+            font-weight: 600;
             color: #000000;
+            position: absolute;
+            margin: 1vh 0 0 10vw;
         }
     }
 }
