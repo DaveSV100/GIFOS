@@ -2,6 +2,13 @@ const burger = document.querySelector('.hamburger');
 const icon = document.querySelector('#burger');
 const list = document.querySelector('.navBar-menu');
 const body = document.querySelector('body');
+const logo = document.querySelector('#logo-icon');
+
+//Logo button
+logo.addEventListener('click', () => {
+    // window.scrollTo(0, 0);
+    location.reload();
+});
 
 const navSlide = () => {
 //     //Image tracker =

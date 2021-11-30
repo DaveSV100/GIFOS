@@ -1,6 +1,7 @@
 //                     //TRENDING SEARCH TERMS
 const searches_url = "https://api.giphy.com/v1/trending/searches?";
 let searches = document.getElementById("mainContent-terms_result");
+// let activatedFunction = false;
 function show_terms() {
     async function display() {
         let terms = `${searches_url}&api_key=${apiKey}&limit=5`
@@ -17,12 +18,14 @@ function show_terms() {
             a.textContent = product;
             searches.appendChild(a);
             console.log(product);
+            // activatedFunction = true;
             //To disable event listener
-            let clicked = false;
+            // let clicked = true;
             a.addEventListener('click', () => {
                 //Disable a event listener 
+                //
                 // if (!clicked) {
-                    // clicked = true;
+                //     clicked = false;
                     async function searchGif() {
                         let search = a.text;
                         console.log(search); 
@@ -94,6 +97,7 @@ function show_terms() {
                             title.textContent = titleContent;
                             gifContainer.appendChild(title);
                             })   
+                            
                         }
                         //Change icon from 'search'(icon == s) to 'close'(icon == c) to reload page and search something else
                         if (a.text.length == 0) {
@@ -159,7 +163,8 @@ function show_terms() {
                     }).catch(err => {
                         console.error('something went wrong :/', err);
                     })
-                // } 
+                // } //
+             //
             });
         });
 
