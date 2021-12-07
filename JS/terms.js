@@ -18,14 +18,7 @@ function show_terms() {
             a.textContent = product;
             searches.appendChild(a);
             console.log(product);
-            // activatedFunction = true;
-            //To disable event listener
-            // let clicked = true;
             a.addEventListener('click', () => {
-                //Disable a event listener 
-                //
-                // if (!clicked) {
-                //     clicked = false;
                     async function searchGif() {
                         let search = a.text;
                         console.log(search); 
@@ -38,7 +31,6 @@ function show_terms() {
                         return data;
                     }
                     searchGif().then(response => {
-                        
                         for (var i = 0; i < response.data.length; i++) {
                             document.body.style.gridTemplateRows = '10vh 240vh 20vh';
                             searchContainer.style.gridTemplateRows = '20vh 20vh 20vh 10vh 110vh 10vh';
@@ -48,57 +40,65 @@ function show_terms() {
                             foundGif.setAttribute('alt', response.data[i].title);
                             gifs.appendChild(foundGif);
                             foundGif.addEventListener('click', () => {
-                                //GIF CARD
-                            //The styles for the Gif Card are set on the master.scss file.
-                            //To go to the top and stop scroll
-                            window.scrollTo(0, 0);
-                            body.style.overflow = 'hidden';
-                            //Gif card background. 
-                            let background = document.createElement('div');
-                            background.setAttribute('class', 'gifCard');
-                            body.appendChild(background);
-                            //Gif container
-                            let gifContainer = document.createElement('div');
-                            gifContainer.setAttribute('class', 'gifCard-container');
-                            background.appendChild(gifContainer);
-                            //Close icon
-                            let x = document.createElement('button');
-                            x.setAttribute('class', 'x-icon');
-                            x.setAttribute('type', 'submit');
-                            let xIcon = document.createElement('img');
-                            xIcon.setAttribute('src', 'assets/close.svg');
-                            xIcon.setAttribute('alt', 'Close card');
-                            x.appendChild(xIcon);
-                            gifContainer.appendChild(x);
-                            x.addEventListener('click', () => {
-                            location.reload();
-                            })
-                            //Gif image
-                            foundGif.setAttribute('class', 'card-image');
-                            gifContainer.appendChild(foundGif);
-                            //Favorite icon
-                            let favIcon = document.createElement('a');
-                            favIcon.setAttribute('class', 'favorite-icon');
-                            let favImage = document.createElement('img');
-                            favImage.setAttribute('src', 'assets/icon-fav-active.svg');
-                            favIcon.appendChild(favImage);
-                            gifContainer.appendChild(favIcon);
-                            //Donwload icon 
-                            let downloadIcon = document.createElement('a');
-                            downloadIcon.setAttribute('class', 'donwload-icon');
-                            let downloadImage = document.createElement('img');
-                            downloadImage.setAttribute('src', 'assets/icon-download.svg');
-                            downloadIcon.appendChild(downloadImage);
-                            gifContainer.appendChild(downloadIcon);
-                            //Title
-                            let title = document.createElement('p');
-                            title.setAttribute('class', 'gif-title');
-                            let titleContent = foundGif.alt;
-                            title.textContent = titleContent;
-                            gifContainer.appendChild(title);
-                            })   
-                            
-                        }
+                                    //GIF CARD
+                                //The styles for the Gif Card are set on the master.scss file.
+                                //To go to the top and stop scroll
+                                window.scrollTo(0, 0);
+                                body.style.overflow = 'hidden';
+                                //Gif card background. 
+                                let background = document.createElement('div');
+                                background.setAttribute('class', 'gifCard');
+                                body.appendChild(background);
+                                //Gif container
+                                let gifContainer = document.createElement('div');
+                                gifContainer.setAttribute('class', 'gifCard-container');
+                                background.appendChild(gifContainer);
+                                //Close icon
+                                let x = document.createElement('button');
+                                x.setAttribute('class', 'x-icon');
+                                x.setAttribute('type', 'submit');
+                                let xIcon = document.createElement('img');
+                                xIcon.setAttribute('src', 'assets/close.svg');
+                                xIcon.setAttribute('alt', 'Close card');
+                                x.appendChild(xIcon);
+                                gifContainer.appendChild(x);
+                                x.addEventListener('click', () => {
+                                location.reload();
+                                })
+                                //Gif image
+                                foundGif.setAttribute('class', 'card-image');
+                                gifContainer.appendChild(foundGif);
+                                //Favorite icon
+                                let favIcon = document.createElement('a');
+                                favIcon.setAttribute('class', 'favorite-icon');
+                                let favImage = document.createElement('img');
+                                favImage.setAttribute('src', 'assets/icon-fav-active.svg');
+                                favIcon.appendChild(favImage);
+                                gifContainer.appendChild(favIcon);
+                                //Local Storage
+                                favIcon.addEventListener('click', () => {
+                                    localStorage.setItem('gifImg', foundGif.src);
+                                    localStorage.setItem('gifTitle', foundGif.alt);
+                                    let favGif_url = localStorage.getItem('gifImg');
+                                    let favGif_title = localStorage.getItem('gifTitle');
+                                    console.log(favGif_url);
+                                    console.log(favGif_title);
+                                });
+                                //Donwload icon 
+                                let downloadIcon = document.createElement('a');
+                                downloadIcon.setAttribute('class', 'donwload-icon');
+                                let downloadImage = document.createElement('img');
+                                downloadImage.setAttribute('src', 'assets/icon-download.svg');
+                                downloadIcon.appendChild(downloadImage);
+                                gifContainer.appendChild(downloadIcon);
+                                //Title
+                                let title = document.createElement('p');
+                                title.setAttribute('class', 'gif-title');
+                                let titleContent = foundGif.alt;
+                                title.textContent = titleContent;
+                                gifContainer.appendChild(title);
+                                })   
+                            }
                         //Change icon from 'search'(icon == s) to 'close'(icon == c) to reload page and search something else
                         if (a.text.length == 0) {
                            //It won't fetch any gif because the input is empty and won't change the icon
@@ -151,7 +151,67 @@ function show_terms() {
                                         //Gifs container
                                         let foundGif = document.createElement('img');
                                         foundGif.setAttribute('src', response.data[i].images.original.url);
+                                        foundGif.setAttribute('alt', response.data[i].title);
                                         gifs.appendChild(foundGif);
+                                        foundGif.addEventListener('click', () => {
+                                            //GIF CARD
+                                        //The styles for the Gif Card are set on the master.scss file.
+                                        //To go to the top and stop scroll
+                                        window.scrollTo(0, 0);
+                                        body.style.overflow = 'hidden';
+                                        //Gif card background. 
+                                        let background = document.createElement('div');
+                                        background.setAttribute('class', 'gifCard');
+                                        body.appendChild(background);
+                                        //Gif container
+                                        let gifContainer = document.createElement('div');
+                                        gifContainer.setAttribute('class', 'gifCard-container');
+                                        background.appendChild(gifContainer);
+                                        //Close icon
+                                        let x = document.createElement('button');
+                                        x.setAttribute('class', 'x-icon');
+                                        x.setAttribute('type', 'submit');
+                                        let xIcon = document.createElement('img');
+                                        xIcon.setAttribute('src', 'assets/close.svg');
+                                        xIcon.setAttribute('alt', 'Close card');
+                                        x.appendChild(xIcon);
+                                        gifContainer.appendChild(x);
+                                        x.addEventListener('click', () => {
+                                        location.reload();
+                                        })
+                                        //Gif image
+                                        foundGif.setAttribute('class', 'card-image');
+                                        gifContainer.appendChild(foundGif);
+                                        //Favorite icon
+                                        let favIcon = document.createElement('a');
+                                        favIcon.setAttribute('class', 'favorite-icon');
+                                        let favImage = document.createElement('img');
+                                        favImage.setAttribute('src', 'assets/icon-fav-active.svg');
+                                        favIcon.appendChild(favImage);
+                                        gifContainer.appendChild(favIcon);
+                                        //Local Storage
+                                        favIcon.addEventListener('click', () => {
+                                            localStorage.setItem('gifImg', foundGif.src);
+                                            localStorage.setItem('gifTitle', foundGif.alt);
+                                            let favGif_url = localStorage.getItem('gifImg');
+                                            let favGif_title = localStorage.getItem('gifTitle');
+                                            console.log(favGif_url);
+                                            console.log(favGif_title);
+                                        });
+                                        //Donwload icon 
+                                        let downloadIcon = document.createElement('a');
+                                        downloadIcon.setAttribute('class', 'donwload-icon');
+                                        let downloadImage = document.createElement('img');
+                                        downloadImage.setAttribute('src', 'assets/icon-download.svg');
+                                        downloadIcon.appendChild(downloadImage);
+                                        gifContainer.appendChild(downloadIcon);
+                                        //Title
+                                        let title = document.createElement('p');
+                                        title.setAttribute('class', 'gif-title');
+                                        let titleContent = foundGif.alt;
+                                        title.textContent = titleContent;
+                                        gifContainer.appendChild(title);
+                                        })   
                                     }
                                     //Remove button
                                     gifsBtn.remove();
@@ -163,11 +223,8 @@ function show_terms() {
                     }).catch(err => {
                         console.error('something went wrong :/', err);
                     })
-                // } //
-             //
             });
         });
-
     }).catch(err => {
         console.error('something went wrong :/', err);
     })

@@ -44,14 +44,23 @@ getGif().then(response => {
             gif.setAttribute('class', 'card-image');
             gifContainer.appendChild(gif);
             //Favorite icon
-            let favIcon = document.createElement('a');
+            let favIcon = document.createElement('button');
             favIcon.setAttribute('class', 'favorite-icon');
             let favImage = document.createElement('img');
             favImage.setAttribute('src', 'assets/icon-fav-active.svg');
             favIcon.appendChild(favImage);
             gifContainer.appendChild(favIcon);
+              //Local Storage
+            favIcon.addEventListener('click', () => {
+                localStorage.setItem('gifImg', gif.src);
+                localStorage.setItem('gifTitle', gif.alt);
+                let favGif_url = localStorage.getItem('gifImg');
+                let favGif_title = localStorage.getItem('gifTitle');
+                console.log(favGif_url);
+                console.log(favGif_title);
+            });
             //Donwload icon 
-            let downloadIcon = document.createElement('a');
+            let downloadIcon = document.createElement('button');
             downloadIcon.setAttribute('class', 'donwload-icon');
             let downloadImage = document.createElement('img');
             downloadImage.setAttribute('src', 'assets/icon-download.svg');

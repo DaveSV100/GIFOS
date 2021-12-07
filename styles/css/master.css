@@ -342,11 +342,15 @@ footer {
   position: absolute;
   transform: translateX(-30vw);
   margin-top: 32vh;
+  background: none;
+  border: none;
 }
 .gifCard .gifCard-container .donwload-icon {
   position: absolute;
   transform: translateX(-20vw);
   margin-top: 31vh;
+  background: none;
+  border: none;
 }
 .gifCard .gifCard-container .gif-title {
   width: 50vw;
