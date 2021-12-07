@@ -1,5 +1,4 @@
                     //SEARCH
-const apiKey = "efARnSmXUsXz3XqFvbyykWkVyNi3IIuQ";
 const searchUrl = "https://api.giphy.com/v1/gifs/search?";
 let searchIcon = document.getElementById('search-icon');
 let searchContainer = document.getElementById('search');

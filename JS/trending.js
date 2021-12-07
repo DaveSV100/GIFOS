@@ -1,4 +1,5 @@
 //                     //TRENDING
+const apiKey = "efARnSmXUsXz3XqFvbyykWkVyNi3IIuQ";
 const trending = document.getElementById('trending-gifos');
 const trendingUrl = "https://api.giphy.com/v1/gifs/trending?";
 async function getGif() {

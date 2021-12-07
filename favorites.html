@@ -10,14 +10,14 @@
     crossorigin="anonymous"/>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap" rel="stylesheet">
-    <title>Favorites</title>
+    <title>Favoritos</title>
 </head>
 <body>
     <!--Navbar-->
     <header id="top">
         <div class="top-line"></div>
         <nav class="navBar">
-           <a href="index.html"><img class="logo" src="assets/logo-mobile.svg" alt="Gifos logo"></a>
+           <a href="index.html" id="logo-icon"><img class="logo" src="assets/logo-mobile.svg" alt="Gifos logo"></a>
            <ul class="navBar-menu">
                 <li class="navBar-menu_item">
                     <a href="/dark_mode.html">Modo nocturno</a>
@@ -35,23 +35,41 @@
            <a class="hamburger hidden"><img id="burger" src="assets/burger.svg" alt="Menu"></a>
         </nav>
     </header>
-    <main id="mainContent">
-        
+    <!--Search and Trending-->
+    <main id="favoritePage">
+                                    <!--SECTION 1-->
+        <!--Search Gifos-->
+        <section id="favorite" class="favorite-gifs">
+            <!--Title1-->
+            <img src="assets/icon-favoritos.svg">
+            <div class="favorite-title">
+                <h1>Favoritos</h1>
+            </div>
+        </section>
+                                    <!--SECTION 2-->
+        <!--Trending Gifos-->
+        <section id="trending" class="favorite-trending">
+            <div class="trending-text">
+                <h2>Trending GIFOS</h2>
+                <p>Mira los últimos GIFOS de nuestra comunidad.</p>
+            </div>
+            <div id="trending-gifos">
+
+            </div>
+        </section>
     </main>
     <!--Last part-->
     <footer id="bottom">
         <p>Compartir en:</p>
-        <a><i class="fab fa-facebook"></i></a>
-        <a><i class="fab fa-twitter"></i></a>
-        <a><i class="fab fa-instagram"></i></a>
-        <p>© GIFOS 2020 All Rights Reserved.</p>
+        <div class="socialMedia">
+            <a><i class="fab fa-facebook"></i></a>
+            <a><i class="fab fa-twitter"></i></a>
+            <a><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>© GIFOS 2021 All Rights Reserved.</p>
     </footer>
     <!--Scripts-->
     <script src="JS/menu.js"></script>
-    <script src="js/trending.js"></script>
-    <script src="js/search.js"></script>
-    <script src="js/autocomplete.js"></script>
-    <script src="JS/terms.js"></script>
-    <script src="JS/responsive.js"></script>
+    <script src="JS/trending.js"></script>
 </body>
 </html>

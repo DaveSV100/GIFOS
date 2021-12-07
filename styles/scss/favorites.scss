@@ -1,0 +1,55 @@
+#favoritePage {
+    display: grid; 
+    grid-template-columns: 100vw;
+    grid-template-rows: 50vh 50vh;
+    grid-template-areas: 
+    "favorite-gifs"
+    "favorite-trending";
+    .favorite-gifs {
+        grid-area: favorite-gifs;
+    }
+    .favorite-trending {
+        grid-area: favorite-trending;
+        height: 50vh;
+        width: 100vw;
+        .trending-text {
+            height: 20vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            h2 {
+                height: 5vh;
+                color: #572EE5;
+                font-family: 'Montserrat-bold', sans-serif;
+                text-align: center;
+                font-weight: 400;
+                font-size: 1.5rem;
+                line-height: 30px;
+            }
+            p {
+                height: 5vh;
+                font-family: 'Roboto-Regular', sans-serif;
+                font-size: 1rem;
+                color: #000000;
+                text-align: center;
+                line-height: 23px;
+            }
+        }
+        #trending-gifos {
+            height: 30vh;
+            width: 100vw;
+            display: flex;
+            overflow: scroll;
+            img {
+                height: 187px;
+                width: 243px;
+                object-fit: cover;
+            }
+        }
+    }
+    //SECTION 1
+
+    //SECTION 2
+
+}
