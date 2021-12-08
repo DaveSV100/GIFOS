@@ -249,11 +249,14 @@
 #favoritePage {
   display: grid;
   grid-template-columns: 100vw;
-  grid-template-rows: 50vh 50vh;
+  grid-template-rows: 70vh 50vh;
   grid-template-areas: "favorite-gifs" "favorite-trending";
 }
 #favoritePage .favorite-gifs {
   grid-area: favorite-gifs;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 #favoritePage .favorite-trending {
   grid-area: favorite-trending;

@@ -52,13 +52,13 @@ getGif().then(response => {
             favIcon.appendChild(favImage);
             gifContainer.appendChild(favIcon);
               //Local Storage
+              
             favIcon.addEventListener('click', () => {
-                localStorage.setItem('gifImg', gif.src);
-                localStorage.setItem('gifTitle', gif.alt);
-                let favGif_url = localStorage.getItem('gifImg');
-                let favGif_title = localStorage.getItem('gifTitle');
-                console.log(favGif_url);
-                console.log(favGif_title);
+                const items = [];
+                    let source = gif.src;
+                    items.push(source);
+                    localStorage.setItem('gifImg', items);
+                    console.log(items);
             });
             //Donwload icon 
             let downloadIcon = document.createElement('button');

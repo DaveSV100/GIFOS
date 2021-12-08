@@ -1,12 +1,26 @@
 #favoritePage {
     display: grid; 
     grid-template-columns: 100vw;
-    grid-template-rows: 50vh 50vh;
+    grid-template-rows: 70vh 50vh;
     grid-template-areas: 
     "favorite-gifs"
     "favorite-trending";
     .favorite-gifs {
         grid-area: favorite-gifs;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .favorite-gifs_added {
+            // display: flex;
+            // flex-flow: row wrap;
+            // justify-content: center;
+            // align-content: flex-start;
+            img {
+                // width: 150px;
+                // height: 150px;
+                // object-fit: cover;
+            }
+        }
     }
     .favorite-trending {
         grid-area: favorite-trending;
@@ -28,7 +42,7 @@
                 line-height: 30px;
             }
             p {
-                height: 5vh;
+                height: 5vh;       
                 font-family: 'Roboto-Regular', sans-serif;
                 font-size: 1rem;
                 color: #000000;
