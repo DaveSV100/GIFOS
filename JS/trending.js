@@ -54,11 +54,19 @@ getGif().then(response => {
               //Local Storage
               
             favIcon.addEventListener('click', () => {
-                const items = [];
-                    let source = gif.src;
-                    items.push(source);
-                    localStorage.setItem('gifImg', items);
-                    console.log(items);
+                console.log('Favorite button');
+                let new_data = gif.src;
+                if(localStorage.getItem('data') == null) {
+                    localStorage.setItem('data', '[]');
+                }
+                let old_data = JSON.parse(localStorage.getItem('data'));
+                old_data.push(new_data);
+                localStorage.setItem('data', JSON.stringify(old_data));
+                    // let items = [];
+                    // let source = gif.src;
+                    // items.push(source);
+                    // localStorage.setItem('gifImg', items);
+                    // console.log(items);
             });
             //Donwload icon 
             let downloadIcon = document.createElement('button');

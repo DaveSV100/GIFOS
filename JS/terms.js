@@ -15,7 +15,7 @@ function show_terms() {
         console.log(filter);
         let five = filter.forEach(product => {
             let a = document.createElement("a");
-            a.textContent = product;
+            a.textContent = product + ",";
             searches.appendChild(a);
             console.log(product);
             a.addEventListener('click', () => {
