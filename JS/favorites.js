@@ -5,9 +5,15 @@ function saveData() {
     //Create ForEach
     if (localStorage.getItem('data') == null) {
         localStorage.removeItem('data');
+        //No favorite content icon
         let noFav = document.createElement('img');
         noFav.setAttribute('src', 'assets/icon-fav-sin-contenido.svg')
+        noFav.setAttribute('class', 'favorite-gifs_added_icon');
         favGifs.appendChild(noFav);
+        //No favorite content paragraph
+        let noGif = document.createElement('p');
+        noGif.textContent = '¡Guarda tu primer GIF en Favoritos para qie se muestre aquí!';
+        favGifs.appendChild(noGif);
     } else {
         let getFav = JSON.parse(localStorage.getItem('data'));
         getFav.forEach(element => {
