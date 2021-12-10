@@ -5,14 +5,17 @@ function saveData() {
     //Create ForEach
     if (localStorage.getItem('data') == null) {
         localStorage.removeItem('data');
+        //Body grid
+        document.body.style.gridTemplateRows = '10vh 90vh 20vh';
         //No favorite content icon
         let noFav = document.createElement('img');
         noFav.setAttribute('src', 'assets/icon-fav-sin-contenido.svg')
-        noFav.setAttribute('class', 'favorite-gifs_added_icon');
+        noFav.setAttribute('class', 'favorite-gifs_icon');
         favGifs.appendChild(noFav);
         //No favorite content paragraph
         let noGif = document.createElement('p');
-        noGif.textContent = '¡Guarda tu primer GIF en Favoritos para qie se muestre aquí!';
+        noGif.setAttribute('class', 'favorite-gifs_text');
+        noGif.textContent = '¡Guarda tu primer GIF en Favoritos para que se muestre aquí!';
         favGifs.appendChild(noGif);
     } else {
         let getFav = JSON.parse(localStorage.getItem('data'));

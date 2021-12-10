@@ -1,7 +1,7 @@
 #favoritePage {
     display: grid; 
     grid-template-columns: 100vw;
-    grid-template-rows: 20vh 50vh;
+    grid-template-rows: 40vh 50vh;
     grid-template-areas: 
     "favorite-gifs"
     "favorite-trending";
@@ -10,15 +10,37 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        .favorite-gifs_added {
+        h1 {
+            color: #572EE5;
+            font-family: 'Montserrat-bold', sans-serif;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        .favorite-gifs_empty {
+            // display: flex;
+            // flex-flow: row wrap;
+            // justify-content: center;
+            // align-content: flex-start;
             display: flex;
-            flex-flow: row wrap;
+            flex-direction: column;
             justify-content: center;
-            align-content: flex-start;
-            .favorite-gifs_added_icon {
-                width: 50px;
-                height: 50px;
+            align-items: center;
+            .favorite-gifs_icon {
+                margin-top: 7vh;
+                width: 70px;
+                height: 70px;
             }
+            .favorite-gifs_text {
+                margin-top: 2vh;
+                width: 70vw;
+                text-align: center;
+            }
+        }
+        .favorite-gifs_result {
+            // display: flex;
+            // flex-flow: row wrap;
+            // justify-content: center;
+            // align-content: flex-start;
             img {
                 width: 150px;
                 height: 150px;
@@ -30,6 +52,7 @@
         grid-area: favorite-trending;
         height: 50vh;
         width: 100vw;
+        background: #F3F5F8;
         .trending-text {
             height: 20vh;
             display: flex;
