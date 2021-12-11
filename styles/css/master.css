@@ -303,6 +303,12 @@
   width: 70vw;
   text-align: center;
 }
+#favoritePage .favorite-gifs .favorite-gifs_result {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: flex-start;
+}
 #favoritePage .favorite-gifs .favorite-gifs_result img {
   width: 150px;
   height: 150px;
