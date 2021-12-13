@@ -39,11 +39,23 @@ getGif().then(response => {
             x.appendChild(xIcon);
             gifContainer.appendChild(x);
             x.addEventListener('click', () => {
-                location.reload();
+                if (document.URL.includes('index.html')) {
+                    background.remove();
+                    gifContainer.remove();
+                    body.style.overflow = 'scroll';
+                } else if (document.URL.includes('favorites.html')) {
+                    location.reload();
+                } else {
+                    background.remove();
+                    gifContainer.remove();
+                    body.style.overflow = 'scroll';
+                }
             })
             //Gif image
-            gif.setAttribute('class', 'card-image');
-            gifContainer.appendChild(gif);
+            let gifContainer_img = document.createElement('img');
+            gifContainer_img.setAttribute('src', gif.src)
+            gifContainer_img.setAttribute('class', 'card-image');
+            gifContainer.appendChild(gifContainer_img);
             //Favorite icon
             let favIcon = document.createElement('button');
             favIcon.setAttribute('class', 'favorite-icon');

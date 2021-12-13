@@ -54,11 +54,15 @@ searchButton.addEventListener('click', () => {
             x.appendChild(xIcon);
             gifContainer.appendChild(x);
             x.addEventListener('click', () => {
-            location.reload();
+                background.remove();
+                gifContainer.remove();
+                body.style.overflow = 'scroll';
             })
             //Gif image
-            foundGif.setAttribute('class', 'card-image');
-            gifContainer.appendChild(foundGif);
+            let gifContainer_img = document.createElement('img');
+            gifContainer_img.setAttribute('src', foundGif.src)
+            gifContainer_img.setAttribute('class', 'card-image');
+            gifContainer.appendChild(gifContainer_img);
             //Favorite icon
             let favIcon = document.createElement('button');
             favIcon.setAttribute('class', 'favorite-icon');
@@ -118,6 +122,7 @@ searchButton.addEventListener('click', () => {
         } else {
             let btn = document.createElement('button');
             btn.setAttribute('id', 'moreGifs-btn');
+            btn.setAttribute('class', 'see-more_btn');
             btn.setAttribute('type', 'submit');
             btn.setAttribute('name', 'More gifs');
             btn.textContent = 'Ver más';
@@ -168,11 +173,15 @@ searchButton.addEventListener('click', () => {
                         x.appendChild(xIcon);
                         gifContainer.appendChild(x);
                         x.addEventListener('click', () => {
-                        location.reload();
+                            background.remove();
+                            gifContainer.remove();
+                            body.style.overflow = 'scroll';
                         })
                         //Gif image
-                        foundGif.setAttribute('class', 'card-image');
-                        gifContainer.appendChild(foundGif);
+                        let gifContainer_img = document.createElement('img');
+                        gifContainer_img.setAttribute('src', foundGif.src)
+                        gifContainer_img.setAttribute('class', 'card-image');
+                        gifContainer.appendChild(gifContainer_img);
                         //Favorite icon
                         let favIcon = document.createElement('button');
                         favIcon.setAttribute('class', 'favorite-icon');

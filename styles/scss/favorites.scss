@@ -47,6 +47,21 @@
                 object-fit: cover;
             }
         }
+        .see-more_btn {
+            margin-top: 3vh;
+            height: 40px;
+            width: 100px;
+            background: none;
+            border: 1px solid #572EE5;
+            border-radius: 25px;
+            font-family: 'Montserrat-bold', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #572EE5;
+            letter-spacing: 0;
+            text-align: center;
+            text-transform: uppercase;
+        }
     }
     .favorite-trending {
         grid-area: favorite-trending;
@@ -89,8 +104,4 @@
             }
         }
     }
-    //SECTION 1
-
-    //SECTION 2
-
 }

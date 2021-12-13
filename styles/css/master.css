@@ -184,7 +184,7 @@
   grid-area: mainContent-button;
   height: 0vh;
 }
-#mainContent #search .mainContent-button button {
+#mainContent #search .mainContent-button .see-more_btn {
   height: 40px;
   width: 100px;
   background: none;
@@ -314,6 +314,21 @@
   height: 150px;
   object-fit: cover;
 }
+#favoritePage .favorite-gifs .see-more_btn {
+  margin-top: 3vh;
+  height: 40px;
+  width: 100px;
+  background: none;
+  border: 1px solid #572EE5;
+  border-radius: 25px;
+  font-family: "Montserrat-bold", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #572EE5;
+  letter-spacing: 0;
+  text-align: center;
+  text-transform: uppercase;
+}
 #favoritePage .favorite-trending {
   grid-area: favorite-trending;
   height: 50vh;
@@ -423,7 +438,7 @@ footer {
 }
 
 .gifCard {
-  height: 200vh;
+  height: 100vh;
   width: 100vw;
   z-index: 2;
   position: absolute;

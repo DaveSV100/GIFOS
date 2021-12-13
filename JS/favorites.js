@@ -1,10 +1,11 @@
 const favContainer = document.getElementById('favoritePage');
 const favGifs = document.getElementById('favorite-gifs_imgs');
 const gifContainer = document.querySelector('.favorite-gifs_empty');
+const btnContainer = document.getElementById('favorite-gifs_btn');
 
 function saveData() {
     // localStorage.removeItem('data');
-    //If there are no gifs added to favorites
+    // If there are no gifs added to favorites
     if (localStorage.getItem('data') == null) {
         localStorage.removeItem('data');
         //Body grid
@@ -28,29 +29,49 @@ function saveData() {
             let fav = document.createElement('img');
             fav.setAttribute('src', element);
             favGifs.appendChild(fav);
-            // console.log(element);
-            // let counter = element.length * 10;
-            // let plus = 90 + counter;
-            // let height = plus.toString();
-            // console.log(localStorage.length);
-            // console.log(height);
-            // document.body.style.gridTemplateRows = `'10vh ${height} 20vh'`;
-            // favContainer.style.gridTemplateRows = `'${height} 50vh'`;
         });
-        for (var i = 0; i < getFav.length; i++) {
-            let counter = getFav.length * 10;
-            let bodyPlus = 90 + counter;
-            let bodyHeight = bodyPlus.toString();
-            let containerPlus = 40 + counter;
-            let containerHeight = containerPlus.toString();
-            console.log(getFav.length);
-            // console.log(plus);
-            // console.log(height);
-            document.body.style.gridTemplateRows = `10vh ${bodyHeight}vh 20vh`;
-            favContainer.style.gridTemplateRows = `${containerHeight}vh 50vh`;
-            // document.body.style.gridTemplateRows = '10vh 150vh 20vh';
-            // favContainer.style.gridTemplateRows = '70vh 50vh';
-        }
+            //If there are 12 or less gifs
+            if(getFav.length <= 12) {
+                for (var i = 0; i < getFav.length; i++) {
+                    let counter = getFav.length * 7;
+                    let bodyPlus = 90 + counter;
+                    let bodyHeight = bodyPlus.toString();
+                    let containerPlus = 40 + counter;
+                    let containerHeight = containerPlus.toString();
+                    console.log(getFav.length);
+                    document.body.style.gridTemplateRows = `10vh ${bodyHeight}vh 20vh`;
+                    favContainer.style.gridTemplateRows = `${containerHeight}vh 50vh`;
+                }
+            //If there are more than 12 gifs
+            } else if (getFav.length >= 13) {
+                //Set rows according to the 12 gifs already added
+                document.body.style.gridTemplateRows = '10vh 174vh 20vh';
+                favContainer.style.gridTemplateRows = '124vh 50vh';
+                // let div = document.createElement('button');
+                let btn = document.createElement('button');
+                btn.setAttribute('id', 'moreGifs-btn');
+                btn.setAttribute('class', 'see-more_btn');
+                btn.setAttribute('type', 'submit');
+                btn.setAttribute('name', 'More gifs');
+                btn.textContent = 'Ver más';
+                btnContainer.appendChild(btn);
+                      //See more event listener
+                      btn.addEventListener('click', () => {
+                        btn.remove();
+                        for (var i = 0; i < getFav.length; i++) {
+                            let counter = getFav.length * 8;
+                            let bodyPlus = 90 + counter;
+                            let bodyHeight = bodyPlus.toString();
+                            let containerPlus = 40 + counter;
+                            let containerHeight = containerPlus.toString();
+                            console.log(getFav.length);
+                            document.body.style.gridTemplateRows = `10vh ${bodyHeight}vh 20vh`;
+                            favContainer.style.gridTemplateRows = `${containerHeight}vh 50vh`;
+                        }
+                      })
+                    
+            }
+        
     }
 }
 saveData();
