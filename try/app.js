@@ -1,13 +1,20 @@
-const box = document.getElementById('input');
-const btn = document.getElementById('submitBtn');
-
-btn.addEventListener('click', () => {
-console.log('hello');
-    let new_data = box.value;
-    if(localStorage.getItem('data') == null) {
-        localStorage.setItem('data', '[]');
-    }
-    let old_data = JSON.parse(localStorage.getItem('data'));
-    old_data.push(new_data);
-    localStorage.setItem('data', JSON.stringify(old_data));
-}); 
+const box = document.getElementById('box');
+let gif = document.createElement('img');
+gif.setAttribute('src', '/camera.jpg');
+gif.setAttribute('alt', 'camera');
+function down() {
+    let downloadIcon = document.createElement('a');
+    let downloadImage = document.createElement('img');
+    downloadImage.setAttribute('src', 'icon-download.svg');
+    downloadIcon.appendChild(downloadImage);
+    box.appendChild(downloadIcon);
+    downloadIcon.addEventListener('click', function hello(name, url){
+        downloadIcon.setAttribute('href', gif.src);
+        downloadIcon.setAttribute('donwload', 'file');
+        downloadIcon.click();
+        url = gif.src;
+        name = gif.alt;
+        download(name, url);
+    })
+}
+down();

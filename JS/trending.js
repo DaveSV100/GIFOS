@@ -81,12 +81,16 @@ getGif().then(response => {
                     // console.log(items);
             });
             //Donwload icon 
-            let downloadIcon = document.createElement('button');
+            let downloadIcon = document.createElement('a');
             downloadIcon.setAttribute('class', 'donwload-icon');
             let downloadImage = document.createElement('img');
             downloadImage.setAttribute('src', 'assets/icon-download.svg');
             downloadIcon.appendChild(downloadImage);
             gifContainer.appendChild(downloadIcon);
+            downloadIcon.addEventListener('click', () => {
+                downloadIcon.setAttribute('download', gif.alt);
+                downloadIcon.setAttribute('href', gif.src);
+            });
             //Title
             let title = document.createElement('p');
             title.setAttribute('class', 'gif-title');
