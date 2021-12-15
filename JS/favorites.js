@@ -5,6 +5,7 @@ const btnContainer = document.getElementById('favorite-gifs_btn');
 
 function saveData() {
     const getFav = JSON.parse(localStorage.getItem('data'));
+    let filter = getFav.slice(0, 12);
     // localStorage.removeItem('data');
     // If there are no gifs added to favorites
     if (localStorage.getItem('data') == null) {
@@ -38,7 +39,7 @@ function saveData() {
                 let counter = getFav.length * 10;
                 let bodyPlus = 90 + counter;
                 let bodyHeight = bodyPlus.toString();
-                let containerPlus = 40 + counter;
+                let containerPlus = 40  + counter;
                 let containerHeight = containerPlus.toString();
                 console.log(getFav.length);
                 document.body.style.gridTemplateRows = `10vh ${bodyHeight}vh 20vh`;
@@ -46,7 +47,6 @@ function saveData() {
             }
 
         } 
-        
         else if (getFav.length == 12) {
             // Set rows according to the 12 gifs already added
             getFav.forEach(element => {
@@ -56,6 +56,7 @@ function saveData() {
             });
             for (var i = 0; i < getFav.length; i++) {
                 let counter = getFav.length * 10;
+                let height = counter.toString();
                 let bodyPlus = 90 + counter;
                 let bodyHeight = bodyPlus.toString();
                 let containerPlus = 40 + counter;
@@ -65,35 +66,51 @@ function saveData() {
                 favContainer.style.gridTemplateRows = `${containerHeight}vh 50vh`;
             }
         } 
-        
         else if (getFav.length > 12) {
             
+            filter.forEach(element => {
+                let fav = document.createElement('img');
+                fav.setAttribute('src', element);
+                favGifs.appendChild(fav);
+            });
+            for (var i = 0; i < filter.length; i++) {
+                let counter = filter.length * 7;
+                let bodyPlus = 90 + counter;
+                let bodyHeight = bodyPlus.toString();
+                let containerPlus = 40 + counter;
+                let containerHeight = containerPlus.toString();
+                console.log(getFav.length);
+                document.body.style.gridTemplateRows = `10vh ${bodyHeight}vh 20vh`;
+                favContainer.style.gridTemplateRows = `${containerHeight}vh 50vh`;
+            }
             console.log(getFav.length);
-                let btn = document.createElement('button');
-                btn.setAttribute('id', 'moreGifs-btn');
-                btn.setAttribute('class', 'see-more_btn');
-                btn.setAttribute('type', 'submit');
-                btn.setAttribute('name', 'More gifs');
-                btn.textContent = 'Ver más';
-                btnContainer.appendChild(btn);
-                // btn.addEventListener('click', () => {
-                //     btn.remove();
-                //     getFav.forEach(element => {
-                //         let fav = document.createElement('img');
-                //         fav.setAttribute('src', element);
-                //         favGifs.appendChild(fav);
-                //     });
-                //     for (var i = 0; i < getFav.length; i++) {
-                //         let counter = getFav.length * 10;
-                //         let bodyPlus = 90 + counter;
-                //         let bodyHeight = bodyPlus.toString();
-                //         let containerPlus = 40 + counter;
-                //         let containerHeight = containerPlus.toString();
-                //         console.log(getFav.length);
-                //         document.body.style.gridTemplateRows = `10vh ${bodyHeight}vh 20vh`;
-                //         favContainer.style.gridTemplateRows = `${containerHeight}vh 50vh`;
-                //     }
-                // })
+            console.log(filter);
+            let btn = document.createElement('button');
+            btn.setAttribute('id', 'moreGifs-btn');
+            btn.setAttribute('class', 'see-more_btn');
+            btn.setAttribute('type', 'submit');
+            btn.setAttribute('name', 'More gifs');
+            btn.textContent = 'Ver más';
+            btnContainer.appendChild(btn);
+            btn.addEventListener('click', () => {
+                btn.remove();
+                filter = getFav.slice(13, 25);
+                filter.forEach(element => {
+                    let fav = document.createElement('img');
+                    fav.setAttribute('src', element);
+                    favGifs.appendChild(fav);
+                });
+                for (var i = 0; i < getFav.length; i++) {
+                    let counter = getFav.length * 7;
+                    let bodyPlus = 90 + counter;
+                    let bodyHeight = bodyPlus.toString();
+                    let containerPlus = 40 + counter;
+                    let containerHeight = containerPlus.toString();
+                    console.log(getFav.length);
+                    document.body.style.gridTemplateRows = `10vh ${bodyHeight}vh 20vh`;
+                    favContainer.style.gridTemplateRows = `${containerHeight}vh 50vh`;
+                }
+            })
         }
     }
 }
