@@ -16,21 +16,23 @@ function auto() {
         return data;
     }
     autocomplete().then(response => {
-        let show = data.forEach(word => {
-            let write_terms = document.createElement('p');
-            write_terms.textContent = response.data[word].name;
-            let container = document.createElement('div');
-            container.appendChild(write_terms);
-            searchBox.appendChild(container);
-        })
-        // for(var i = 0; i < response.data.length; i++) {
+        //     let auto = response.data.forEach(word => {
         //     let write_terms = document.createElement('p');
-        //     write_terms.textContent = response.data[i].name;
+        //     write_terms.textContent = word;
         //     let container = document.createElement('div');
         //     container.appendChild(write_terms);
         //     searchBox.appendChild(container);
-        // }
+        // })
+        for(var i = 0; i < response.data.length; i++) {
+            let write_terms = document.createElement('p');
+            write_terms.textContent = response.data[i].name;
+            let container = document.createElement('div');
+            container.appendChild(write_terms);
+            searchBox.appendChild(container);
+        }
     }).catch(err => {
         console.error('something went wrong :/', err);
     })
 }
+
+
