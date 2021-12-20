@@ -32,8 +32,8 @@ function show_terms() {
                     }
                     searchGif().then(response => {
                         for (var i = 0; i < response.data.length; i++) {
-                            document.body.style.gridTemplateRows = '10vh 240vh 20vh';
-                            searchContainer.style.gridTemplateRows = '20vh 20vh 20vh 10vh 110vh 10vh';
+                            document.body.style.gridTemplateRows = '10vh 280vh 20vh';
+                            searchContainer.style.gridTemplateRows = '20vh 30vh 30vh 10vh 110vh 10vh';
                             //Gifs container
                             let foundGif = document.createElement('img');
                             foundGif.setAttribute('src', response.data[i].images.original.url);

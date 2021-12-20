@@ -5,7 +5,7 @@ const btnContainer = document.getElementById('favorite-gifs_btn');
 
 function saveData() {
     const getFav = JSON.parse(localStorage.getItem('data'));
-    let filter = getFav.slice(0, 12);
+    
     // localStorage.removeItem('data');
     // If there are no gifs added to favorites
     if (localStorage.getItem('data') == null) {
@@ -25,7 +25,7 @@ function saveData() {
     }
     //If there are gifs added to favorites 
     else {
-        
+        let filter = getFav.slice(0, 12);
         gifContainer.classList.toggle('favorite-gifs_result');
 
         if (getFav.length <= 12) {
