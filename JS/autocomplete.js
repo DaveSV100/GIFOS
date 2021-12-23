@@ -34,10 +34,11 @@ inputBox.addEventListener('input', () => {
                         //     result[i].textContent = '';
                         //     autocompleteContainer.removeChild(result[i]);
                         // }
-                        for(let i = 0; i <= result.length -1; i++) {
-                            result[i].textContent = '';
-                            // autocompleteContainer.removeChild(result[i]);
-                        }
+                        // for(let i = 0; i <= result.length -1; i++) {
+                            // result[i].textContent = '';
+                            const box = document.getElementById('autocomplete-container');
+                            box.remove();
+                        // }
                         response = false;
                     } 
                     else {
