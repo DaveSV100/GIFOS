@@ -21,7 +21,6 @@
         }
         .navBar-menu {
             display: none;
-            .navBar-menu_item {
                 a {
                     text-decoration: none;
                     font-family: 'Montserrat-Bold', sans-serif;
@@ -30,7 +29,7 @@
                     text-align: center;
                     line-height: 60px;
                 }
-            }
+            
             div {
                 color: #FFFFFF;
                 height: 1px;
@@ -52,7 +51,11 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-          }        
+            .navBar-menu_item a img {
+                padding-top: 15px;
+                width: 40px;
+            }
+        }        
         .hamburger {
             margin: .8rem 1rem 0rem;
             cursor: pointer;
