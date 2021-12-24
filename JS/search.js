@@ -10,6 +10,9 @@ let searchedGifs = document.getElementsByClassName('mainContent-gifs');
 let searchButton = document.getElementById('searchBtn');
 let word = document.getElementById('search-box');
 searchButton.addEventListener('click', () => {
+    //Remove autocomplete container
+    const box = document.getElementById('autocomplete-container');
+    box.remove();
     async function searchGif() {
         let search = word.value;
         console.log(search); 
