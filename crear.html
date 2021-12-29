@@ -40,12 +40,23 @@
         </nav>
     </header>
     <!--Search and Trending-->
-    <main id="createPage">
+    <main class="createPage">
                                     <!--SECTION 1-->
         <!--Favorite Gifs-->
-        <section id="create" class="create-gifs">
-            <h1>Aquí podrás crear tus propios GIFOS</h1>
-            <p>¡Crea tu GIFO en sólo 3 pasos! (solo necesitas una cámara para grabar un video)</p>
+        <section class="create">
+            <img src="assets/camara.svg" alt="Ícono de cámara">
+            <img src="assets/pelicula.svg" alt="Ícono de cinta">
+            <div class="create-container">
+                <h1 class="create-container_title">Aquí podrás crear tus propios GIFOS</h1>
+                <p class="create-container_paragraph">¡Crea tu GIFO en sólo 3 pasos! (solo necesitas una cámara para grabar un video)</p>
+                <video></video>
+                <video></video>
+            </div>
+            <p class="create-number create-number1">1</p>
+            <p class="create-number create-number2">2</p>
+            <p class="create-number create-number3">3</p>
+            <div class="create-line"></div>
+            <button id="create-button" class="create-gifs_button">COMENZAR</button>
         </section>
     </main>
     <!--Last part-->
@@ -61,5 +72,6 @@
     </footer>
     <!--Scripts-->
     <script src="JS/menu.js"></script>
+    <script src="JS/create.js"></script>
 </body>
 </html>

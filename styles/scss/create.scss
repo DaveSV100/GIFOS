@@ -1,0 +1,18 @@
+.createPage {
+    .create {
+        .create-container {
+            height: 50vh;
+            border: solid #572EE5;
+        }
+    }
+    .create-line {
+        height: 2px;
+        width: 90vw;
+        background-color: #572EE5;
+    }
+    .create-number {
+        border: 1px solid #572EE5;
+        border-radius: 10px;
+        width: 20px;
+    }
+}
