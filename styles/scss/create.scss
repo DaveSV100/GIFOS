@@ -3,6 +3,16 @@
         .create-container {
             height: 50vh;
             border: solid #572EE5;
+            .create-container_title {
+                width: 90vw;
+                margin: 0 auto;
+                text-align: center;
+            }
+            .create-container_paragraph {
+                width: 90vw;
+                margin: 0 auto;
+                text-align: center;
+            }
         }
     }
     .create-line {

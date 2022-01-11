@@ -79,7 +79,7 @@
 }
 #mainContent #search .mainContent-title1 h1 {
   font-family: "Montserrat-bold", sans-serif;
-  color: #572EE5;
+  color: var(--main);
   font-size: 1.5rem;
   line-height: 33px;
 }
@@ -379,6 +379,16 @@
   height: 50vh;
   border: solid #572EE5;
 }
+.createPage .create .create-container .create-container_title {
+  width: 90vw;
+  margin: 0 auto;
+  text-align: center;
+}
+.createPage .create .create-container .create-container_paragraph {
+  width: 90vw;
+  margin: 0 auto;
+  text-align: center;
+}
 .createPage .create-line {
   height: 2px;
   width: 90vw;
@@ -454,6 +464,10 @@ main {
 
 footer {
   grid-area: footer;
+}
+
+:root {
+  --main: #572EE5;
 }
 
 .gifCard {

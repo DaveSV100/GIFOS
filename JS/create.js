@@ -96,12 +96,13 @@ btn.addEventListener('click', () => {
           console.log(mediaRecorder.state);
 
           let stopBtn = document.createElement('button');
-          stopBtn.setAttribute('id', 'stopBtn');
           stopBtn.textContent = 'FINALIZAR';
+          stopBtn.setAttribute('id', 'stop-button');
           container.appendChild(stopBtn);
-      })
+      })  
 
-      let stopButton = document.getElementById('stopBtn');
+      let stopButton = document.getElementById('stop-button');
+      console.log(stopButton);
       stopButton.addEventListener('click', (ev)=>{
           //change button from "finalizar" to "subir gifo"
           console.log('clicked')
