@@ -126,6 +126,7 @@
                 width: 150px;
                 height: 150px;
                 object-fit: cover;
+                //object-fit: contain;
             }
         }
         .mainContent-button {
@@ -146,7 +147,7 @@
                 text-transform: uppercase;
             }
         }
-    }
+    }           
     /*Section2*/
     #trending {
         height: 60vh;
@@ -181,10 +182,14 @@
             width: 100vw;
             display: flex;
             overflow: scroll;
+            // overflow-x: scroll;
+            // overscroll-behavior-x: contain;
+            // scroll-snap-type: x proximity;
             img {
                 height: 187px;
                 width: 243px;
                 object-fit: cover;
+                // scroll-snap-align: center;
             }
         }
     }
