@@ -376,7 +376,7 @@
 }
 
 .createPage .create .create-container {
-  height: 50vh;
+  height: 60vh;
   border: solid #572EE5;
 }
 .createPage .create .create-container .create-container_title {
@@ -398,6 +398,11 @@
   border: 1px solid #572EE5;
   border-radius: 10px;
   width: 20px;
+}
+.createPage .create-number-active {
+  background-color: "#572EE5";
+  color: #ffffff;
+  border: 1px solid #572EE5;
 }
 
 @media (min-width: 769px) {

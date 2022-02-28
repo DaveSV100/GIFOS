@@ -1,7 +1,7 @@
 .createPage {
     .create {
         .create-container {
-            height: 50vh;
+            height: 60vh;
             border: solid #572EE5;
             .create-container_title {
                 width: 90vw;
@@ -25,4 +25,29 @@
         border-radius: 10px;
         width: 20px;
     }
+    .create-number-active {
+        background-color: "#572EE5";
+        color: #ffffff;
+        border: 1px solid #572EE5;
+    }
 }
+
+
+// const btn = document.getElementById('create-button');
+// const title = document.querySelector('.create-container_title');
+// const paragraph = document.querySelector('.create-container_paragraph');
+
+
+
+// btn.addEventListener("click", ()=> {
+
+//     if(btn.innerText === "Comenzar"){
+//         btn.innerText = "Grabar";
+//     }
+//     else if(btn.innerText === "Grabar"){
+//         btn.innerText= "Finalizar";
+//     }
+//     else if(btn.innerText === "Finalizar") {
+//         btn.innerText= "Upload";
+//     }
+// });
