@@ -14,23 +14,22 @@ const paragraph = document.querySelector('.create-container_paragraph');
 //     }
 // });
 
-// const gif = () => {
-//     return new Promise((resolve, reject) => {
-//         true ? resolve("resolve") : reject("reject")
-//     })
+// const upload_url = "https://upload.giphy.com/v1/gifs?";
+// const api = `${upload_url}&api_key=efARnSmXUsXz3XqFvbyykWkVyNi3IIuQ`;
+
+// const upload = async () => {
+//     const response = await fetch(api);
+//     const data = await response.json();
+//     console.log(data);
+//     return data;
 // }
-// gif()
-// .then(res => console.log(res))
-// .catch(err => console.log(err))
-
-// btn.onclick = async function upload() {
-//     const gifs = await gif();
-//     console.log("finished")
-// }
-
-
-
-
+// upload()
+// .then(response => {
+//     console.log(response);
+// })
+// .catch(err => {
+//     console.error("something went wrong", err);
+// })
 
 
 
@@ -91,9 +90,10 @@ navigator.mediaDevices.getUserMedia(constraintObj)
         video.play();
     }
 
-    let mediaRecorder = new MediaRecorder(mediaStreamObj);
-    let chunks = [];
 
+    
+	let mediaRecorder = new MediaRecorder(mediaStreamObj);
+    let chunks = [];
     // if(btn.innerText === "Empezar") {
     //     btn.innerText = "Grabar";
     // }
@@ -122,16 +122,223 @@ navigator.mediaDevices.getUserMedia(constraintObj)
             videoContainer.appendChild(video);
             let blob = new Blob(chunks, { "type" : "video/mp4;" });
             console.log(blob);
-            chunks = [];
+			
+            
             let videoURL = window.URL.createObjectURL(blob);
             video.src = videoURL;
-            console.log(videoURL)
+            console.log(videoURL);
+
+			let form = new FormData();
+			form.append("file", blob, "myGif.gif");
+			console.log(form.get('file'))
+
+			const api_key = "efARnSmXUsXz3XqFvbyykWkVyNi3IIuQ";
+            const apiUrl = "https://upload.giphy.com/v1/gifs?";
+			const hidder = new Headers()
+
+            fetch(`${apiUrl}&api_key=${api_key}`,{
+            method:"POST",
+			body:form
+            })
+			.then(res => res.json())
+			.then(result => {
+				console.log(result);
+			})
+			.catch(error => {
+				console.error("Error: ", error)
+			})
+			chunks = [];
         }
+        
     })    
 })
 .catch(function(err) { 
     console.log(err.name, err.message); 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let constraintObj = { 
+//     audio: false, 
+//     video: { 
+//         facingMode: "user", 
+//         width: 300, height: 250
+//         //   width: { min: 640, ideal: 1280, max: 1920 },
+//         //   height: { min: 480, ideal: 720, max: 1080 } 
+//         // width: 1280, height: 720  -- preference only
+//         // facingMode: {exact: "user"}
+//         // facingMode: "environment"
+//     } 
+// }; 
+
+//  //handle older browsers that might implement getUserMedia in some way
+//  if (navigator.mediaDevices === undefined) {
+//     navigator.mediaDevices = {};
+//     navigator.mediaDevices.getUserMedia = function(constraintObj) {
+//         let getUserMedia = navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+//         if (!getUserMedia) {
+//             return Promise.reject(new Error('getUserMedia is not implemented in this browser'));
+//         }
+//         return new Promise(function(resolve, reject) {
+//             getUserMedia.call(navigator, constraintObj, resolve, reject);
+//         });
+//     }
+// }else{
+//     navigator.mediaDevices.enumerateDevices()
+//     .then(devices => {
+//         devices.forEach(device=>{
+//             console.log(device.kind.toUpperCase(), device.label);
+//             //, device.deviceId
+//         })
+//     })
+//     .catch(err=>{
+//         console.log(err.name, err.message);
+//     })
+// }
+
+// navigator.mediaDevices.getUserMedia(constraintObj)
+// .then(function(mediaStreamObj) {
+//     // create video element
+//     let video = document.createElement('video');
+//     video.setAttribute('id', 'video1');
+//     let videoContainer = document.querySelector('.create-container');
+//     videoContainer.appendChild(video);
+
+//     if("srcObject" in video) {
+//         video.srcObject = mediaStreamObj;
+//     } else {
+//         //old version
+//         video.src = window.URL.createObjectURL(mediaStreamObj);
+//     }
+//     video.onloadedmetadata = function(ev) {
+//         //showing the video element that's being captured by the webcam
+//         video.play();
+//     }
+
+//     let mediaRecorder = new MediaRecorder(mediaStreamObj);
+//     let chunks = [];
+
+//     // if(btn.innerText === "Empezar") {
+//     //     btn.innerText = "Grabar";
+//     // }
+//     btn.addEventListener("click", (ev) => {
+//         mediaRecorder.start();
+//         console.log("recording......")
+//         btn.remove();
+//         let stopBtn = document.createElement("button");
+//         stopBtn.innerText = "Finalizar";
+//         stopBtn.setAttribute("id", "stopBtn");
+//         let container = document.querySelector(".create");
+//         container.appendChild(stopBtn);
+//         stopBtn.addEventListener("click", ()=> {
+//             mediaRecorder.stop();
+//             console.log("stopping.......")
+//             video.remove();
+//         })
+//         mediaRecorder.ondataavailable = function(ev) {
+//             chunks.push(ev.data);
+//         }
+//         mediaRecorder.onstop = (ev) => {
+//             let video = document.createElement("video");
+//             video.setAttribute("id", "videoElement")
+//             video.controls = true;
+//             let videoContainer = document.querySelector('.create-container');
+//             videoContainer.appendChild(video);
+//             let blob = new Blob(chunks, { "type" : "video/mp4;" });
+//             console.log(blob);
+//             chunks = [];
+//             let videoURL = window.URL.createObjectURL(blob);
+//             video.src = videoURL;
+//             console.log(videoURL);
+//             // const apiUrl = "https://upload.giphy.com/v1/gifs?&api_key=efARnSmXUsXz3XqFvbyykWkVyNi3IIuQ"
+//             // async function upload() {
+                
+//             // }
+//         }
+        
+//     })    
+// })
+// .catch(function(err) { 
+//     console.log(err.name, err.message); 
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // async function createGif() {
 //     let response = await 
@@ -154,6 +361,17 @@ navigator.mediaDevices.getUserMedia(constraintObj)
 //     // }
 // }
 // url();
+
+
+
+
+
+
+
+
+
+
+
 
 
 
