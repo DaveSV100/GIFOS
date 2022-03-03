@@ -3,6 +3,27 @@ const btn = document.getElementById('create-button');
 const title = document.querySelector('.create-container_title');
 const paragraph = document.querySelector('.create-container_paragraph');
 const video = document.querySelector("#gifo");
+const api_key = "efARnSmXUsXz3XqFvbyykWkVyNi3IIuQ";
+let totalTime = 0;
+let newGifId = "";
+let videoRecorder;
+let gifRecorder;
+let gifSrc;
+let playing = false;
+
+//Here I'm using async await instead of promises and .then
+async function fetchURL(url, params = null) {
+	try {
+		const fetchData = await fetch(url, params);
+		const response = await fetchData.json();
+		return response;
+	} catch (error) {
+		if (error.name !== "AbortError") {
+			console.log("Error al obtener resultados");
+		}
+		return error;
+	}
+}
 
 let constraintObj = { 
     audio: false, 
@@ -65,23 +86,28 @@ async function recordGif() {
     console.log("recording .....")
     const button = document.getElementById("recordBtn");
     button.remove()
-    let stopBtn = document.createElement("button");
-                stopBtn.innerText = "Finalizar";
-                stopBtn.setAttribute("id", "stopBtn");
-                let container = document.querySelector(".create");
-                container.appendChild(stopBtn);
+    setTimeout(()=> {
+        let stopBtn = document.createElement("button");
+        stopBtn.innerText = "Finalizar";
+        stopBtn.setAttribute("id", "stopBtn");
+        let container = document.querySelector(".create");
+        container.appendChild(stopBtn);
     stopBtn.addEventListener("click", () => {
         stop();
     })
+    }, 500)
 }
 
 async function stop() {
+    const button = document.getElementById("stopBtn");
+    button.remove()
     console.log("stopping........")
     await videoRecorder.stopRecording();
     await gifRecorder.stopRecording();
     const videoBlob = await videoRecorder.getBlob();
 	const gifBlob = await gifRecorder.getBlob();
     video.src = URL.createObjectURL(videoBlob);
+    console.log(video.src);
     videoRecorder.stream.getTracks().forEach(t => t.stop());
 	video.srcObject = null;
 
@@ -89,23 +115,17 @@ async function stop() {
     await videoRecorder.destroy();
     await gifRecorder.reset();
     await gifRecorder.destroy();
-
+    video.width = 300;
+    video.play();
+    video.setAttribute("loop", true);
+    
     gifSrc = await gifBlob;
     console.log(gifSrc);
-    
-    // video.remove();
-    // let video2 = document.createElement("video");
-    // video2.setAttribute("id", "videoElement")
-    // video2.controls = true;
-    // let videoContainer = document.querySelector('.create-container');
-    // videoContainer.appendChild(video2);
-    // video2.src = URL.createObjectURL(await gifBlob);
 
     gifRecorder = null;
     videoRecorder = null;
 
     console.log("***Upload started***");
-    const api_key = "efARnSmXUsXz3XqFvbyykWkVyNi3IIuQ";
     const formData = new FormData();
     formData.append("file", gifSrc, "myGif.gif");
     const params = {
@@ -116,13 +136,40 @@ async function stop() {
     const data = await fetchURL(`https://upload.giphy.com/v1/gifs?api_key=${api_key}`, params);
     console.log(await data);
     console.log("***Upload ended***");
-    return await data;
-    // uploadCreatedGif()
+    if(data.meta.status === 200) {
+        const id = data.data.id;
+        console.log(id);
+        let uploadBtn = document.createElement("button");
+        uploadBtn.innerText = "Subir GIFO";
+        uploadBtn.setAttribute("id", "uploadBtn");
+        let container = document.querySelector(".create");
+        container.appendChild(uploadBtn);
+        uploadBtn.addEventListener("click", ()=> {
+            uploadGif(id);
+        })
+    }
+    return data;
 }   
+async function uploadGif(id) {
+    console.log("saving......")
+    const api_url = "https://api.giphy.com/v1/gifs/"
+    const response = await fetchURL(`${api_url}${id}?api_key=${api_key}`);
+    console.log(response.data);
+    const gif = response.data;
+    // let new_data = response.data;
+    // if(localStorage.getItem('data') == null) {
+    //     localStorage.setItem('data', '[]');
+    // }
 
-// async function uploadCreatedGif() {
-    
-// }
+    // let old_data = JSON.parse(localStorage.getItem('data'));
+    // old_data.push(new_data);
+    // localStorage.setItem('data', JSON.stringify(old_data));
+    //     // let items = [];
+    //     // let source = gif.src;
+    //     // items.push(source);
+    //     // localStorage.setItem('gifImg', items);
+    //     // console.log(items);
+}
 
 
 

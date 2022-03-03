@@ -63,7 +63,7 @@ getGif().then(response => {
             favImage.setAttribute('src', 'assets/icon-fav-active.svg');
             favIcon.appendChild(favImage);
             gifContainer.appendChild(favIcon);
-              //Local Storage
+            //Local Storage
               
             favIcon.addEventListener('click', () => {
                 console.log('Favorite button');
@@ -74,11 +74,11 @@ getGif().then(response => {
                 let old_data = JSON.parse(localStorage.getItem('data'));
                 old_data.push(new_data);
                 localStorage.setItem('data', JSON.stringify(old_data));
-                    // let items = [];
-                    // let source = gif.src;
-                    // items.push(source);
-                    // localStorage.setItem('gifImg', items);
-                    // console.log(items);
+                // let items = [];
+                // let source = gif.src;
+                // items.push(source);
+                // localStorage.setItem('gifImg', items);
+                // console.log(items);
             });
             //Donwload icon 
             let downloadIcon = document.createElement('a');
