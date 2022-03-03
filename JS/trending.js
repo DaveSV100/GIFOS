@@ -68,6 +68,7 @@ getGif().then(response => {
             favIcon.addEventListener('click', () => {
                 console.log('Favorite button');
                 let new_data = gif.src;
+                console.log(new_data)
                 if(localStorage.getItem('data') == null) {
                     localStorage.setItem('data', '[]');
                 }

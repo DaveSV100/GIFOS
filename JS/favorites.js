@@ -4,8 +4,14 @@ const gifContainer = document.querySelector('.favorite-gifs_empty');
 const btnContainer = document.getElementById('favorite-gifs_btn');
 
 function saveData() {
+    // const getFav = {}
+    // Object.keys(localStorage).forEach(element => {
+    //     element.startsWith("data") ? (getFav[element] = localStorage.getItem(element)) : null;
+    //     return getFav;
+    // });
+    // JSON.parse(localStorage.getItem('data'));
     const getFav = JSON.parse(localStorage.getItem('data'));
-    
+
     // localStorage.removeItem('data');
     // If there are no gifs added to favorites
     if (localStorage.getItem('data') == null) {

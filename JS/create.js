@@ -127,7 +127,7 @@ async function stop() {
 
     console.log("***Upload started***");
     const formData = new FormData();
-    formData.append("file", gifSrc, "myGif.gif");
+    formData.append("file", gifSrc, "myGif.gif")
     const params = {
         method: "POST",
         body: formData,
@@ -154,21 +154,20 @@ async function uploadGif(id) {
     console.log("saving......")
     const api_url = "https://api.giphy.com/v1/gifs/"
     const response = await fetchURL(`${api_url}${id}?api_key=${api_key}`);
-    console.log(response.data);
-    const gif = response.data;
-    // let new_data = response.data;
-    // if(localStorage.getItem('data') == null) {
-    //     localStorage.setItem('data', '[]');
-    // }
+    const gif = response.data.url;
+    console.log(gif)
+    if(localStorage.getItem('data') == null) {
+        localStorage.setItem('data', '[]');
+    }
 
-    // let old_data = JSON.parse(localStorage.getItem('data'));
-    // old_data.push(new_data);
-    // localStorage.setItem('data', JSON.stringify(old_data));
-    //     // let items = [];
-    //     // let source = gif.src;
-    //     // items.push(source);
-    //     // localStorage.setItem('gifImg', items);
-    //     // console.log(items);
+    let old_data = JSON.parse(localStorage.getItem('data'));
+    old_data.push(gif);
+    localStorage.setItem('data', JSON.stringify(old_data));
+        // let items = [];
+        // let source = gif.src;
+        // items.push(source);
+        // localStorage.setItem('gifImg', items);
+        // console.log(items);
 }
 
 
