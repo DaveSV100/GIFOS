@@ -154,22 +154,35 @@ async function uploadGif(id) {
     console.log("saving......")
     const api_url = "https://api.giphy.com/v1/gifs/"
     const response = await fetchURL(`${api_url}${id}?api_key=${api_key}`);
-    const gif = response.data.url;
-    console.log(gif)
-    if(localStorage.getItem('data') == null) {
-        localStorage.setItem('data', '[]');
-    }
-
-    let old_data = JSON.parse(localStorage.getItem('data'));
-    old_data.push(gif);
-    localStorage.setItem('data', JSON.stringify(old_data));
+    const data = response.data
+    console.log(data)
+    const gifId = data.id;
+    console.log(gifId);
+    const gif = JSON.stringify(data);
+	localStorage.setItem("gifo", gif);
         // let items = [];
         // let source = gif.src;
         // items.push(source);
         // localStorage.setItem('gifImg', items);
         // console.log(items);
+    const getGifo = {}
+    Object.keys(localStorage).forEach(element => {
+        element.startsWith("gifo") ? (getGifo[element] = localStorage.getItem(element)) : null;    
+    })
+    console.log(getGifo);
+    return getGifo;
+    
 }
-
+function loadMyGifs(getGifo) {
+    for (let myGifKey in myGifs) {
+        const parsedGifData = JSON.parse(myGifs[myGifKey]);
+        let aspectRatio = "";
+        parsedGifData.images["480w_still"].width / parsedGifData.images["480w_still"].height >= 1.5
+            ? (aspectRatio = "item-double")
+            : null;
+        $gifsGrid.append(newElement("myGif", parsedGifData, aspectRatio));
+    }
+}
 
 
 
