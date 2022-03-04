@@ -10,14 +10,14 @@
     crossorigin="anonymous"/>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap" rel="stylesheet">
-    <title>My Gifos</title>
+    <title>Mis GIFOS</title>
 </head>
 <body>
     <!--Navbar-->
     <header id="top">
         <div class="top-line"></div>
         <nav class="navBar">
-           <a href="index.html"><img class="logo" src="assets/logo-mobile.svg" alt="Gifos logo"></a>
+           <a href="index.html" id="logo-icon"><img class="logo" src="assets/logo-mobile.svg" alt="Gifos logo"></a>
            <ul class="navBar-menu">
                 <li class="navBar-menu_item">
                     <a href="/dark_mode.html">Modo nocturno</a>
@@ -31,27 +31,55 @@
                     <a href="/my_gifos.html">Mis GIFOS</a>
                 </li>
                 <div class="navBar-menu_line"></div>
+                <li class="navBar-menu_item">
+                    <a class="navBar-menu_item_create" href="/crear.html"><img src="assets/button-crear-gifo.svg" alt="Crear gif"></a>
+                </li>
+                <div class="navBar-menu_line"></div>
            </ul>
            <a class="hamburger hidden"><img id="burger" src="assets/burger.svg" alt="Menu"></a>
         </nav>
     </header>
-    <main id="mainContent">
-        
+    <!--Search and Trending-->
+    <main id="favoritePage">
+                                    <!--SECTION 1-->
+        <!--Favorite Gifs-->
+        <section id="favorite" class="favorite-gifs">
+
+            <img src="assets/icon-favoritos.svg">
+            <h1>Mis Gifos</h1>
+            <div id="favorite-gifs_imgs" class="favorite-gifs_empty">
+
+            </div>
+            <div id="favorite-gifs_btn" class="favorite-gifs_button">
+
+            </div>
+        </section>
+                                    <!--SECTION 2-->
+        <!--Trending Gifos-->
+        <section id="trending" class="favorite-trending">
+            <div class="trending-text">
+                <h2>Trending GIFOS</h2>
+                <p>Mira los últimos GIFOS de nuestra comunidad.</p>
+            </div>
+            <div id="trending-gifos">
+
+            </div>
+        </section>
     </main>
     <!--Last part-->
     <footer id="bottom">
-        <p>Compartir en:</p>
-        <a><i class="fab fa-facebook"></i></a>
-        <a><i class="fab fa-twitter"></i></a>
-        <a><i class="fab fa-instagram"></i></a>
-        <p>© GIFOS 2020 All Rights Reserved.</p>
+        <p class="bottom-title">Compartir en:</p>
+        <div class="bottom-networks">
+            <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p class="bottom-rights">© GIFOS 2021 All Rights Reserved.</p>
+        <div class="bottom-line"></div>
     </footer>
     <!--Scripts-->
     <script src="JS/menu.js"></script>
-    <script src="js/trending.js"></script>
-    <script src="js/search.js"></script>
-    <script src="js/autocomplete.js"></script>
-    <script src="JS/terms.js"></script>
-    <script src="JS/responsive.js"></script>
+    <script src="JS/myGifs.js"></script>
+    <script src="JS/trending.js"></script>
 </body>
 </html>

@@ -10,12 +10,12 @@ function saveData() {
     //     return getFav;
     // });
     // JSON.parse(localStorage.getItem('data'));
-    const getFav = JSON.parse(localStorage.getItem('data'));
+    const getFav = JSON.parse(localStorage.getItem('gifo'));
 
     // localStorage.removeItem('data');
     // If there are no gifs added to favorites
-    if (localStorage.getItem('data') == null) {
-        localStorage.removeItem('data');
+    if (localStorage.getItem('gifo') == null) {
+        localStorage.removeItem('gifo');
         //Body grid
         document.body.style.gridTemplateRows = '10vh 90vh 20vh';
         //No favorite content icon

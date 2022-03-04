@@ -7,6 +7,7 @@ async function getGif() {
     const response = await fetch(fetch_url);
     const data = await response.json();
     console.log(fetch_url);
+    console.log(data);
     return data;
 }
 getGif().then(response => {

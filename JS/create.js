@@ -11,7 +11,7 @@ let gifRecorder;
 let gifSrc;
 let playing = false;
 
-//Here I'm using async await instead of promises and .then
+//Async await instead of promises and .then
 async function fetchURL(url, params = null) {
 	try {
 		const fetchData = await fetch(url, params);
@@ -147,43 +147,41 @@ async function stop() {
         uploadBtn.addEventListener("click", ()=> {
             uploadGif(id);
         })
-    }
+    } else {console.log("There was an error")}
     return data;
 }   
 async function uploadGif(id) {
     console.log("saving......")
     const api_url = "https://api.giphy.com/v1/gifs/"
-    const response = await fetchURL(`${api_url}${id}?api_key=${api_key}`);
-    const data = response.data
+    const response = await fetch(`${api_url}${id}?api_key=${api_key}`);
+    console.log(response);
+    const data = await response.json();
     console.log(data)
-    const gifId = data.id;
-    console.log(gifId);
-    const gif = JSON.stringify(data);
-	localStorage.setItem("gifo", gif);
-        // let items = [];
-        // let source = gif.src;
-        // items.push(source);
-        // localStorage.setItem('gifImg', items);
-        // console.log(items);
-    const getGifo = {}
-    Object.keys(localStorage).forEach(element => {
-        element.startsWith("gifo") ? (getGifo[element] = localStorage.getItem(element)) : null;    
-    })
-    console.log(getGifo);
-    return getGifo;
-    
-}
-function loadMyGifs(getGifo) {
-    for (let myGifKey in myGifs) {
-        const parsedGifData = JSON.parse(myGifs[myGifKey]);
-        let aspectRatio = "";
-        parsedGifData.images["480w_still"].width / parsedGifData.images["480w_still"].height >= 1.5
-            ? (aspectRatio = "item-double")
-            : null;
-        $gifsGrid.append(newElement("myGif", parsedGifData, aspectRatio));
+    try {
+        const new_data = data.data.images.downsized.url;
+        if(localStorage.getItem('gifo') == null) {
+            localStorage.setItem('gifo', '[]');
+        }
+        let old_data = JSON.parse(localStorage.getItem('gifo'));
+        old_data.push(new_data);
+        localStorage.setItem('gifo', JSON.stringify(old_data));
+        // let gif = document.createElement("img");
+        // gif.setAttribute("src", data.data.images.downsized.url);
+        // gif.setAttribute("alt", "mygif");
+        // container.appendChild(gif);
+    } catch (error) {
+        console.log(error);
     }
 }
 
+// let new_data = gif.src;
+// console.log(new_data)
+// if(localStorage.getItem('data') == null) {
+//     localStorage.setItem('data', '[]');
+// }
+// let old_data = JSON.parse(localStorage.getItem('data'));
+// old_data.push(new_data);
+// localStorage.setItem('data', JSON.stringify(old_data));
 
 
 
