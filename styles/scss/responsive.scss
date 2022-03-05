@@ -3,9 +3,6 @@
         display: grid;
         grid-template-columns: 100vw;
         grid-template-rows: 10vh 170vh 20vh;
-        grid-template-areas: "header"
-                             "main"
-                             "footer";
     }
     #mainContent #search {
         grid-template-rows: 20vh 40vh 30vh 0vh 0vh 0vh;
@@ -16,7 +13,7 @@
 }
 @media (min-width: 648px) {
     #mainContent #search {
-        grid-template-rows: 20vh 50vh 30vh 0vh 0vh 0vh;
+        grid-template-rows: 20vh 40vh 25vh 0vh 0vh 0vh;
     }
 }
 @media (min-width: 769px) {
@@ -59,13 +56,13 @@
 } 
 @media (min-width: 1020px) {
     #mainContent #search {
-        grid-template-rows: 20vh 60vh 30vh 0vh 0vh 0vh;
+        grid-template-rows: 20vh 40vh 20vh 0vh 0vh 0vh;
         .mainContent-title1 {
             h1 {
-                font-size: 2rem;
+                font-size: 1.5rem;
             }
             .title1-gifos {
-                font-size: 2rem;
+                font-size: 1.5rem;
             }
         }
         .mainContent-search {
@@ -74,11 +71,29 @@
             }
         }
     }
-
+    #mainContent #trending #trending-gifos img {
+        height: 280px;
+        width: 365px;
+    }
+    #mainContent #search .mainContent-terms .mainContent-terms_title {
+        font-size: 1.3rem;
+    }
+    #mainContent #search .mainContent-terms #mainContent-terms_result a {
+        font-size: 1.2rem;
+    }
+    #mainContent #trending .trending-text h2 {
+        font-size: 1.5rem;
+    }
+    #mainContent #trending .trending-text p {
+        font-size: 1.2rem;
+    }
 }
 @media (min-width: 1440px) {
+    #mainContent #search {
+        grid-template-rows: 20vh 40vh 30vh 0vh 0vh 0vh;
+    }
     #mainContent #search .mainContent-title1 h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
     #top .navBar .navBar-menu .navBar-menu_item a {
         font-size: 1rem;
@@ -98,5 +113,15 @@
     }
     #top .navBar .navBar-menu .navBar-menu_item a {
         font-size: 1.5rem;
+    }
+    #top .navBar .logo {
+        width: 100px;
+    }
+    #mainContent #search .mainContent-terms .mainContent-terms_title {
+        font-size: 2.5rem;
+        line-height: 80px;
+    }
+    #mainContent #search .mainContent-terms #mainContent-terms_result a {
+        font-size: 2rem;
     }
 }
