@@ -9,7 +9,16 @@ let gifsBtn = document.getElementById('result-button');
 let searchedGifs = document.getElementsByClassName('mainContent-gifs');
 let searchButton = document.getElementById('searchBtn');
 let word = document.getElementById('search-box');
-searchButton.addEventListener('click', () => {
+
+word.autocomplete = "off";
+searchContainer.onkeyup = (e) => {
+    if(e.keyCode == 13) {
+        searchGif();
+    }
+}
+searchButton.addEventListener('click', () => searchGif());
+
+function searchGif () {
     //Remove autocomplete container
     const box = document.getElementById('autocomplete-container');
     box.remove();
@@ -226,4 +235,4 @@ searchButton.addEventListener('click', () => {
     }).catch(err => {
         console.error('something went wrong :/', err);
     })
-});
+};
