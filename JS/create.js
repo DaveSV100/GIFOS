@@ -169,9 +169,9 @@ async function uploadGif(id) {
         // gif.setAttribute("src", data.data.images.downsized.url);
         // gif.setAttribute("alt", "mygif");
         // container.appendChild(gif);
-    } catch (error) {
-        console.log(error);
-    }
+    } 
+    //From ecma script on you just need to place the catch and console log (error) and all of this stuff are not necessary anymore
+    catch {}
 }
 
 // let new_data = gif.src;

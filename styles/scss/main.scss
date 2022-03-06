@@ -4,7 +4,7 @@
     #search {
         display: grid;
         grid-template-columns: 100vw;
-        grid-template-rows: 20vh 30vh 30vh 0vh 0vh 0vh;
+        grid-template-rows: 20vh 40vh 40vh 0vh 0vh 0vh;
         grid-template-areas: 
                              "mainContent-title1"
                              "mainContent-search"
@@ -69,13 +69,16 @@
                 .searchBtn-icon:hover {
                     opacity: .7;
                 }
+                .autocomplete-container {
+                    display: grid;
+                    flex-direction: column;
+                    justify-items: left;
+                    color: var(--main);
+                    z-index: 1;
+                    position: absolute;
+                }
             }
-            #autocomplete-container {
-                display: grid;
-                flex-direction: column;
-                justify-items: left;
-                color: var(--main);
-            }
+            
         }
         .mainContent-terms {
             grid-area: mainContent-terms;
