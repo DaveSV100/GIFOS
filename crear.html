@@ -12,9 +12,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap" rel="stylesheet">
     <title>Favoritos</title>
 </head>
-<body>
+<body class="body-create">
     <!--Navbar-->
-    <header id="top">
+    <header id="top" class="header-create">
         <div class="top-line"></div>
         <nav class="navBar">
            <a href="index.html" id="logo-icon"><img class="logo" src="assets/logo-mobile.svg" alt="Gifos logo"></a>
@@ -40,14 +40,13 @@
         </nav>
     </header>
     <!--Search and Trending-->
-    <main class="createPage">
-                                    <!--SECTION 1-->
-        <!--Favorite Gifs-->
-        <section class="create">
-            <img src="assets/camara.svg" alt="Ícono de cámara">
-            <img src="assets/pelicula.svg" alt="Ícono de cinta">
+    <main class="main-create">
+            <div class="create-icons">
+                <img src="assets/camara.svg" alt="Ícono de cámara">
+                <img src="assets/pelicula.svg" alt="Ícono de cinta">
+            </div>
             <div class="create-container">
-                <h1 class="create-container_title">Aquí podrás crear tus propios GIFOS</h1>
+                <h1 class="create-container_title">Aquí podrás crear tus propios <span>GIFOS</span></h1>
                 <p class="create-container_paragraph">¡Crea tu GIFO en sólo 3 pasos! (solo necesitas una cámara para grabar un video)</p>
                 <!-- <p><button id="btnStart">START RECORDING</button><br/>
                     <button id="btnStop">STOP RECORDING</button></p>
@@ -55,15 +54,18 @@
                 <video id="vid2" controls></video> -->
                 <video id="gifo"></video>
             </div>
-            <p class="create-number create-number1">1</p>
-            <p class="create-number create-number2">2</p>
-            <p class="create-number create-number3">3</p>
-            <div class="create-line"></div>
-            <button id="create-button" class="create-gifs_button" value="start">Comenzar</button>
-        </section>
+            <div class="create-actions">
+                <div class="create-actions_numbers">
+                    <p class="create-number create-number1">1</p>
+                    <p class="create-number create-number2">2</p>
+                    <p class="create-number create-number3">3</p>
+                </div>
+                <div class="create-line"></div>
+                <button id="create-button" class="create-gifs_button" value="start">COMENZAR</button>
+            </div>
     </main>
     <!--Last part-->
-    <footer id="bottom">
+    <footer id="bottom" class="bottom-create">
         <p class="bottom-title">Compartir en:</p>
         <div class="bottom-networks">
             <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>

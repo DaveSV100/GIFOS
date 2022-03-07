@@ -1,53 +1,115 @@
-.createPage {
-    .create {
+.body-create {
+        display: grid;
+        grid-template-columns: 100vw;
+        grid-template-rows: 10vh 115vh 10vh;
+        grid-template-areas:
+            "header-create"
+            "main-create"
+            "bottom-create";
+}
+.header-create {
+    grid-area: header-create;
+}
+.main-create {
+    grid-area: main-create;
+    height: 50vh;
+    display: grid;
+    grid-template-columns: 100vw;
+    grid-template-rows: 25vh 60vh 15vh;
+    grid-template-areas: 
+    "create-icons"
+    "create-container"
+    "create-actions";
+        .create-icons {
+            grid-area: create-icons;
+            height: 25vh;
+            display: flex;
+            justify-content: space-evenly;
+            img {
+                width: 100px;
+            }
+        }
         .create-container {
-            height: 60vh;
+            grid-area: create-container;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 55vh;
             border: solid #572EE5;
             .create-container_title {
-                width: 90vw;
-                margin: 0 auto;
+                max-width: 70vw;
                 text-align: center;
+                font-size: 1.5rem;
+                color: var(--main);
+                span {
+                    color: #36ebaf;;
+                }
             }
             .create-container_paragraph {
                 width: 90vw;
-                margin: 0 auto;
                 text-align: center;
             }
         }
-    }
-    .create-line {
-        height: 2px;
-        width: 90vw;
-        background-color: #572EE5;
-    }
-    .create-number {
-        border: 1px solid #572EE5;
-        border-radius: 10px;
-        width: 20px;
-    }
-    .create-number-active {
-        background-color: "#572EE5";
-        color: #ffffff;
-        border: 1px solid #572EE5;
-    }
+        .create-actions {
+            grid-area: create-actions;
+            height: 15vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            .create-actions_numbers {
+                min-width: 100px;
+                max-width: 200px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                .create-number {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: 1px solid #572EE5;
+                    color: var(--main);
+                    border-radius: 20px;
+                    font-size: 1rem;
+                    height: 30px;
+                    width: 30px;
+                }
+                .create-number-active {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: "#572EE5";
+                    color: #ffffff;
+                    border: 1px solid #572EE5;
+                    border-radius: 20px;
+                    font-size: 1rem;
+                    height: 30px;
+                    width: 30px;
+                    text-align: center;
+                }
+            }
+            .create-line {
+                height: 1px;
+                width: 90vw;
+                background-color: #572EE5;
+            }
+            .create-gifs_button {
+                height: 40px;
+                min-width: 127px;
+                max-width: 400px;
+                border: 1px solid #572EE5;
+                border-radius: 25px;
+                background: none;
+                font-family: 'Montserrat-bold', sans-serif;
+                font-size: .8rem;
+                font-weight: 600;
+                color: #572EE5;
+                text-align: center;
+            }
+        }
+
 }
-
-
-// const btn = document.getElementById('create-button');
-// const title = document.querySelector('.create-container_title');
-// const paragraph = document.querySelector('.create-container_paragraph');
-
-
-
-// btn.addEventListener("click", ()=> {
-
-//     if(btn.innerText === "Comenzar"){
-//         btn.innerText = "Grabar";
-//     }
-//     else if(btn.innerText === "Grabar"){
-//         btn.innerText= "Finalizar";
-//     }
-//     else if(btn.innerText === "Finalizar") {
-//         btn.innerText= "Upload";
-//     }
-// });
+.bottom-create {
+    grid-area: bottom-create;
+}
