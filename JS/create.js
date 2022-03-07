@@ -1,8 +1,12 @@
 const container = document.querySelector(".create-actions");
 const btn = document.getElementById('create-button');
+const videoContainer = document.querySelector(".create-container");
 const title = document.querySelector('.create-container_title');
 const paragraph = document.querySelector('.create-container_paragraph');
 const video = document.querySelector("#gifo");
+const number1 = document.querySelector(".create-number1");
+const number2 = document.querySelector(".create-number2");
+const number3 = document.querySelector(".create-number3");
 const api_key = "efARnSmXUsXz3XqFvbyykWkVyNi3IIuQ";
 let totalTime = 0;
 let newGifId = "";
@@ -43,17 +47,31 @@ btn.addEventListener("click", () => {
 })
 
 async function init () {
+    number1.style.backgroundColor = "#572EE5";
+    number1.style.color = "#ffffff";
     const stream = await navigator.mediaDevices.getUserMedia(constraintObj);
     video.srcObject = stream;
     await video.play();
+    if (!stream) {
+        title.textContent = "¿Nos das acceso a tu cámara?";
+        paragraph.textContent = "El acceso a tu camara será válido sólo por el tiempo en el que estés creando el GIFO."
+    } else {
+        title.textContent = "";
+        paragraph.textContent = "";
+    }
     record()
 }
 
 async function record() {
     console.log("let's record")
     btn.remove();
+    number1.style.backgroundColor = "#ffffff";
+    number1.style.color = "#572EE5";
+    number2.style.backgroundColor = "#572EE5";
+    number2.style.color = "#ffffff";
     const recordBtn = document.createElement("button");
     recordBtn.setAttribute("id", "recordBtn");
+    recordBtn.setAttribute("class", "create-gifs_button");
     recordBtn.innerText = "Grabar";
     container.appendChild(recordBtn);
     recordBtn.addEventListener("click", () => {
@@ -88,8 +106,9 @@ async function recordGif() {
     button.remove()
     setTimeout(()=> {
         let stopBtn = document.createElement("button");
-        stopBtn.innerText = "Finalizar";
+        stopBtn.innerText = "FINALIZAR";
         stopBtn.setAttribute("id", "stopBtn");
+        stopBtn.setAttribute("class", "create-gifs_button");
         let container = document.querySelector(".create-actions");
         container.appendChild(stopBtn);
     stopBtn.addEventListener("click", () => {
@@ -140,8 +159,9 @@ async function stop() {
         const id = data.data.id;
         console.log(id);
         let uploadBtn = document.createElement("button");
-        uploadBtn.innerText = "Subir GIFO";
+        uploadBtn.innerText = "SUBIR GIFO";
         uploadBtn.setAttribute("id", "uploadBtn");
+        uploadBtn.setAttribute("class", "create-gifs_button");
         let container = document.querySelector(".create-actions");
         container.appendChild(uploadBtn);
         uploadBtn.addEventListener("click", ()=> {
@@ -151,6 +171,24 @@ async function stop() {
     return data;
 }   
 async function uploadGif(id) {
+    //Advertisment
+    const ad = document.createElement("div");
+    ad.setAttribute("class", "video-ad");
+    videoContainer.appendChild(ad);
+    //Img
+    const adImg = document.createElement("img");
+    adImg.setAttribute("src", "./assets/loading.png");
+    adImg.setAttribute("alt", "Ícono de cargando");
+    ad.appendChild(adImg);
+    //Paragraph
+    const adText = document.createElement("p");
+    adText.textContent = "Estamos subiendo tu GIFO";
+    ad.appendChild(adText);
+    //Numbers
+    number2.style.backgroundColor = "#ffffff";
+    number2.style.color = "#572EE5";
+    number3.style.backgroundColor = "#572EE5";
+    number3.style.color = "#ffffff";
     console.log("saving......")
     const api_url = "https://api.giphy.com/v1/gifs/"
     const response = await fetch(`${api_url}${id}?api_key=${api_key}`);
@@ -165,6 +203,23 @@ async function uploadGif(id) {
         let old_data = JSON.parse(localStorage.getItem('gifo'));
         old_data.push(new_data);
         localStorage.setItem('gifo', JSON.stringify(old_data));
+        const lastBtn = document.getElementById("uploadBtn");
+        lastBtn.remove();
+        //Popup advertisment
+        const download = document.createElement("img");
+        download.setAttribute("src", "./assets/icon-download.svg");
+        download.setAttribute("alt", "Ícono de descargar");
+        download.setAttribute("class", "ad-download");
+        ad.appendChild(download);
+        const link = document.createElement("img");
+        link.setAttribute("src", "./assets/icon-link-normal.svg");
+        link.setAttribute("alt", "Ícono de copiar enlace");
+        link.setAttribute("class", "ad-link");
+        ad.appendChild(link);
+        //Check icon
+        adImg.setAttribute("src", "./assets/check.png");
+        adImg.setAttribute("alt", "Ícono de subido");
+        adText.textContent = "GIFO subido con éxito";
         // let gif = document.createElement("img");
         // gif.setAttribute("src", data.data.images.downsized.url);
         // gif.setAttribute("alt", "mygif");
