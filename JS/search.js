@@ -20,8 +20,10 @@ searchButton.addEventListener('click', () => searchGif());
 
 function searchGif () {
     //Remove autocomplete container
-    const box = document.getElementById('autocomplete-container');
-    box.remove();
+    // const box = document.getElementById('autocomplete-container');
+    // box.remove();
+    //Clean autocomplete container (suggestions)
+    clean()
     async function searchGif() {
         let search = word.value;
         console.log(search); 
