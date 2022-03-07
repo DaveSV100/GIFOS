@@ -211,11 +211,14 @@ async function uploadGif(id) {
         download.setAttribute("alt", "Ícono de descargar");
         download.setAttribute("class", "ad-download");
         ad.appendChild(download);
+        download.addEventListener("click", () => {downloadGif(id)})
         const link = document.createElement("img");
         link.setAttribute("src", "./assets/icon-link-normal.svg");
         link.setAttribute("alt", "Ícono de copiar enlace");
         link.setAttribute("class", "ad-link");
         ad.appendChild(link);
+        const gifLink = data.data.url;
+        link.addEventListener("click", () => {copyLink(gifLink)})
         //Check icon
         adImg.setAttribute("src", "./assets/check.png");
         adImg.setAttribute("alt", "Ícono de subido");
@@ -225,6 +228,28 @@ async function uploadGif(id) {
         // gif.setAttribute("alt", "mygif");
         // container.appendChild(gif);
     } 
-    //From ecma script on you just need to place the catch and console log (error) and all of this stuff are not necessary anymore
+    //From ecma script 9 on, you don't need to place the catch with console log (error) and all of that stuff anymore
     catch {}
+}
+const downloadGif = async (id) => {
+    console.log("donwloading: ", id);
+    let blob = await fetch(`https://media.giphy.com/media/${id}/giphy.gif`)
+    .then((img) => img.blob());
+    invokeSaveAsDialog(blob, "My-gif.gif");
+}
+const copyLink = (gifLink) => {
+    console.log("copying link", gifLink);
+    const text = document.createElement("textarea");
+    text.value = gifLink;
+    console.log(text.value);
+    text.setAttribute("readonly", "");
+    text.style.display = "none";
+    document.body.appendChild(text);
+    const copy = async () => {
+        const value = await navigator.clipboard.writeText(text.value)
+        try {
+            console.log("copied"); 
+        } catch{}
+    }
+    copy();
 }
