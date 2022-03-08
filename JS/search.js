@@ -9,6 +9,9 @@ let gifsBtn = document.getElementById('result-button');
 let searchedGifs = document.getElementsByClassName('mainContent-gifs');
 let searchButton = document.getElementById('searchBtn');
 let word = document.getElementById('search-box');
+//Width
+const width = window.innerWidth;
+console.log("The width of this device is: ", width);
 
 word.autocomplete = "off";
 searchContainer.onkeyup = (e) => {
