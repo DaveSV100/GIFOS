@@ -1,7 +1,7 @@
 .body-create {
         display: grid;
         grid-template-columns: 100vw;
-        grid-template-rows: 10vh 115vh 10vh;
+        grid-template-rows: 10vh 120vh 10vh;
         grid-template-areas:
             "header-create"
             "main-create"
@@ -15,16 +15,17 @@
     height: 50vh;
     display: grid;
     grid-template-columns: 100vw;
-    grid-template-rows: 25vh 60vh 15vh;
+    grid-template-rows: 10vh 60vh 15vh 10vh;
     grid-template-areas: 
-    "create-icons"
+    "camera-icon"
     "create-container"
-    "create-actions";
-        .create-icons {
-            grid-area: create-icons;
-            height: 25vh;
+    "create-actions"
+    "movie-icon";
+        .camera-icon {
+            grid-area: camera-icon;
+            height: 10vh;
             display: flex;
-            justify-content: space-evenly;
+            justify-content: center;
             img {
                 width: 100px;
             }
@@ -37,18 +38,19 @@
             justify-content: center;
             height: 55vh;
             border: solid #572EE5;
-            .create-container_title {
-                max-width: 70vw;
-                text-align: center;
-                font-size: 1.5rem;
-                color: var(--main);
-                span {
-                    color: #36ebaf;;
+            .create-container_text {
+                width: 80vw;
+                .create-container_title {
+                    text-align: center;
+                    font-size: 1.5rem;
+                    color: var(--main);
+                    span {
+                        color: #36ebaf;;
+                    }
                 }
-            }
-            .create-container_paragraph {
-                width: 90vw;
-                text-align: center;
+                .create-container_paragraph {
+                    text-align: center;
+                }
             }
         }
         .create-actions {
@@ -95,7 +97,15 @@
                 text-align: center;
             }
         }
-
+        .movie-icon {
+            grid-area: movie-icon;
+            height: 20vh;
+            display: flex;
+            justify-content: center;
+            img {
+                width: 100px;
+            }
+        }
 }
 //Popup advertisment 
 main .create-container .video-ad {

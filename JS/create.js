@@ -250,6 +250,6 @@ const copyLink = (gifLink) => {
         try {
             console.log("copied"); 
         } catch{}
-    }
+    }           
     copy();
 }
