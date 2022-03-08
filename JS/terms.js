@@ -97,8 +97,7 @@ function show_terms() {
                                 downloadIcon.appendChild(downloadImage);
                                 gifContainer.appendChild(downloadIcon);
                                 downloadIcon.addEventListener('click', () => {
-                                    downloadIcon.setAttribute('download', gif.alt);
-                                    downloadIcon.setAttribute('href', gif.src);
+                                    downloadFromGiphy(foundGif.src, foundGif.alt);
                                 });
                                 //Title
                                 let title = document.createElement('p');
@@ -220,8 +219,7 @@ function show_terms() {
                                         downloadIcon.appendChild(downloadImage);
                                         gifContainer.appendChild(downloadIcon);
                                         downloadIcon.addEventListener('click', () => {
-                                            downloadIcon.setAttribute('download', gif.alt);
-                                            downloadIcon.setAttribute('href', gif.src);
+                                            downloadFromGiphy(foundGif.src, foundGif.alt);
                                         });
                                         //Title
                                         let title = document.createElement('p');

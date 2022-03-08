@@ -101,9 +101,7 @@ function searchGif () {
             downloadIcon.appendChild(downloadImage);
             gifContainer.appendChild(downloadIcon);
             downloadIcon.addEventListener('click', () => {
-                console.log("heeeeeeeeey")
-                downloadIcon.setAttribute('download', foundGif.alt);
-                downloadIcon.setAttribute('href', foundGif.src);
+                downloadFromGiphy(foundGif.src, foundGif.alt);
             });
             //Title
             let title = document.createElement('p');
@@ -225,8 +223,7 @@ function searchGif () {
                         downloadIcon.appendChild(downloadImage);
                         gifContainer.appendChild(downloadIcon);
                         downloadIcon.addEventListener('click', () => {
-                            downloadIcon.setAttribute('download', foundGif.alt);
-                            downloadIcon.setAttribute('href', foundGif.src);
+                            downloadFromGiphy(foundGif.src, foundGif.alt);
                         });
                         //Title
                         let title = document.createElement('p');
