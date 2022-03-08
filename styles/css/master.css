@@ -527,7 +527,7 @@ main .create-container .video-ad p {
   grid-area: bottom-create;
 }
 
-@media (min-width: 426px) {
+@media (min-width: 425px) {
   body {
     display: grid;
     grid-template-columns: 100vw;
@@ -540,6 +540,19 @@ main .create-container .video-ad p {
 
   #mainContent #search .mainContent-search img {
     width: 60vw;
+  }
+
+  body .gifCard .gifCard-container {
+    height: 70vh;
+  }
+  body .gifCard .gifCard-container .card-image {
+    height: 50vh;
+  }
+  body .gifCard .gifCard-container .favorite-icon {
+    margin-top: 62vh;
+  }
+  body .gifCard .gifCard-container .donwload-icon {
+    margin-top: 61vh;
   }
 }
 @media (min-width: 648px) {
@@ -582,6 +595,20 @@ main .create-container .video-ad p {
 
   #top .navBar .navBar-menu_update {
     position: static;
+  }
+
+  body .gifCard .gifCard-container {
+    height: 80vh;
+  }
+  body .gifCard .gifCard-container .card-image {
+    height: 60vh;
+  }
+  body .gifCard .gifCard-container .favorite-icon {
+    margin-top: 72vh;
+    transform: translateX(-25vw);
+  }
+  body .gifCard .gifCard-container .donwload-icon {
+    margin-top: 71vh;
   }
 }
 @media (min-width: 1020px) {
@@ -655,6 +682,29 @@ main .create-container .video-ad p {
     grid-row: 2/3;
     align-items: flex-end;
   }
+
+  body .gifCard .gifCard-container .x-icon img {
+    height: 25px;
+    width: 25px;
+  }
+  body .gifCard .gifCard-container .favorite-icon {
+    margin-top: 72vh;
+    transform: translateX(-25vw);
+  }
+  body .gifCard .gifCard-container .favorite-icon img {
+    height: 25px;
+    width: 25px;
+  }
+  body .gifCard .gifCard-container .donwload-icon {
+    margin-top: 71vh;
+  }
+  body .gifCard .gifCard-container .donwload-icon img {
+    height: 40px;
+    width: 40px;
+  }
+  body .gifCard .gifCard-container .gif-title {
+    font-size: 1.5rem;
+  }
 }
 @media (min-width: 1440px) {
   #mainContent #search {
@@ -667,6 +717,21 @@ main .create-container .video-ad p {
 
   #top .navBar .navBar-menu .navBar-menu_item a {
     font-size: 1rem;
+  }
+
+  body .gifCard .gifCard-container {
+    height: 90vh;
+  }
+  body .gifCard .gifCard-container .card-image {
+    height: 70vh;
+    width: 80vw;
+  }
+  body .gifCard .gifCard-container .favorite-icon {
+    margin-top: 82vh;
+    transform: translateX(-23vw);
+  }
+  body .gifCard .gifCard-container .donwload-icon {
+    margin-top: 81vh;
   }
 }
 @media (min-width: 2560px) {
@@ -696,6 +761,40 @@ main .create-container .video-ad p {
 
   #mainContent #search .mainContent-terms #mainContent-terms_result a {
     font-size: 2rem;
+  }
+
+  body .gifCard .gifCard-container .x-icon img {
+    height: 50px;
+    width: 50px;
+  }
+  body .gifCard .gifCard-container .favorite-icon {
+    margin-top: 81vh;
+    transform: translateX(-23vw);
+  }
+  body .gifCard .gifCard-container .favorite-icon img {
+    height: 50px;
+    width: 50px;
+  }
+  body .gifCard .gifCard-container .donwload-icon {
+    margin-top: 81vh;
+  }
+  body .gifCard .gifCard-container .donwload-icon img {
+    height: 70px;
+    width: 70px;
+  }
+  body .gifCard .gifCard-container .gif-title {
+    font-size: 2.5rem;
+  }
+
+  #mainContent #trending {
+    height: 60vh;
+  }
+  #mainContent #trending #trending-gifos {
+    height: 40vh;
+  }
+  #mainContent #trending #trending-gifos img {
+    height: 420px;
+    width: 548px;
   }
 }
 * {
@@ -728,27 +827,30 @@ footer {
 }
 
 .gifCard {
+  top: 0;
+  left: 0;
   height: 100vh;
   width: 100vw;
-  z-index: 2;
-  position: absolute;
+  z-index: 20;
+  position: fixed;
   background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .gifCard .gifCard-container {
-  transform: translateY(10vh);
-  height: 100vh;
+  height: 50vh;
   width: 100vw;
-  background: white;
   position: relative;
 }
 .gifCard .gifCard-container .x-icon {
   position: absolute;
+  margin: 5vh 0 0 83vw;
   background: none;
   border: none;
-  margin: 5vh 0 0 83vw;
 }
 .gifCard .gifCard-container .card-image {
-  height: 20vh;
+  height: 30vh;
   width: 80vw;
   object-fit: cover;
   margin: 10vh 10vw 0;
@@ -756,14 +858,14 @@ footer {
 .gifCard .gifCard-container .favorite-icon {
   position: absolute;
   transform: translateX(-30vw);
-  margin-top: 32vh;
+  margin-top: 42vh;
   background: none;
   border: none;
 }
 .gifCard .gifCard-container .donwload-icon {
   position: absolute;
   transform: translateX(-20vw);
-  margin-top: 31vh;
+  margin-top: 41vh;
   background: none;
   border: none;
 }

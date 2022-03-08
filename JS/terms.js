@@ -33,8 +33,8 @@ function show_terms() {
                     }
                     searchGif().then(response => {
                         for (var i = 0; i < response.data.length; i++) {
-                            document.body.style.gridTemplateRows = '10vh 280vh 20vh';
-                            searchContainer.style.gridTemplateRows = '20vh 30vh 30vh 10vh 110vh 10vh';
+                            document.body.style.gridTemplateRows = '10vh 300vh 20vh';
+                            searchContainer.style.gridTemplateRows = '20vh 30vh 30vh 10vh 130vh 10vh';
                             //Gifs container
                             let foundGif = document.createElement('img');
                             foundGif.setAttribute('src', response.data[i].images.original.url);
@@ -44,7 +44,7 @@ function show_terms() {
                                     //GIF CARD
                                 //The styles for the Gif Card are set on the master.scss file.
                                 //To go to the top and stop scroll
-                                window.scrollTo(0, 0);
+                                // window.scrollTo(0, 0);
                                 body.style.overflow = 'hidden';
                                 //Gif card background. 
                                 let background = document.createElement('div');
@@ -96,6 +96,10 @@ function show_terms() {
                                 downloadImage.setAttribute('src', 'assets/icon-download.svg');
                                 downloadIcon.appendChild(downloadImage);
                                 gifContainer.appendChild(downloadIcon);
+                                downloadIcon.addEventListener('click', () => {
+                                    downloadIcon.setAttribute('download', gif.alt);
+                                    downloadIcon.setAttribute('href', gif.src);
+                                });
                                 //Title
                                 let title = document.createElement('p');
                                 title.setAttribute('class', 'gif-title');
@@ -152,8 +156,8 @@ function show_terms() {
                                 }
                                 searchGif().then(response => {
                                     for (var i = 0; i < response.data.length; i++) {
-                                        document.body.style.gridTemplateRows = '10vh 340vh 20vh';
-                                        searchContainer.style.gridTemplateRows = '20vh 20vh 20vh 10vh 210vh 0vh';
+                                        document.body.style.gridTemplateRows = '10vh 420vh 20vh';
+                                        searchContainer.style.gridTemplateRows = '20vh 30vh 30vh 10vh 260vh 0vh';
                                         //Gifs container
                                         let foundGif = document.createElement('img');
                                         foundGif.setAttribute('src', response.data[i].images.original.url);
@@ -163,7 +167,7 @@ function show_terms() {
                                             //GIF CARD
                                         //The styles for the Gif Card are set on the master.scss file.
                                         //To go to the top and stop scroll
-                                        window.scrollTo(0, 0);
+                                        // window.scrollTo(0, 0);
                                         body.style.overflow = 'hidden';
                                         //Gif card background. 
                                         let background = document.createElement('div');
@@ -215,6 +219,10 @@ function show_terms() {
                                         downloadImage.setAttribute('src', 'assets/icon-download.svg');
                                         downloadIcon.appendChild(downloadImage);
                                         gifContainer.appendChild(downloadIcon);
+                                        downloadIcon.addEventListener('click', () => {
+                                            downloadIcon.setAttribute('download', gif.alt);
+                                            downloadIcon.setAttribute('href', gif.src);
+                                        });
                                         //Title
                                         let title = document.createElement('p');
                                         title.setAttribute('class', 'gif-title');

@@ -1,4 +1,4 @@
-@media (min-width: 426px) {
+@media (min-width: 425px) {
     body {
         display: grid;
         grid-template-columns: 100vw;
@@ -9,6 +9,18 @@
     }
     #mainContent #search .mainContent-search img {
         width: 60vw;
+    }
+    body .gifCard .gifCard-container {
+        height: 70vh;
+        .card-image {
+            height: 50vh;
+        }
+        .favorite-icon {
+            margin-top: 62vh;
+        }
+        .donwload-icon {
+            margin-top: 61vh;
+        }
     }
 }
 @media (min-width: 648px) {
@@ -52,6 +64,20 @@
     }
     #top .navBar .navBar-menu_update {
         position: static;
+    }
+    //Gifcard - image
+    body .gifCard .gifCard-container {
+        height: 80vh;
+        .card-image {
+            height: 60vh;
+        }
+        .favorite-icon {
+            margin-top: 72vh;
+            transform: translateX(-25vw);
+        }
+        .donwload-icon {
+            margin-top: 71vh;
+        }
     }
 } 
 @media (min-width: 1020px) {
@@ -131,7 +157,32 @@
             align-items: flex-end;
         }
     }
-
+    body .gifCard .gifCard-container {
+        .x-icon {
+            img {
+                height: 25px;
+                width: 25px;
+            }
+        }
+        .favorite-icon {
+            margin-top: 72vh;
+            transform: translateX(-25vw);
+            img {
+                height: 25px;
+                width: 25px;
+            }
+        }
+        .donwload-icon {
+            margin-top: 71vh;
+            img {
+                height: 40px;
+                width: 40px;
+            }
+        }
+        .gif-title {
+            font-size: 1.5rem;
+        }
+    }
 }
 @media (min-width: 1440px) {
     #mainContent #search {
@@ -142,6 +193,21 @@
     }
     #top .navBar .navBar-menu .navBar-menu_item a {
         font-size: 1rem;
+    }
+    //Gif card
+    body .gifCard .gifCard-container {
+        height: 90vh;
+        .card-image {
+            height: 70vh;
+            width: 80vw;
+        }
+        .favorite-icon {
+            margin-top: 82vh;
+            transform: translateX(-23vw);
+        }
+        .donwload-icon {
+            margin-top: 81vh;
+        }
     }
 }
 @media (min-width: 2560px) {
@@ -169,4 +235,40 @@
     #mainContent #search .mainContent-terms #mainContent-terms_result a {
         font-size: 2rem;
     }
+    body .gifCard .gifCard-container {
+        .x-icon {
+            img {
+                height: 50px;
+                width: 50px;
+            }
+        }
+        .favorite-icon {
+            margin-top: 81vh;
+            transform: translateX(-23vw);
+            img {
+                height: 50px;
+                width: 50px;
+            }
+        }
+        .donwload-icon {
+            margin-top: 81vh;
+            img {
+                height: 70px;
+                width: 70px;
+            }
+        }
+        .gif-title {
+            font-size: 2.5rem;
+        }
+    }
+    #mainContent #trending {
+        height: 60vh;
+        #trending-gifos {
+            height: 40vh;
+            img {
+                height: 420px;
+                width: 548px;
+            }
+        }
+    } 
 }
