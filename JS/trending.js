@@ -96,10 +96,6 @@ getGif().then(response => {
             downloadIcon.appendChild(downloadImage);
             gifContainer.appendChild(downloadIcon);
             downloadIcon.addEventListener('click', () => {
-                // downloadIcon.setAttribute('download', gif.alt);
-                // downloadIcon.setAttribute('href', gif.src);
-                // down = gif.src;
-                // invokeSaveAsDialog(down, "My-gif.gif");
                 downloadFromGiphy(gif.src, gif.alt);
             });
             //Title
