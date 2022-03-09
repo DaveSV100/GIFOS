@@ -42,69 +42,7 @@ const searchGif = async (value) => {
             foundGif.setAttribute('src', data.data[i].images.original.url);
             foundGif.setAttribute('alt', data.data[i].title);
             gifs.appendChild(foundGif);
-            foundGif.addEventListener('click', () => {
-                        //GIF CARD
-            //The styles for the Gif Card are set on the master.scss file.
-            body.style.overflow = 'hidden';
-            //Gif card background. 
-            let background = document.createElement('div');
-            background.setAttribute('class', 'gifCard');
-            body.appendChild(background);
-            //Gif container
-            let gifContainer = document.createElement('div');
-            gifContainer.setAttribute('class', 'gifCard-container');
-            background.appendChild(gifContainer);
-            //Close icon
-            let x = document.createElement('button');
-            x.setAttribute('class', 'x-icon');
-            x.setAttribute('type', 'submit');
-            let xIcon = document.createElement('img');
-            xIcon.setAttribute('src', 'assets/close.svg');
-            xIcon.setAttribute('alt', 'Close card');
-            x.appendChild(xIcon);
-            gifContainer.appendChild(x);
-            x.addEventListener('click', () => {
-                background.remove();
-                gifContainer.remove();
-                body.style.overflow = 'scroll';
-            })
-            //Gif image
-            let gifContainer_img = document.createElement('img');
-            gifContainer_img.setAttribute('src', foundGif.src);
-            gifContainer_img.setAttribute('alt', foundGif.alt);
-            gifContainer_img.setAttribute('class', 'card-image');
-            gifContainer.appendChild(gifContainer_img);
-            //Favorite icon
-            let favIcon = document.createElement('button');
-            favIcon.setAttribute('class', 'favorite-icon');
-            let favImage = document.createElement('img');
-            favImage.setAttribute('src', 'assets/icon-fav-active.svg');
-            favImage.setAttribute('alt', 'Ícono de añadir a favoritos');
-            favIcon.appendChild(favImage);
-            gifContainer.appendChild(favIcon);
-            //Local Storage
-            favIcon.addEventListener('click', () => {
-                localStorage.setItem('gifImg', foundGif.src);
-                localStorage.setItem('gifTitle', foundGif.alt);
-                let favGif_url = localStorage.getItem('gifImg');
-                let favGif_title = localStorage.getItem('gifTitle');
-                console.log(favGif_url);
-                console.log(favGif_title);
-            });
-            //Donwload icon 
-            let downloadIcon = document.createElement('button');
-            downloadIcon.setAttribute('class', 'donwload-icon');
-            let downloadImage = document.createElement('img');
-            downloadImage.setAttribute('src', 'assets/icon-download.svg');
-            downloadIcon.appendChild(downloadImage);
-            gifContainer.appendChild(downloadIcon);
-            //Title
-            let title = document.createElement('p');
-            title.setAttribute('class', 'gif-title');
-            let titleContent = foundGif.alt;
-            title.textContent = titleContent;
-            gifContainer.appendChild(title);
-            })   
+            foundGif.addEventListener('click', () => {gifCard(foundGif.src, foundGif.alt)})   
         }
         //Gif result title
         let gifTitle = document.createElement('p');
@@ -146,76 +84,13 @@ const searchGif = async (value) => {
                         foundGif.setAttribute('src', response.data[i].images.original.url);
                         foundGif.setAttribute('alt', response.data[i].title);
                         gifs.appendChild(foundGif);
-                        foundGif.addEventListener('click', () => {
-                                    //GIF CARD
-                        //The styles for the Gif Card are set on the master.scss file.
-                        body.style.overflow = 'hidden';
-                        //Gif card background. 
-                        let background = document.createElement('div');
-                        background.setAttribute('class', 'gifCard');
-                        body.appendChild(background);
-                        //Gif container
-                        let gifContainer = document.createElement('div');
-                        gifContainer.setAttribute('class', 'gifCard-container');
-                        background.appendChild(gifContainer);
-                        //Close icon
-                        let x = document.createElement('button');
-                        x.setAttribute('class', 'x-icon');
-                        x.setAttribute('type', 'submit');
-                        let xIcon = document.createElement('img');
-                        xIcon.setAttribute('src', 'assets/close.svg');
-                        xIcon.setAttribute('alt', 'Close card');
-                        x.appendChild(xIcon);
-                        gifContainer.appendChild(x);
-                        x.addEventListener('click', () => {
-                            background.remove();
-                            gifContainer.remove();
-                            body.style.overflow = 'scroll';
-                        })
-                        //Gif image
-                        let gifContainer_img = document.createElement('img');
-                        gifContainer_img.setAttribute('src', foundGif.src)
-                        gifContainer_img.setAttribute('alt', foundGif.alt);
-                        gifContainer_img.setAttribute('class', 'card-image');
-                        gifContainer.appendChild(gifContainer_img);
-                        //Favorite icon
-                        let favIcon = document.createElement('button');
-                        favIcon.setAttribute('class', 'favorite-icon');
-                        let favImage = document.createElement('img');
-                        favImage.setAttribute('src', 'assets/icon-fav-active.svg');
-                        favImage.setAttribute('alt', 'Ícono de añadir a favoritos');
-                        favIcon.appendChild(favImage);
-                        gifContainer.appendChild(favIcon);
-                        //Local Storage
-                        favIcon.addEventListener('click', () => {
-                            localStorage.setItem('gifImg', foundGif.src);
-                            localStorage.setItem('gifTitle', foundGif.alt);
-                            let favGif_url = localStorage.getItem('gifImg');
-                            let favGif_title = localStorage.getItem('gifTitle');
-                            console.log(favGif_url);
-                            console.log(favGif_title);
-                        });
-                        //Donwload icon 
-                        let downloadIcon = document.createElement('button');
-                        downloadIcon.setAttribute('class', 'donwload-icon');
-                        let downloadImage = document.createElement('img');
-                        downloadImage.setAttribute('src', 'assets/icon-download.svg');
-                        downloadImage.setAttribute('alt', 'Ícono de descargar');
-                        downloadIcon.appendChild(downloadImage);
-                        gifContainer.appendChild(downloadIcon);
-                        //Title
-                        let title = document.createElement('p');
-                        title.setAttribute('class', 'gif-title');
-                        let titleContent = foundGif.alt;
-                        title.textContent = titleContent;
-                        gifContainer.appendChild(title);
-                        })   
-                            }
-                            //Remove button
-                            gifsBtn.remove();
-                        }).catch(err => {
-                            console.error('something went wrong :/', err);
-                        })
+                        foundGif.addEventListener('click', () => {gifCard(foundGif.src, foundGif.alt)})   
+                    }
+                    //Remove button
+                    gifsBtn.remove();
+                }).catch(err => {
+                    console.error('something went wrong :/', err);
+                })
             });
         }
     } catch{}
