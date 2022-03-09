@@ -555,9 +555,13 @@ main .create-container .video-ad p {
     margin-top: 61vh;
   }
 }
-@media (min-width: 648px) {
+@media (min-width: 600px) {
   #mainContent #search {
     grid-template-rows: 20vh 40vh 30vh 0vh 0vh 0vh;
+  }
+  #mainContent #search #result-gifs img {
+    width: 250px;
+    height: 250px;
   }
 }
 @media (min-width: 768px) {
@@ -611,7 +615,7 @@ main .create-container .video-ad p {
     margin-top: 71vh;
   }
 }
-@media (min-width: 1020px) {
+@media (min-width: 1000px) {
   #mainContent #search {
     grid-template-rows: 20vh 40vh 20vh 0vh 0vh 0vh;
   }
@@ -623,6 +627,10 @@ main .create-container .video-ad p {
   }
   #mainContent #search .mainContent-search img {
     width: 40vw;
+  }
+  #mainContent #search #result-gifs img {
+    height: 300px;
+    width: 300px;
   }
 
   #mainContent #trending {

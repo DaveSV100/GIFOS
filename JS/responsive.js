@@ -4,18 +4,36 @@ const layout1 = () => {
     console.log("***** Layout1 ****")
     console.log(searchHandler1);
     const width1 = window.innerWidth;
-    if(width1 >= 300 && width1 < 425) {
+    if(width1 >= 300 && width1 < 450) {
         console.log("This is a phone");
+        // document.classList.toggle("mobile-body");
+        // resultContainer.classList.toggle("mobile-container");
         document.body.style.gridTemplateRows = '10vh 300vh 20vh';
-        resultContainer.style.gridTemplateRows = '20vh 30vh 30vh 10vh 130vh 10vh';
-    } else if(width1 >= 425 && width1 < 768) {
-        console.log("This is a large mobile")
-    } else if(width1 >=768 && width1 < 1020) {
+        resultContainer.style.gridTemplateRows = '20vh 30vh 30vh 10vh 140vh 10vh';
+    } else if(width1 >= 450 && width1 < 600) {
+        console.log("This is a large mobile");
+        document.body.style.gridTemplateRows = '10vh 250vh 20vh';
+        resultContainer.style.gridTemplateRows = '20vh 30vh 30vh 10vh 90vh 10vh';
+    } else if(width1 >= 600 && width1 < 750) {
         console.log("This is a tablet");
-    } else if(width1 >=1020 && width1 < 2560) {
+        document.body.style.gridTemplateRows = '10vh 390vh 20vh';
+        resultContainer.style.gridTemplateRows = '20vh 40vh 30vh 10vh 220vh 10vh';
+    } else if(width1 >= 750 && width1 < 1000) {
+        console.log("This is a tablet");
+        document.body.style.gridTemplateRows = '10vh 320vh 20vh';
+        resultContainer.style.gridTemplateRows = '20vh 40vh 30vh 10vh 150vh 10vh';
+    } else if(width1 >=1000 && width1 < 1155) {
         console.log("This is a laptop");
-    } else if(width1 >= 2560) {
+        document.body.style.gridTemplateRows = '10vh 350vh 20vh';
+        resultContainer.style.gridTemplateRows = '20vh 40vh 30vh 10vh 180vh 10vh';
+    } else if(width1 >=1150 && width1 < 1400) {
+        console.log("This is a laptop");
+        document.body.style.gridTemplateRows = '10vh 310vh 20vh';
+        resultContainer.style.gridTemplateRows = '20vh 40vh 30vh 10vh 140vh 10vh';
+    } else if(width1 >= 1400) {
         console.log("This is a larger laptop or a tv");
+        document.body.style.gridTemplateRows = '10vh 280vh 20vh';
+        resultContainer.style.gridTemplateRows = '20vh 40vh 30vh 10vh 110vh 10vh';
     }
 }
 const layout2 = () => {
