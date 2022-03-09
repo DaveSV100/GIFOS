@@ -1,5 +1,7 @@
                     //SEARCH
 const searchUrl = "https://api.giphy.com/v1/gifs/search?";
+let searchHandler1 = false;
+let searchHandler2 = false;
 let searchIcon = document.getElementById('search-icon');
 let searchContainer = document.getElementById('search');
 let title = document.getElementById('result-title')
@@ -10,8 +12,8 @@ let searchedGifs = document.getElementsByClassName('mainContent-gifs');
 let searchButton = document.getElementById('searchBtn');
 let word = document.getElementById('search-box');
 //Width
-const width = window.innerWidth;
-console.log("The width of this device is: ", width);
+// const width = window.innerWidth;
+// console.log("The width of this device is: ", width);
 
 word.autocomplete = "off";
 searchContainer.onkeyup = (e) => {
@@ -22,6 +24,7 @@ searchContainer.onkeyup = (e) => {
 searchButton.addEventListener('click', () => searchGif());
 
 function searchGif () {
+    
     //Remove autocomplete container
     // const box = document.getElementById('autocomplete-container');
     // box.remove();
@@ -39,9 +42,12 @@ function searchGif () {
         return data;
     }
     searchGif().then(response => {
+        //Change layout (the function is on the response.js file)
+        searchHandler1 = true;
+        layout1();
         for (var i = 0; i < response.data.length; i++) {
-            document.body.style.gridTemplateRows = '10vh 300vh 20vh';
-            searchContainer.style.gridTemplateRows = '20vh 30vh 30vh 10vh 130vh 10vh';
+            // document.body.style.gridTemplateRows = '10vh 300vh 20vh';
+            // searchContainer.style.gridTemplateRows = '20vh 30vh 30vh 10vh 130vh 10vh';
             //Gifs container
             let foundGif = document.createElement('img');
             foundGif.setAttribute('src', response.data[i].images.original.url);
@@ -161,9 +167,13 @@ function searchGif () {
                     return data;
                 }
                 searchGif().then(response => {
+                    //Change layout (the function on in the response.js file)
+                    searchHandler1 = false;
+                    searchHandler2 = true;
+                    layout2();
                     for (var i = 0; i < response.data.length; i++) {
-                        document.body.style.gridTemplateRows = '10vh 420vh 20vh';
-                        searchContainer.style.gridTemplateRows = '20vh 30vh 30vh 10vh 260vh 0vh';
+                        // document.body.style.gridTemplateRows = '10vh 420vh 20vh';
+                        // searchContainer.style.gridTemplateRows = '20vh 30vh 30vh 10vh 260vh 0vh';
                         //Gifs container
                         let foundGif = document.createElement('img');
                         foundGif.setAttribute('src', response.data[i].images.original.url);

@@ -6,8 +6,6 @@ async function getGif() {
     let fetch_url = `${trendingUrl}&api_key=${apiKey}&limit=30&offset=0`;
     const response = await fetch(fetch_url);
     const data = await response.json();
-    console.log(fetch_url);
-    console.log(data);
     return data;
 }
 getGif().then(response => {
