@@ -29,9 +29,10 @@ function show_terms() {
                         return data;
                     }
                     searchGif().then(response => {
+                        //Change layout (the function on in the response.js file)
+                        searchHandler1 = true;
+                        layout1();
                         for (var i = 0; i < response.data.length; i++) {
-                            document.body.style.gridTemplateRows = '10vh 300vh 20vh';
-                            searchContainer.style.gridTemplateRows = '20vh 30vh 30vh 10vh 130vh 10vh';
                             //Gifs container
                             let foundGif = document.createElement('img');
                             foundGif.setAttribute('src', response.data[i].images.original.url);
@@ -151,9 +152,11 @@ function show_terms() {
                                     return data;
                                 }
                                 searchGif().then(response => {
+                                    //Change layout (the function on in the response.js file)
+                                    searchHandler1 = false;
+                                    searchHandler2 = true;
+                                    layout2();
                                     for (var i = 0; i < response.data.length; i++) {
-                                        document.body.style.gridTemplateRows = '10vh 420vh 20vh';
-                                        searchContainer.style.gridTemplateRows = '20vh 30vh 30vh 10vh 260vh 0vh';
                                         //Gifs container
                                         let foundGif = document.createElement('img');
                                         foundGif.setAttribute('src', response.data[i].images.original.url);
