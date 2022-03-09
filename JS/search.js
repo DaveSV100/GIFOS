@@ -1,16 +1,16 @@
                             //SEARCH
 const searchUrl = "https://api.giphy.com/v1/gifs/search?";
+const searchIcon = document.getElementById('search-icon');
+const searchContainer = document.getElementById('search');
+const title = document.getElementById('result-title')
+const searchedTitle = document.getElementsByClassName('mainContent-result');
+const gifs = document.getElementById('result-gifs');
+const gifsBtn = document.getElementById('result-button');
+const searchedGifs = document.getElementsByClassName('mainContent-gifs');
+const searchButton = document.getElementById('searchBtn');
+const word = document.getElementById('search-box');
 let searchHandler1 = false;
 let searchHandler2 = false;
-let searchIcon = document.getElementById('search-icon');
-let searchContainer = document.getElementById('search');
-let title = document.getElementById('result-title')
-let searchedTitle = document.getElementsByClassName('mainContent-result');
-let gifs = document.getElementById('result-gifs');
-let gifsBtn = document.getElementById('result-button');
-let searchedGifs = document.getElementsByClassName('mainContent-gifs');
-let searchButton = document.getElementById('searchBtn');
-let word = document.getElementById('search-box');
 
 word.autocomplete = "off";
 searchContainer.onkeyup = (e) => {
@@ -29,6 +29,7 @@ const searchGif = async (value) => {
     let search_fetch = `${searchUrl}&api_key=${apiKey}&q=${value}&limit=12&offset=0&rating=g`;
     const response = await fetch(search_fetch);
     const data = await response.json();
+
     try {
         //Change layout (the function is on the response.js file)
         searchHandler1 = true;
@@ -69,7 +70,8 @@ const searchGif = async (value) => {
             })
             //Gif image
             let gifContainer_img = document.createElement('img');
-            gifContainer_img.setAttribute('src', foundGif.src)
+            gifContainer_img.setAttribute('src', foundGif.src);
+            gifContainer_img.setAttribute('alt', foundGif.alt);
             gifContainer_img.setAttribute('class', 'card-image');
             gifContainer.appendChild(gifContainer_img);
             //Favorite icon
@@ -77,6 +79,7 @@ const searchGif = async (value) => {
             favIcon.setAttribute('class', 'favorite-icon');
             let favImage = document.createElement('img');
             favImage.setAttribute('src', 'assets/icon-fav-active.svg');
+            favImage.setAttribute('alt', 'Ícono de añadir a favoritos');
             favIcon.appendChild(favImage);
             gifContainer.appendChild(favIcon);
             //Local Storage
@@ -103,23 +106,6 @@ const searchGif = async (value) => {
             gifContainer.appendChild(title);
             })   
         }
-        //Change icon from 'search'(icon == s) to 'close'(icon == c) to reload page and search something else
-        // if (search.length === "") {
-        //     //It won't fetch any gif because the input is empty and will not change the icon
-        //  } else {
-        //      let icon = 's';
-        //      if (icon =='s') {
-        //       searchIcon.src='assets/close.svg';
-        //       icon='c';
-        //       //Reload page
-        //       searchButton.addEventListener('click', () => {
-        //          location.reload();
-        //       })
-        //      } else {
-        //          searchIcon.src='assets/icon-search.svg';
-        //          icon='s';
-        //      }
-        // }
         //Gif result title
         let gifTitle = document.createElement('p');
         let titleName = search;
@@ -189,6 +175,7 @@ const searchGif = async (value) => {
                         //Gif image
                         let gifContainer_img = document.createElement('img');
                         gifContainer_img.setAttribute('src', foundGif.src)
+                        gifContainer_img.setAttribute('alt', foundGif.alt);
                         gifContainer_img.setAttribute('class', 'card-image');
                         gifContainer.appendChild(gifContainer_img);
                         //Favorite icon
@@ -196,6 +183,7 @@ const searchGif = async (value) => {
                         favIcon.setAttribute('class', 'favorite-icon');
                         let favImage = document.createElement('img');
                         favImage.setAttribute('src', 'assets/icon-fav-active.svg');
+                        favImage.setAttribute('alt', 'Ícono de añadir a favoritos');
                         favIcon.appendChild(favImage);
                         gifContainer.appendChild(favIcon);
                         //Local Storage
@@ -212,6 +200,7 @@ const searchGif = async (value) => {
                         downloadIcon.setAttribute('class', 'donwload-icon');
                         let downloadImage = document.createElement('img');
                         downloadImage.setAttribute('src', 'assets/icon-download.svg');
+                        downloadImage.setAttribute('alt', 'Ícono de descargar');
                         downloadIcon.appendChild(downloadImage);
                         gifContainer.appendChild(downloadIcon);
                         //Title

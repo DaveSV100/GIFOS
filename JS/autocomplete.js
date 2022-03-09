@@ -2,11 +2,11 @@
 const autocomplete_url = "https://api.giphy.com/v1/gifs/search/tags?";
 const mainContent_search = document.querySelector('.mainContent-search');
 const suggestions_container = document.querySelector('.search-container')
-const inputBox = document.getElementById('search-box');
+// const inputBox = document.getElementById('search-box');
 
 
-inputBox.addEventListener("input", () => {
-    const value = inputBox.value;
+word.addEventListener("input", () => {
+    const value = word.value;
     autocomplete(value);
 });
 
@@ -36,12 +36,10 @@ const displaySuggestions = (data) => {
     for (let i = 0; i < data.data.length; i++) {
         const suggestion = document.createElement("a");
         suggestion.textContent = data.data[i].name;
-        // suggestion.addEventListener("click", () => search());
         container.appendChild(suggestion);
         suggestion.addEventListener("click", () => {
+            word.value = "";
             searchGif(data.data[i].name);
-            changeIcon();
-            clean();
         })
     }
     
@@ -75,5 +73,3 @@ const changeIcon = () => {
     //         }
     // }
 }
-
-
