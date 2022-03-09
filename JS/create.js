@@ -69,6 +69,8 @@ async function record() {
     number1.style.color = "#572EE5";
     number2.style.backgroundColor = "#572EE5";
     number2.style.color = "#ffffff";
+    number3.style.backgroundColor = "#ffffff";
+    number3.style.color = "#572EE5";
     const recordBtn = document.createElement("button");
     recordBtn.setAttribute("id", "recordBtn");
     recordBtn.setAttribute("class", "create-gifs_button");
@@ -196,6 +198,7 @@ async function uploadGif(id) {
     const data = await response.json();
     console.log(data)
     try {
+        //Save to local storage
         const new_data = data.data.images.downsized.url;
         if(localStorage.getItem('gifo') == null) {
             localStorage.setItem('gifo', '[]');
@@ -223,10 +226,32 @@ async function uploadGif(id) {
         adImg.setAttribute("src", "./assets/check.png");
         adImg.setAttribute("alt", "Ícono de subido");
         adText.textContent = "GIFO subido con éxito";
-        // let gif = document.createElement("img");
-        // gif.setAttribute("src", data.data.images.downsized.url);
-        // gif.setAttribute("alt", "mygif");
-        // container.appendChild(gif);
+        //Make new 2 buttons: repeat and go to my_gifos.html
+        const repeatBtn = document.createElement("button");
+        repeatBtn.innerText = "REPETIR CAPTURA";
+        repeatBtn.setAttribute("id", "repeatBtn");
+        repeatBtn.setAttribute("class", "create-gifs_button");
+        const container = document.querySelector(".create-actions");
+        container.appendChild(repeatBtn);
+        repeatBtn.addEventListener("click", () => {
+            repeatBtn.remove();
+            ad.remove();
+            number3.style.backgroundColor = "#ffffff";
+            number3.style.color = "#572EE5";
+            init();
+            // video.srcObject = stream;
+            // record();
+        })
+        const pageBtn = document.createElement("button");
+        pageBtn.innerText = "VER GIFOS";
+        pageBtn.setAttribute("id", "pageBtn");
+        pageBtn.setAttribute("class", "create-gifs_button");
+        // const box = document.querySelector(".create-actions");
+        container.appendChild(pageBtn);
+        pageBtn.addEventListener("click", () => {
+            pageBtn.remove();
+            window.location.href = "../my_gifos.html";
+        })
     } 
     //From ecma script 9 on, you don't need to place the catch with console log (error) and all of that stuff anymore
     catch {}

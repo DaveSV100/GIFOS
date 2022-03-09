@@ -83,6 +83,10 @@
             margin-top: 71vh;
         }
     }
+    #favoritePage .favorite-gifs .favorite-gifs_result img {
+        width: 250px;
+        height: 250px;
+    }
 } 
 @media (min-width: 1000px) {
     //Home page
@@ -147,12 +151,6 @@
             width: 60vw;
             .create-container_text {
                 width: 40vw;
-                .create-container_title {
-                    // max-width: 50vw;
-                }
-                .create-container_paragraph {
-                    // max-width: 50vw;
-                }
             }
         }
         .create-actions {
@@ -217,6 +215,10 @@
             margin-top: 81vh;
         }
     }
+    #favoritePage .favorite-gifs .favorite-gifs_result img {
+        width: 350px;
+        height: 350px;
+    }
 }
 @media (min-width: 2560px) {
     #mainContent #search .mainContent-title1 {
@@ -280,11 +282,3 @@
         }
     } 
 }
-//Gifs layout displayed when searching for
-// .mobile-body {
-//     grid-template-rows: 10vh 300vh 20vh;
-// }
-// .mobile-container {
-//     grid-template-rows: 20vh 30vh 30vh 10vh 130vh 10vh;
-// }
-// .mobile-

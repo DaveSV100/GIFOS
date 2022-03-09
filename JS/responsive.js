@@ -83,3 +83,6 @@ const selectLayout = () => {
 
 window.addEventListener("resize", selectLayout);
 // window.onresize = sizeEventListener;
+
+//Layout for favorites.html and myGifos.html
+

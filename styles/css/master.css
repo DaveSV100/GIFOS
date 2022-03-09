@@ -404,7 +404,7 @@
   height: 50vh;
   display: grid;
   grid-template-columns: 100vw;
-  grid-template-rows: 10vh 60vh 15vh 10vh;
+  grid-template-rows: 10vh 60vh 20vh 10vh;
   grid-template-areas: "camera-icon" "create-container" "create-actions" "movie-icon";
 }
 .main-create .camera-icon {
@@ -441,7 +441,7 @@
 }
 .main-create .create-actions {
   grid-area: create-actions;
-  height: 15vh;
+  height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -614,6 +614,11 @@ main .create-container .video-ad p {
   body .gifCard .gifCard-container .donwload-icon {
     margin-top: 71vh;
   }
+
+  #favoritePage .favorite-gifs .favorite-gifs_result img {
+    width: 250px;
+    height: 250px;
+  }
 }
 @media (min-width: 1000px) {
   #mainContent #search {
@@ -740,6 +745,11 @@ main .create-container .video-ad p {
   }
   body .gifCard .gifCard-container .donwload-icon {
     margin-top: 81vh;
+  }
+
+  #favoritePage .favorite-gifs .favorite-gifs_result img {
+    width: 350px;
+    height: 350px;
   }
 }
 @media (min-width: 2560px) {
