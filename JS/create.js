@@ -123,6 +123,18 @@ async function stop() {
     const button = document.getElementById("stopBtn");
     button.remove()
     console.log("stopping........")
+    //Creating gifo advertisement
+    const ad = document.createElement("div");
+    ad.setAttribute("class", "video-ad");
+    videoContainer.appendChild(ad);
+    const adImg = document.createElement("img");
+    adImg.setAttribute("src", "./assets/loading.png");
+    adImg.setAttribute("alt", "Ícono de cargando");
+    ad.appendChild(adImg);
+    const adText = document.createElement("p");
+    adText.textContent = "Estamos configurando tu GIFO...";
+    ad.appendChild(adText);
+    //Stop and get blob
     await videoRecorder.stopRecording();
     await gifRecorder.stopRecording();
     const videoBlob = await videoRecorder.getBlob();
@@ -158,6 +170,7 @@ async function stop() {
     console.log(await data);
     console.log("***Upload ended***");
     if(data.meta.status === 200) {
+        ad.remove();
         const id = data.data.id;
         console.log(id);
         let uploadBtn = document.createElement("button");

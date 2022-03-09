@@ -54,12 +54,15 @@
         .navBar-menu_item a {
             text-transform: uppercase;
             font-family: 'Montserrat-Bold', sans-serif;
-            font-size: 13px;
+            font-size: .8rem;
             font-weight: 600;
             color: #572EE5;
             letter-spacing: 0;
             text-align: center;
             padding-right: 30px;
+        }
+        .navBar-menu_create a img {
+            margin-top: 2vh;
         }
         .navBar-menu_line {
             height: 0;
