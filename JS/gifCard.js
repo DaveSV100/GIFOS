@@ -77,3 +77,4 @@ const gifCard = (source, alt) => {
     title.textContent = titleContent;
     gifContainer.appendChild(title);
 }
+

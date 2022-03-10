@@ -9,18 +9,18 @@ async function getGif() {
     return data;
 }
 getGif().then(response => {
-    // const data = response.data[0].id;
-    // console.log(data)
-    // const ids = [];
-    // console.log(ids);
     for (let i = 0; i < response.data.length; i++) {
-        // const id = response.data[i].id;
-        // ids.push(id);
         let gif = document.createElement('img');
         gif.setAttribute('src', response.data[i].images.original.url);
         gif.setAttribute('alt', response.data[i].title);
         trending.appendChild(gif);
         gif.addEventListener('click', () => {gifCard(gif.src, gif.alt)});   
+        gif.addEventListener("mouseover", () => {
+            console.log("Hey, i'mma display the card");
+            // const ad = document.createElement("div");
+            // ad.setAttribute("class", "overCard");
+            // gif.appendChild(ad);
+        })
     }
 }).catch(err => {
     console.error('something went wrong :/', err);

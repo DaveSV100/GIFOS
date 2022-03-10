@@ -1,0 +1,105 @@
+body.darkTheme {
+    background-color: var(--darkColor);
+    #top .navBar {
+        background-color: var(--darkColor);
+        .navBar-menu_update {
+            background-color: #000000;
+        }
+        .navBar-menu a {
+            color: #FFFFFF;
+        }
+    }
+    #mainContent {
+        #search {
+            .mainContent-title1 h1 {
+                color: #FFFFFF;
+            }
+            .mainContent-search .search-container {
+                #search-box {
+                    border: 1px solid #FFFFFF;
+                    color: #FFFFFF;
+                }
+                .autocomplete-container {
+                    color: #FFFFFF;
+                }
+            }
+            .mainContent-terms {
+                .mainContent-terms_title {
+                    color: #FFFFFF;
+                }
+                #mainContent-terms_result a {
+                    color: #FFFFFF;
+                }
+            }
+        }
+        #trending {
+            background-color: var(--darkColor2);
+            .trending-text {
+                background-color: var(--darkColor2);
+                h2 {
+                    color: #FFFFFF;
+                }
+                p {
+                    color: #FFFFFF;
+                }
+            }
+            #trending-gifos {
+                background-color: var(--darkColor2);
+            }
+        }
+    }
+    #bottom {
+        .bottom-networks a i {
+            color: #FFFFFF;
+        }
+        p {
+            color: #FFFFFF;
+        }
+    }
+}
+body.darkTheme {
+    #favoritePage {
+        #favorite h1 {
+            color: #FFFFFF
+        }
+        .see-more_btn {
+            border: 1px solid #ffffff;
+            color: #FFFFFF;
+        }
+        #trending {
+            background-color: var(--darkColor2);
+            .trending-text {
+                background-color: var(--darkColor2);
+                h2 {
+                    color: #FFFFFF;
+                }
+                p {
+                    color: #FFFFFF;
+                }
+            }
+            #trending-gifos {
+                background-color: var(--darkColor2);
+            }
+        }
+    }
+}
+body.darkTheme .main-create {
+    .create-container .create-container_text {
+        .create-container_title {
+            color: #FFFFFF;
+        }
+        .create-container_paragraph {
+            color: #FFFFFF;
+        }
+    }
+    .create-actions {
+        .create-actions_numbers .create-number {
+            border: 1px solid #ffffff;
+            color: #FFFFFF;
+        }
+    }
+    .create-gifs_button {
+        border: 1px solid #ffffff;
+        color: #FFFFFF;
+    }
+}

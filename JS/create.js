@@ -14,6 +14,7 @@ let videoRecorder;
 let gifRecorder;
 let gifSrc;
 let playing = false;
+console.log(darkModeIsRunning);
 
 //Async await instead of promises and .then
 async function fetchURL(url, params = null) {
@@ -255,6 +256,7 @@ async function uploadGif(id) {
         repeatBtn.addEventListener("click", () => {
             repeatBtn.remove();
             ad.remove();
+            pageBtn.remove();
             number3.style.backgroundColor = "#ffffff";
             number3.style.color = "#572EE5";
             init();

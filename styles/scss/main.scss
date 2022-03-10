@@ -42,6 +42,7 @@
             }
             .search-container {
                 #search-box {
+                    background: none;
                     margin-top: -10px;
                     height: 50px;
                     min-width: 290px;
@@ -195,10 +196,7 @@
             height: 30vh;
             width: 100vw;
             display: flex;
-            overflow: scroll;
-            // overflow-x: scroll;
-            // overscroll-behavior-x: contain;
-            // scroll-snap-type: x proximity;
+            overflow: auto;
             img {
                 height: 187px;
                 width: 243px;

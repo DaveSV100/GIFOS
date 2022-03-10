@@ -20,7 +20,7 @@
            <a href="index.html" id="logo-icon"><img class="logo" src="assets/logo-mobile.svg" alt="Gifos logo"></a>
            <ul class="navBar-menu">
                 <li class="navBar-menu_item">
-                    <a href="/dark_mode.html">Modo nocturno</a>
+                    <a class="darkMode">Modo nocturno</a>
                 </li>
                 <div class="navBar-menu_line"></div>
                 <li class="navBar-menu_item">
@@ -32,7 +32,7 @@
                 </li>
                 <div class="navBar-menu_line"></div>
                 <li class="navBar-menu_item">
-                    <a class="navBar-menu_item_create" href="/crear.html"><img src="assets/button-crear-gifo.svg" alt="Crear gif"></a>
+                    <a class="navBar-menu_item_create" href="/create.html"><img src="assets/button-crear-gifo.svg" alt="Crear gif"></a>
                 </li>
                 <div class="navBar-menu_line"></div>
            </ul>
@@ -42,7 +42,7 @@
     <!--Search and Trending-->
     <main class="main-create">
             <div class="camera-icon">
-                <img src="assets/camara.svg" alt="Ícono de cámara">
+                <img id="cameraIcon" src="assets/camara.svg" alt="Ícono de cámara">
             </div>
             <!--Video container-->
             <div class="create-container">
@@ -63,7 +63,7 @@
                 <button id="create-button" class="create-gifs_button" value="start">COMENZAR</button>
             </div>
             <div class="movie-icon">
-                <img src="assets/pelicula.svg" alt="Ícono de cinta">
+                <img id="movieIcon" src="assets/pelicula.svg" alt="Ícono de cinta">
             </div>
     </main>
     <!--Last part-->
@@ -79,6 +79,7 @@
     </footer>
     <!--Scripts-->
     <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+    <script src="JS/darkMode.js"></script>
     <script src="JS/menu.js"></script>
     <script src="JS/create.js"></script>
 </body>

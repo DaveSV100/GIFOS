@@ -1,8 +1,9 @@
-@import 'header.scss', 'main.scss', 'footer.scss', 'favorites.scss', 'create.scss', 'responsive.scss';
+@import 'darkMode.scss', 'header.scss', 'main.scss', 'footer.scss', 'favorites.scss', 'create.scss', 'responsive.scss';
 * {
     margin: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
 }
 body {
     display: grid;
@@ -23,6 +24,8 @@ footer {
 }
 :root {
     --main: #572EE5;
+    --darkColor: #37383C;
+    --darkColor2: #222326;
 }
 
 //GIF CARD
