@@ -212,13 +212,19 @@ async function uploadGif(id) {
     console.log(data)
     try {
         //Save to local storage
-        const new_data = data.data.images.downsized.url;
+        const source = data.data.images.downsized.url;
+        const alt = "Mi Gifo";
+        let gifObj = {
+            src: source,
+            name: alt,
+        };
+
         if(localStorage.getItem('gifo') == null) {
             localStorage.setItem('gifo', '[]');
         }
-        let old_data = JSON.parse(localStorage.getItem('gifo'));
-        old_data.push(new_data);
-        localStorage.setItem('gifo', JSON.stringify(old_data));
+        let favData = JSON.parse(localStorage.getItem('gifo'));
+        favData.push(gifObj);
+        localStorage.setItem('gifo', JSON.stringify(favData));
         const lastBtn = document.getElementById("uploadBtn");
         lastBtn.remove();
         //Popup advertisment

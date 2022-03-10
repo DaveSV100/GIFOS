@@ -1,5 +1,4 @@
 const gifCard = (source, alt) => {
-    console.log(source, alt);
         //GIF CARD
     //The styles for the Gif Card are set on the master.scss file.
     body.style.overflow = 'hidden';
@@ -42,27 +41,19 @@ const gifCard = (source, alt) => {
     //Local Storage
     favIcon.addEventListener('click', () => {
         console.log('Favorite button');
-        // favorite(source, alt);
         let gifObj = {
             src: source,
             name: alt,
         };
-        
+
         if(localStorage.getItem('data') == null) {
             localStorage.setItem('data', '[]');
         }
         let favData = JSON.parse(localStorage.getItem('data'));
         favData.push(gifObj);
         localStorage.setItem('data', JSON.stringify(favData));
-        // saveData();
-        // let src = source;
-        // if(localStorage.getItem('data') == null) {
-        //     localStorage.setItem('data', '[]');
-        // }
-        // let old_data = JSON.parse(localStorage.getItem('data'));
-        // old_data.push(src);
-        // localStorage.setItem('data', JSON.stringify(old_data));
     });
+    
 
     //Donwload icon 
     let downloadIcon = document.createElement('button');
