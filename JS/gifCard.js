@@ -42,13 +42,26 @@ const gifCard = (source, alt) => {
     //Local Storage
     favIcon.addEventListener('click', () => {
         console.log('Favorite button');
-        let new_data = source;
+        // favorite(source, alt);
+        let gifObj = {
+            src: source,
+            name: alt,
+        };
+        
         if(localStorage.getItem('data') == null) {
             localStorage.setItem('data', '[]');
         }
-        let old_data = JSON.parse(localStorage.getItem('data'));
-        old_data.push(new_data);
-        localStorage.setItem('data', JSON.stringify(old_data));
+        let favData = JSON.parse(localStorage.getItem('data'));
+        favData.push(gifObj);
+        localStorage.setItem('data', JSON.stringify(favData));
+        // saveData();
+        // let src = source;
+        // if(localStorage.getItem('data') == null) {
+        //     localStorage.setItem('data', '[]');
+        // }
+        // let old_data = JSON.parse(localStorage.getItem('data'));
+        // old_data.push(src);
+        // localStorage.setItem('data', JSON.stringify(old_data));
     });
 
     //Donwload icon 
