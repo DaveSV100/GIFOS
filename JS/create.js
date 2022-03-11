@@ -14,7 +14,6 @@ let videoRecorder;
 let gifRecorder;
 let gifSrc;
 let playing = false;
-console.log(darkModeIsRunning);
 
 //Async await instead of promises and .then
 async function fetchURL(url, params = null) {

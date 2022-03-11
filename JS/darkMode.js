@@ -3,9 +3,17 @@ const trendingTitle = document.querySelector(".trending-text")
 const logoIcon = document.querySelector(".logo");
 const cam = document.querySelector("#cameraIcon");
 const mov = document.querySelector("#movieIcon");
+
 let darkModeIsRunning = false;
 
-theme.addEventListener("click", () => {darkMode()})
+theme.addEventListener("click", () => {
+    if(theme.textContent === "MODO NOCTURNO") {
+        theme.textContent = "MODO DIURNO";
+    } else {
+        theme.textContent = "MODO NOCTURNO";
+    }
+    darkMode();
+})
 
 const darkMode = () => {
     document.body.classList.toggle("darkTheme");
@@ -16,13 +24,10 @@ const darkMode = () => {
         localStorage.setItem("dark-theme", false);
     }
 
-    // if(document.URL.includes('create.html')) {
-    //     cam.src = "/assets/camara-modo-noc.svg";
-    //     mov.src = "/assets/pelicula-modo-noc.svg";
-    // }
+    
     
 }
-
+console.log(localStorage.getItem("dark-theme"));
 const settings = () => {
     if (localStorage.getItem("dark-theme") == "true") {
         document.body.classList.add("darkTheme");
@@ -33,9 +38,3 @@ const settings = () => {
     }
 }
 settings();
-
-//Get the user preference system theme
-// const prefersDarkScheme = window.matchMedia("(prefers-color-scheme:dark)");
-// if (prefersDarkScheme.matches) {
-//     darkMode();
-// } 
