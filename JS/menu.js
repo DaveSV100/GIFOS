@@ -5,7 +5,7 @@ const icon = document.querySelector('#burger');
 const list = document.querySelector('.navBar-menu');
 const body = document.querySelector('body');
 const logo = document.querySelector('#logo-icon');
-const create = document.querySelector('.createIcon');
+
 
 //Logo button
 logo.addEventListener('click', () => {
@@ -41,7 +41,9 @@ const navSlide = () => {
     });
 }
 navSlide();
+
 //Create icon event
+const create = document.querySelector('.createIcon');
 create.addEventListener("mouseover", () => {
     create.src = "assets/CTA-crear-gifo-hover.svg";
 });

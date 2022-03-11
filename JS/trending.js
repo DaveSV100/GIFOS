@@ -27,3 +27,4 @@ const downloadFromGiphy = async (src, name) => {
     let blob = await fetch(src).then((img) => img.blob());
     invokeSaveAsDialog(blob, name + '.gif');
 }
+
