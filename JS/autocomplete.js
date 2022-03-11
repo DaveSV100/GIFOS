@@ -2,8 +2,6 @@
 const autocomplete_url = "https://api.giphy.com/v1/gifs/search/tags?";
 const mainContent_search = document.querySelector('.mainContent-search');
 const suggestions_container = document.querySelector('.search-container')
-// const inputBox = document.getElementById('search-box');
-
 
 word.addEventListener("input", () => {
     const value = word.value;
@@ -55,21 +53,4 @@ const changeIcon = () => {
     searchButton.addEventListener('click', () => {
         location.reload();
     })
-    //Change icon from 'search'(icon == s) to 'close'(icon == c) to reload page and search something else
-    // if (search.length === "") {
-    //     //It won't fetch any gif because the input is empty and will not change the icon
-    //     } else {
-    //         let icon = 's';
-    //         if (icon =='s') {
-    //         searchIcon.src='assets/close.svg';
-    //         icon='c';
-    //         //Reload page
-    //         searchButton.addEventListener('click', () => {
-    //             location.reload();
-    //         })
-    //         } else {
-    //             searchIcon.src='assets/icon-search.svg';
-    //             icon='s';
-    //         }
-    // }
 }

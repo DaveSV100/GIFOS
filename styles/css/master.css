@@ -224,6 +224,9 @@ body.darkTheme .main-create .create-gifs_button {
   z-index: 1;
   position: absolute;
 }
+#mainContent #search .mainContent-search .search-container .autocomplete-container a {
+  cursor: pointer;
+}
 #mainContent #search .mainContent-terms {
   grid-area: mainContent-terms;
   display: flex;
@@ -303,6 +306,7 @@ body.darkTheme .main-create .create-gifs_button {
   letter-spacing: 0;
   text-align: center;
   text-transform: uppercase;
+  cursor: pointer;
 }
 #mainContent #trending {
   height: 60vh;
@@ -343,6 +347,7 @@ body.darkTheme .main-create .create-gifs_button {
   height: 187px;
   width: 243px;
   object-fit: cover;
+  cursor: pointer;
 }
 
 #bottom {
@@ -419,6 +424,7 @@ body.darkTheme .main-create .create-gifs_button {
   width: 150px;
   height: 150px;
   object-fit: cover;
+  cursor: pointer;
 }
 #favoritePage .favorite-gifs .see-more_btn {
   margin-top: 3vh;
@@ -434,6 +440,7 @@ body.darkTheme .main-create .create-gifs_button {
   letter-spacing: 0;
   text-align: center;
   text-transform: uppercase;
+  cursor: pointer;
 }
 #favoritePage .favorite-trending {
   grid-area: favorite-trending;
@@ -475,6 +482,7 @@ body.darkTheme .main-create .create-gifs_button {
   height: 187px;
   width: 243px;
   object-fit: cover;
+  cursor: pointer;
 }
 
 .body-create {
@@ -682,6 +690,12 @@ main .create-container .video-ad p {
     padding-right: 30px;
     cursor: pointer;
   }
+  #top .navBar .navBar-menu .navBar-menu_item a:hover {
+    text-decoration: underline #50E3C2;
+  }
+  #top .navBar .navBar-menu .navBar-menu_item a:active {
+    color: #9CAFC3;
+  }
   #top .navBar .navBar-menu .navBar-menu_create a img {
     margin-top: 2vh;
   }
@@ -709,8 +723,12 @@ main .create-container .video-ad p {
   }
 
   #favoritePage .favorite-gifs .favorite-gifs_result img {
-    width: 250px;
-    height: 250px;
+    width: 220px;
+    height: 220px;
+  }
+
+  #top .navBar .navBar-menu .navBar-menu_item .navBar-menu_item_create img {
+    margin-top: 3vh;
   }
 }
 @media (min-width: 1000px) {
@@ -756,6 +774,11 @@ main .create-container .video-ad p {
 
   #mainContent #trending .trending-text p {
     font-size: 1.2rem;
+  }
+
+  #favoritePage .favorite-gifs .favorite-gifs_result img {
+    width: 250px;
+    height: 250px;
   }
 
   .body-create {
@@ -962,6 +985,7 @@ footer {
   margin: 5vh 0 0 83vw;
   background: none;
   border: none;
+  cursor: pointer;
 }
 .gifCard .gifCard-container .card-image {
   height: 30vh;
@@ -975,6 +999,7 @@ footer {
   margin-top: 42vh;
   background: none;
   border: none;
+  cursor: pointer;
 }
 .gifCard .gifCard-container .donwload-icon {
   position: absolute;
@@ -982,6 +1007,7 @@ footer {
   margin-top: 41vh;
   background: none;
   border: none;
+  cursor: pointer;
 }
 .gifCard .gifCard-container .gif-title {
   width: 50vw;

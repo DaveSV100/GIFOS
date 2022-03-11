@@ -15,12 +15,6 @@ getGif().then(response => {
         gif.setAttribute('alt', response.data[i].title);
         trending.appendChild(gif);
         gif.addEventListener('click', () => {gifCard(gif.src, gif.alt)});   
-        gif.addEventListener("mouseover", () => {
-            console.log("Hey, i'mma display the card");
-            // const ad = document.createElement("div");
-            // ad.setAttribute("class", "overCard");
-            // gif.appendChild(ad);
-        })
     }
 }).catch(err => {
     console.error('something went wrong :/', err);

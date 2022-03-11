@@ -45,6 +45,7 @@
                 width: 150px;
                 height: 150px;
                 object-fit: cover;
+                cursor: pointer;
             }
         }
         .see-more_btn {
@@ -61,6 +62,7 @@
             letter-spacing: 0;
             text-align: center;
             text-transform: uppercase;
+            cursor: pointer;
         }
     }
     .favorite-trending {
@@ -101,6 +103,7 @@
                 height: 187px;
                 width: 243px;
                 object-fit: cover;
+                cursor: pointer;
             }
         }
     }

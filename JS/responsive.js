@@ -6,8 +6,6 @@ const layout1 = () => {
     const width1 = window.innerWidth;
     if(width1 >= 300 && width1 < 450) {
         console.log("This is a phone");
-        // document.classList.toggle("mobile-body");
-        // resultContainer.classList.toggle("mobile-container");
         document.body.style.gridTemplateRows = '10vh 300vh 20vh';
         resultContainer.style.gridTemplateRows = '20vh 30vh 30vh 10vh 140vh 10vh';
     } else if(width1 >= 450 && width1 < 600) {

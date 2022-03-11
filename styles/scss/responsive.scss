@@ -62,6 +62,12 @@
             padding-right: 30px;
             cursor: pointer;
         }
+        .navBar-menu_item a:hover {
+            text-decoration: underline #50E3C2;
+        }
+        .navBar-menu_item a:active {
+            color: #9CAFC3;
+        }
         .navBar-menu_create a img {
             margin-top: 2vh;
         }
@@ -88,8 +94,12 @@
         }
     }
     #favoritePage .favorite-gifs .favorite-gifs_result img {
-        width: 250px;
-        height: 250px;
+        width: 220px;
+        height: 220px;
+    }
+    //Create icon from the navbar
+    #top .navBar .navBar-menu .navBar-menu_item .navBar-menu_item_create img {
+        margin-top: 3vh;
     }
 } 
 @media (min-width: 1000px) {
@@ -136,6 +146,10 @@
     }
     #mainContent #trending .trending-text p {
         font-size: 1.2rem;
+    }
+    #favoritePage .favorite-gifs .favorite-gifs_result img {
+        width: 250px;
+        height: 250px;
     }
     //Create page
     .body-create {

@@ -77,6 +77,9 @@
                     color: var(--main);
                     z-index: 1;
                     position: absolute;
+                    a {
+                        cursor: pointer;
+                    }
                 }
             }
             
@@ -160,6 +163,7 @@
                 letter-spacing: 0;
                 text-align: center;
                 text-transform: uppercase;
+                cursor: pointer;
             }
         }
     }           
@@ -201,6 +205,7 @@
                 height: 187px;
                 width: 243px;
                 object-fit: cover;
+                cursor: pointer;
                 // scroll-snap-align: center;
             }
         }

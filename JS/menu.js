@@ -3,6 +3,7 @@ const icon = document.querySelector('#burger');
 const list = document.querySelector('.navBar-menu');
 const body = document.querySelector('body');
 const logo = document.querySelector('#logo-icon');
+const create = document.querySelector('.createIcon');
 
 //Logo button
 logo.addEventListener('click', () => {
@@ -39,3 +40,11 @@ const navSlide = () => {
     });
 }
 navSlide();
+
+//Create icon event
+create.addEventListener("mouseover", () => {
+    create.src = "assets/CTA-crear-gifo-hover.svg";
+})
+create.addEventListener("mouseout", () => {
+    create.src = "assets/button-crear-gifo.svg";
+})
