@@ -1,3 +1,4 @@
+"use strict";
 const container = document.querySelector(".create-actions");
 const btn = document.getElementById('create-button');
 const videoContainer = document.querySelector(".create-container");
@@ -15,7 +16,6 @@ let gifRecorder;
 let gifSrc;
 let playing = false;
 
-//Async await instead of promises and .then
 async function fetchURL(url, params = null) {
 	try {
 		const fetchData = await fetch(url, params);
@@ -63,7 +63,7 @@ async function init () {
 }
 
 async function record() {
-    console.log("let's record")
+    console.log("Let's record")
     btn.remove();
     number1.style.backgroundColor = "#ffffff";
     number1.style.color = "#572EE5";
@@ -272,9 +272,9 @@ async function uploadGif(id) {
             pageBtn.remove();
             window.location.href = "../my_gifos.html";
         })
-    } 
-    //From ecma script 9 on, you don't need to place the catch with console log (error) and all of that stuff anymore
-    catch {}
+    } catch (error) {
+        console.log(error);
+    }
 }
 const downloadGif = async (id) => {
     console.log("donwloading: ", id);
@@ -283,7 +283,6 @@ const downloadGif = async (id) => {
     invokeSaveAsDialog(blob, "My-gif.gif");
 }
 const copyLink = (gifLink) => {
-    console.log("copying link", gifLink);
     const text = document.createElement("textarea");
     text.value = gifLink;
     console.log(text.value);
@@ -294,7 +293,9 @@ const copyLink = (gifLink) => {
         const value = await navigator.clipboard.writeText(text.value)
         try {
             console.log("copied"); 
-        } catch{}
+        } catch (error) {
+            console.log(error);
+        }
     }           
     copy();
 }

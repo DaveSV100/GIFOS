@@ -1,8 +1,9 @@
+"use strict";
+//These two functions work when user is searching for gifs
 const resultContainer = document.querySelector("#search");
-
 const layout1 = () => {
     console.log("***** Layout1 ****")
-    console.log(searchHandler1);
+    //Get window width
     const width1 = window.innerWidth;
     if(width1 >= 300 && width1 < 450) {
         console.log("This is a phone");
@@ -41,8 +42,6 @@ const layout2 = () => {
     const width2 = window.innerWidth;
     if(width2 >= 300 && width2 < 450) {
         console.log("This is a phone");
-        // document.classList.toggle("mobile-body");
-        // resultContainer.classList.toggle("mobile-container");
         document.body.style.gridTemplateRows = '10vh 410vh 20vh';
         resultContainer.style.gridTemplateRows = '20vh 30vh 30vh 10vh 250vh 10vh';
     } else if(width2 >= 450 && width2 < 600) {
@@ -78,9 +77,5 @@ const selectLayout = () => {
         layout2();
     }
 }
-
+//This line of code listenes to every change in the screen size
 window.addEventListener("resize", selectLayout);
-// window.onresize = sizeEventListener;
-
-//Layout for favorites.html and myGifos.html
-

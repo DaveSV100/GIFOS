@@ -1,4 +1,5 @@
-//                     //TRENDING
+"use strict";
+//TRENDING
 const apiKey = "efARnSmXUsXz3XqFvbyykWkVyNi3IIuQ";
 const trending = document.getElementById('trending-gifos');
 const trendingUrl = "https://api.giphy.com/v1/gifs/trending?";
@@ -15,6 +16,7 @@ getGif().then(response => {
         gif.setAttribute('alt', response.data[i].title);
         trending.appendChild(gif);
         gif.addEventListener('click', () => {gifCard(gif.src, gif.alt)});   
+        //Calling gif card function
     }
 }).catch(err => {
     console.error('something went wrong :/', err);

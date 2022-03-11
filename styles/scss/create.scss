@@ -1,3 +1,4 @@
+//Create
 .body-create {
         display: grid;
         grid-template-columns: 100vw;
@@ -95,6 +96,7 @@
                 font-weight: 600;
                 color: #572EE5;
                 text-align: center;
+                cursor: pointer;
             }
         }
         .movie-icon {
@@ -126,11 +128,13 @@ main .create-container .video-ad {
         position: absolute;
         margin: -200px 0 0 170px;
         width: 30px;
+        cursor: pointer;
     }
     .ad-link {
         position: absolute;
         margin: -200px 0 0 250px;
         width: 30px;
+        cursor: pointer;
     }
     p {
         font-size: .8rem;

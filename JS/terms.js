@@ -1,7 +1,7 @@
-//                     //TRENDING SEARCH TERMS
+"use strict";
+//TRENDING SEARCH TERMS
 const searches_url = "https://api.giphy.com/v1/trending/searches?";
 let searches = document.getElementById("mainContent-terms_result");
-// let activatedFunction = false;
 function show_terms() {
     async function display() {
         let terms = `${searches_url}&api_key=${apiKey}&limit=5`
@@ -17,7 +17,7 @@ function show_terms() {
             searches.appendChild(a);
             a.addEventListener('click', () => {
                 let search = a.text;
-                console.log(search); 
+                //Calling the searchGif function
                 searchGif(search);
             });
         });

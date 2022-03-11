@@ -1,3 +1,5 @@
+"use strict";
+//Hamburger menu
 const burger = document.querySelector('.hamburger');
 const icon = document.querySelector('#burger');
 const list = document.querySelector('.navBar-menu');
@@ -12,16 +14,15 @@ logo.addEventListener('click', () => {
 });
 
 const navSlide = () => {
-//     //Image tracker =
-//     //h = Hamburger icon
-//     //c = Close icon
+    //Image tracker =
+    //h = Hamburger icon
+    //c = Close icon
     let image_tracker='h';
     burger.addEventListener('click', () => {
-       
-//         // minWidth.matches ? list.classList.add('navBar-menu_update') : list.classList.remove('navBar-menu_update');
+        // minWidth.matches ? list.classList.add('navBar-menu_update') : list.classList.remove('navBar-menu_update');
         list.classList.toggle('navBar-menu_update');
         burger.classList.toggle('hidden');
-//         //Change icon
+        //Change icon
         if(image_tracker=='h') {
             icon.src='assets/close.svg';
             image_tracker='c';
@@ -40,11 +41,10 @@ const navSlide = () => {
     });
 }
 navSlide();
-
 //Create icon event
 create.addEventListener("mouseover", () => {
     create.src = "assets/CTA-crear-gifo-hover.svg";
-})
+});
 create.addEventListener("mouseout", () => {
     create.src = "assets/button-crear-gifo.svg";
-})
+});

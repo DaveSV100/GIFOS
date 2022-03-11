@@ -1,3 +1,4 @@
+"use strict";
 const favContainer = document.getElementById('favoritePage');
 const favGifs = document.getElementById('favorite-gifs_imgs');
 const gifContainer = document.querySelector('.favorite-gifs_empty');
@@ -26,9 +27,8 @@ const saveData = () => {
     else {
         let filter = getFav.slice(0, 12);
         gifContainer.classList.toggle('favorite-gifs_result');
-
+        //If there are less than 12 gifs added
         if (getFav.length <= 12) {
-            console.log("--------There are less than 12 ---------")
             getFav.forEach(element => {
                 console.log(element.name)
                 let fav = document.createElement('img');
@@ -49,9 +49,8 @@ const saveData = () => {
                 favContainer.style.gridTemplateRows = `${containerHeight}vh 50vh`;
             }
 
-        } 
-        else if (getFav.length > 12) {
-            console.log("--------There are more than 12 ---------")
+        } else if (getFav.length > 12) {
+            //If there are more than 12 gifs added
             filter.forEach(element => {
                 let fav = document.createElement('img');
                 fav.setAttribute('src', element.src);
@@ -71,6 +70,7 @@ const saveData = () => {
             }
             console.log(getFav.length);
             console.log(filter);
+            //See more gifs 
             let btn = document.createElement('button');
             btn.setAttribute('id', 'moreGifs-btn');
             btn.setAttribute('class', 'see-more_btn');
@@ -80,7 +80,6 @@ const saveData = () => {
             btnContainer.appendChild(btn);
             btn.addEventListener('click', () => {
                 btn.remove();
-                console.log("***show more***")
                 filter = getFav.slice(12, 25);
                 filter.forEach(element => {
                     let fav = document.createElement('img');

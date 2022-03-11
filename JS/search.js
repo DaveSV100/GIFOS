@@ -1,4 +1,5 @@
-                            //SEARCH
+"use strict";
+//SEARCH
 const searchUrl = "https://api.giphy.com/v1/gifs/search?";
 const searchIcon = document.getElementById('search-icon');
 const searchContainer = document.getElementById('search');
@@ -72,13 +73,11 @@ const searchGif = async (value) => {
                     return data;
                 }
                 searchMore().then(response => {
-                    //Change layout (the function on in the response.js file)
+                    //Change layout (the function is on the response.js file)
                     searchHandler1 = false;
                     searchHandler2 = true;
                     layout2();
                     for (var i = 0; i < response.data.length; i++) {
-                        // document.body.style.gridTemplateRows = '10vh 340vh 20vh';
-                        // searchContainer.style.gridTemplateRows = '20vh 20vh 20vh 10vh 210vh 0vh';
                         //Gifs container
                         let foundGif = document.createElement('img');
                         foundGif.setAttribute('src', response.data[i].images.original.url);
@@ -93,5 +92,7 @@ const searchGif = async (value) => {
                 })
             });
         }
-    } catch{}
+    } catch (error) {
+        console.log(error);
+    }
 }

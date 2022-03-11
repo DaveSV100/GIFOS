@@ -1,8 +1,9 @@
+"use strict";
 //AUTOCOMPLETE
 const autocomplete_url = "https://api.giphy.com/v1/gifs/search/tags?";
 const mainContent_search = document.querySelector('.mainContent-search');
 const suggestions_container = document.querySelector('.search-container')
-
+//The variable word comes from search.js. It's the input box
 word.addEventListener("input", () => {
     const value = word.value;
     autocomplete(value);
@@ -17,7 +18,6 @@ const autocomplete = async (value) => {
         if(data.data.length > 0) {
             displaySuggestions(data);
         } else {
-            console.log("You gotta type something dude")
             //remove items
             clean();
         };
@@ -27,6 +27,7 @@ const autocomplete = async (value) => {
 }
 
 const displaySuggestions = (data) => {
+    //Function to clean the suggestions
     clean()
     const container = document.createElement("div");
     container.setAttribute("class", "autocomplete-container")
@@ -47,6 +48,7 @@ const clean = () => {
     const container = suggestions_container.lastChild;
     container.remove();
 }
+//Change the icon that's into the input box
 const changeIcon = () => {
     console.log("changing icon")
     searchIcon.src = "assets/close.svg";

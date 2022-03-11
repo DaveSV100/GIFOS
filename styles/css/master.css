@@ -579,6 +579,7 @@ body.darkTheme .main-create .create-gifs_button {
   font-weight: 600;
   color: #572EE5;
   text-align: center;
+  cursor: pointer;
 }
 .main-create .movie-icon {
   grid-area: movie-icon;
@@ -609,11 +610,13 @@ main .create-container .video-ad .ad-download {
   position: absolute;
   margin: -200px 0 0 170px;
   width: 30px;
+  cursor: pointer;
 }
 main .create-container .video-ad .ad-link {
   position: absolute;
   margin: -200px 0 0 250px;
   width: 30px;
+  cursor: pointer;
 }
 main .create-container .video-ad p {
   font-size: 0.8rem;

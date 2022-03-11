@@ -1,8 +1,9 @@
+"use strict";
 const gifCard = (source, alt) => {
-        //GIF CARD
+    //GIF CARD
     //The styles for the Gif Card are set on the master.scss file.
     body.style.overflow = 'hidden';
-    //Gif card background. 
+    //Gif card background
     let background = document.createElement('div');
     background.setAttribute('class', 'gifCard');
     body.appendChild(background);
@@ -40,7 +41,6 @@ const gifCard = (source, alt) => {
     gifContainer.appendChild(favIcon);
     //Local Storage
     favIcon.addEventListener('click', () => {
-        console.log('Favorite button');
         let gifObj = {
             src: source,
             name: alt,
@@ -53,8 +53,6 @@ const gifCard = (source, alt) => {
         favData.push(gifObj);
         localStorage.setItem('data', JSON.stringify(favData));
     });
-    
-
     //Donwload icon 
     let downloadIcon = document.createElement('button');
     downloadIcon.setAttribute('class', 'donwload-icon');
@@ -63,7 +61,6 @@ const gifCard = (source, alt) => {
     downloadIcon.appendChild(downloadImage);
     gifContainer.appendChild(downloadIcon);
     downloadIcon.addEventListener('click', () => {
-
         const downloadGif = async (src, name) => {
             let blob = await fetch(src).then((img) => img.blob());
             invokeSaveAsDialog(blob, name + '.gif');
